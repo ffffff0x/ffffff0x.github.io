@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Misc Commands | bo0s</title>
+  <meta name="author" content="hitman">
+  
+  <meta name="description" content="My Blog/Website, will Tutorials, and just my general thoughts.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Misc Commands"/>
+  <meta property="og:site_name" content="bo0s"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/12favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">bo0s</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文章">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="标签">
+			  <i class="fa fa-tag"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我是谁.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/wiki/#/" title="WiKi.">
+			  <i class="fa fa-book"></i>WiKi
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tool" title="工具">
+			  <i class="fa fa-space-shuttle"></i>Tool
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/logs" title="日志">
+			  <i class="fa fa-tachometer"></i>Logs
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/code/landing/" title="Discord.JS Bot Code">
+			  <i class="fa fa-code"></i>Tutorials / Code
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+	
+		<div class="page-header">
+			<h1> Misc Commands</h1>
+		</div>
+	
+
+
+
+<div class="row page">
+	<!-- cols -->
+	
+	<div class="col-md-12"> 
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>Misc commands you may find useful. Some require a <code>get</code> or <code>post</code> request which I find the module <code>node-fetch</code> to be useful for.</p>
+<h4 id="1-Hastebin"><a href="#1-Hastebin" class="headerlink" title="[1] Hastebin"></a>[1] Hastebin</h4><ul>
+<li>Replace <code>&lt;TYPE&gt;</code> with “Kicked”, “Banned”, or “Unbanned”</li>
+<li>Replace <code>.kick</code> with <code>.ban</code> for bans, and <code>.unban</code> for unbans</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&quot;node-fetch&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> (!args || !args[<span class="number">0</span>]) <span class="keyword">return</span> message.channel.send(<span class="string">&quot;❌ **Error** \`|\` Please specify a text to post to hastebin!&quot;</span>) <span class="comment">// check if the user provides an argument</span></span><br><span class="line">http(<span class="string">&quot;https://hastebin.com/documents&quot;</span>, &#123;<span class="attr">method</span>: <span class="string">&quot;POST&quot;</span>, <span class="attr">body</span>: <span class="string">`<span class="subst">$&#123;args.join(<span class="string">&quot; &quot;</span>)&#125;</span>`</span>&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> res.json()).then(<span class="function"><span class="params">json</span> =&gt;</span> message.channel.send(<span class="string">`https://hastebin.com/<span class="subst">$&#123;json.key&#125;</span>`</span>))</span><br></pre></td></tr></table></figure>
+<h4 id="2-Password-Generator"><a href="#2-Password-Generator" class="headerlink" title="[2] Password Generator"></a>[2] Password Generator</h4><ul>
+<li>Do <strong>not</strong> store user generated passwords, <strong>ever</strong> with this command</li>
+<li>Acceptable times to store it? When it is being salted <strong>and</strong> hashed. </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">message.author.send(<span class="string">`✅ **Generated** \`|\` <span class="subst">$&#123;<span class="built_in">Array</span>(<span class="number">15</span>).fill(<span class="string">&quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz$%&amp;*^()!@=+-_?&quot;</span>).map(<span class="keyword">function</span>(mapped) &#123; <span class="keyword">return</span> mapped[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * mapped.length)] &#125;</span>).join(&#x27;&#x27;)&#125;`</span>).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123; <span class="comment">// try to dm the author</span></span><br><span class="line">    <span class="keyword">if</span> (error) <span class="keyword">return</span> message.channel.send(<span class="string">&quot;❌ **Error** \`|\` Unable to send a DM to you.&quot;</span>)</span><br><span class="line">&#125;)</span><br><span class="line">message.delete() <span class="comment">// delete the users command</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-Reverse-Text"><a href="#3-Reverse-Text" class="headerlink" title="[3] Reverse Text"></a>[3] Reverse Text</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!args || !args[<span class="number">0</span>]) <span class="keyword">return</span> message.channel.send(<span class="string">&quot;❌ **Error** \`|\` Please specify text to reverse!&quot;</span>)</span><br><span class="line"><span class="keyword">return</span> message.channel.send(args.join(<span class="string">&quot; &quot;</span>).split(<span class="string">&quot;&quot;</span>).reverse().join(<span class="string">&quot;&quot;</span>))</span><br></pre></td></tr></table></figure>
+<h4 id="4-Mock"><a href="#4-Mock" class="headerlink" title="[4] Mock"></a>[4] Mock</h4><ul>
+<li>Doesn’t require user input! Grabs the last message sent and mocks it!</li>
+<li>Beware, this works weirdly on embed content because of the DiscordAPI</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">message.channel.messages.fetch(&#123; <span class="attr">limit</span>: <span class="number">2</span> &#125;).then(<span class="function"><span class="params">found</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> obtainedMsgs = <span class="built_in">Array</span>.from(found)</span><br><span class="line">    <span class="keyword">if</span>(!obtainedMsgs[<span class="number">1</span>] || !obtainedMsgs[<span class="number">1</span>][<span class="number">1</span>]) <span class="keyword">return</span> message.channel.send(<span class="string">&quot;❌ **Error** \`|\` No message to mock available!&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        message.delete()</span><br><span class="line">        <span class="keyword">return</span> message.channel.send(<span class="string">`😔 <span class="subst">$&#123;obtainedMsgs[<span class="number">1</span>][<span class="number">1</span>].content.split(<span class="string">&#x27;&#x27;</span>).map(char =&gt; <span class="built_in">Math</span>.random() &gt; <span class="number">0.5</span> ? char.toUpperCase() : char.toLowerCase()).join(<span class="string">&#x27;&#x27;</span>)&#125;</span>`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="5-New-Subreddit-List"><a href="#5-New-Subreddit-List" class="headerlink" title="[5] New Subreddit List"></a>[5] New Subreddit List</h4><ul>
+<li>For more results, change <code>?limit=5</code></li>
+<li>NSFW subreddits will only show in a NSFW channel</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&quot;node-fetch&quot;</span>)</span><br><span class="line">http(<span class="string">`https://reddit.com/subreddits/new/.json?limit=5`</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> res.json()).then(<span class="function"><span class="params">json</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> subs = <span class="string">&quot;&quot;</span></span><br><span class="line">    json.data.children.forEach(<span class="function"><span class="params">sub</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(sub.data.over18 &amp;&amp; !message.channel.nsfw) <span class="string">`➤ Omitted [18+]\n`</span></span><br><span class="line">        <span class="keyword">else</span> subs += <span class="string">`➤ **&lt;https://reddit.com/<span class="subst">$&#123;sub.data.display_name_prefixed&#125;</span>&gt;**\n`</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> message.channel.send(<span class="string">`📝 **New Subreddits**\n\n<span class="subst">$&#123;subs&#125;</span>\n_Provided by the Reddit API_`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="5-r-AskReddit"><a href="#5-r-AskReddit" class="headerlink" title="[5] r/AskReddit"></a>[5] r/AskReddit</h4><ul>
+<li>Only retrieves 1 random post</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&quot;node-fetch&quot;</span>)</span><br><span class="line">http(<span class="string">`https://reddit.com/r/AskReddit/random/.json?limit=1`</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> res.json()).then(<span class="function"><span class="params">json</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> message.channel.send(<span class="string">`📣 **r/AskReddit** \`|\` <span class="subst">$&#123;json[<span class="number">0</span>].data.children[<span class="number">0</span>].data.title&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="6-r-Memes"><a href="#6-r-Memes" class="headerlink" title="[6] r/Memes"></a>[6] r/Memes</h4><ul>
+<li>Retrieves 1 Random meme</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&quot;node-fetch&quot;</span>)</span><br><span class="line">http(<span class="string">`https://reddit.com/r/Memes/random/.json?limit=1`</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> res.json()).then(<span class="function"><span class="params">json</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> message.channel.send(<span class="string">`😆 **r/Meme**\n**Title:** <span class="subst">$&#123;json[<span class="number">0</span>].data.children[<span class="number">0</span>].data.title&#125;</span>\n<span class="subst">$&#123;json[<span class="number">0</span>].data.children[<span class="number">0</span>].data.url&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	<span id="/code/topics/discordjs/freecode/misc/" class="leancloud-visitors view" data-flag-title="Misc Commands">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2024 hitman's Blog
+  
+      . wubba <a href="http://hexo.io/" target="_blank">lubba</a> dub <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank"> dub.</a>  
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

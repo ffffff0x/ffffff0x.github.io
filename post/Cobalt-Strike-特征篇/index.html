@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Cobalt Strike_特征篇 | bo0s</title>
+  <meta name="author" content="hitman">
+  
+  <meta name="description" content="My Blog/Website, will Tutorials, and just my general thoughts.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Cobalt Strike_特征篇"/>
+  <meta property="og:site_name" content="bo0s"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/12favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">bo0s</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文章">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="标签">
+			  <i class="fa fa-tag"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我是谁.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/wiki/#/" title="WiKi.">
+			  <i class="fa fa-book"></i>WiKi
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tool" title="工具">
+			  <i class="fa fa-space-shuttle"></i>Tool
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/logs" title="日志">
+			  <i class="fa fa-tachometer"></i>Logs
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/code/landing/" title="Discord.JS Bot Code">
+			  <i class="fa fa-code"></i>Tutorials / Code
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> Cobalt Strike_特征篇</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p><img src="/images/pasted-77.png" alt="upload successful"></p>
+<p>在现目前 Cobalt Strike 是我们比较常用的团队后渗透利用神器，以下简称 “CS” 很多人都喜欢在自家的服务器或者别人的服务器上搭建一个来玩玩。这导致一批像克隆体一样的 CS 像靶机一样被暴露在扫描器下，或被爆菊或被加特征…..</p>
+<a id="more"></a> 
+<h3 id="特征发现"><a href="#特征发现" class="headerlink" title="特征发现"></a>特征发现</h3><p>就现目前来说，发现 CS 服务器的主要方式的途径为:<br>1、 木马样本分析<br>2、样本回连溯源<br>3、特征扫描发现</p>
+<h4 id="常见的扫描特征"><a href="#常见的扫描特征" class="headerlink" title="常见的扫描特征"></a>常见的扫描特征</h4><h5 id="证书发现"><a href="#证书发现" class="headerlink" title="证书发现"></a>证书发现</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## CS teamserver服务端默认的证书特征十分明显</span></span><br><span class="line">可以在CS目录使用默认密码 <span class="string">&quot;123456&quot;</span> 查看证书信息</span><br><span class="line">keytool -list -v -keystore cobaltstrike.store </span><br><span class="line"><span class="comment"># 证书信息</span></span><br><span class="line"><span class="attribute">O</span>=cobaltstrike, <span class="attribute">OU</span>=AdvancedPenTesting, <span class="attribute">CN</span>=Major Cobalt Strike</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/pasted-71.png" alt="upload successful"></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Fofa中有一条规则就是如此，可以看到为CS默认端口50050的占比很大</span></span><br><span class="line"><span class="attr">protocol</span>==<span class="string">&quot;cobaltstrike&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 为了保证数据的有效性可加上一句</span></span><br><span class="line"><span class="attr">after</span>=<span class="string">&quot;2020-01-01&quot;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/pasted-65.png" alt="upload successful"></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 搜索证书的指纹信息</span></span><br><span class="line"><span class="attr">cert</span>=<span class="string">&quot;73:6B:5E:DB:CF:C9:19:1D:5B:D0:1F:8C:E3:AB:56:38:18:9F:02:4F&quot;</span> </span><br></pre></td></tr></table></figure>
+<p><img src="/images/pasted-67.png" alt="upload successful"></p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## 搜索证书中带有<span class="string">&quot;Major Cobalt Strike&quot;</span>字段的资产</span><br><span class="line">cert=<span class="string">&quot;Major Cobalt Strike&quot;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/pasted-68.png" alt="upload successful"></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 搜索头信息中为404，使用cobaltstrike协议，并且证书序列号为146473198的资产</span></span><br><span class="line"><span class="attribute">header</span>=<span class="string">&quot;HTTP/1.1 404 Not Found Content-Type: text/plain Date:&quot;</span> || <span class="attribute">protocol</span>=<span class="string">&quot;cobaltstrike&quot;</span> || <span class="attribute">cert</span>=<span class="string">&quot;Serial Number: 146473198&quot;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/pasted-69.png" alt="upload successful"></p>
+<h3 id="特征修改"><a href="#特征修改" class="headerlink" title="特征修改"></a>特征修改</h3><h5 id="修改证书"><a href="#修改证书" class="headerlink" title="修改证书"></a>修改证书</h5><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## 使用 keytool 生成免费的证书(需要java)</span><br><span class="line">keytool -genkey -alias NB -keyalg RSA -validity <span class="number">36500</span> -keystore NB.store</span><br><span class="line"></span><br><span class="line">## 需要注意的是，里面的各种名称都是可以自己更改的，并且输入的密码后面要用，不能忘记</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/pasted-72.png" alt="upload successful"></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">## 更快捷的一行代码生成方式</span><br><span class="line">keytool -keystore cobaltstrike.store -storepass <span class="number">123456</span> -keypass <span class="number">123456</span> -genkey -keyalg RSA -alias taobao.<span class="keyword">com</span> -dname <span class="string">&quot;CN=US, OU=&quot;</span>taobao.<span class="keyword">com</span><span class="string">&quot;, O=&quot;</span>Sofatest<span class="string">&quot;, L=Beijing, ST=Cyberspace, C=CN&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-keytool -keystore cobaltstrike.store -storepass 密码</span><br><span class="line">-keypass 密码</span><br><span class="line">-genkey -keyalg RSA</span><br><span class="line">-alias google.<span class="keyword">com</span> -dname <span class="comment">&quot;CN=(名字与姓氏),</span></span><br><span class="line">OU=(组织单位名称), O=(组织名称),</span><br><span class="line">L=(城市或区域名称),</span><br><span class="line">ST=(州或省份名称),</span><br><span class="line">C=(单位的两字母国家代码)。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>现在再来看证书，可以发现很多地方已经不太一样了</p>
+<p><img src="/images/pasted-73.png" alt="upload successful"></p>
+<h5 id="修改C2"><a href="#修改C2" class="headerlink" title="修改C2"></a>修改C2</h5><p>单单修改证书还不够，我们还需要修改Beacon和Teamserver端C2的通讯配置来将流量特征进行修改</p>
+<h6 id="创建C2-profile"><a href="#创建C2-profile" class="headerlink" title="创建C2.profile"></a>创建C2.profile</h6><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## 我们可以通过一些参考的C2文件来进行修改</span><br><span class="line">## 可根据以下文章的 C2.profile 内容来进行自定义的修改，减少特征.</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.cobaltstrike.com/help-malleable-c2">https://www.cobaltstrike.com/help-malleable-c2</a><br><a target="_blank" rel="noopener" href="https://github.com/rsmudge/Malleable-C2-Profiles">https://github.com/rsmudge/Malleable-C2-Profiles</a><br><a target="_blank" rel="noopener" href="https://github.com/xx0hcd/Malleable-C2-Profiles">https://github.com/xx0hcd/Malleable-C2-Profiles</a><br><a target="_blank" rel="noopener" href="https://github.com/xx0hcd/Malleable-C2-Profiles%E6%93%8D%E4%BD%9C">https://github.com/xx0hcd/Malleable-C2-Profiles操作</a><br><a target="_blank" rel="noopener" href="https://github.com/xx0hcd/Malleable-C2-Profiles">https://github.com/xx0hcd/Malleable-C2-Profiles</a></p>
+<h6 id="验证证书"><a href="#验证证书" class="headerlink" title="验证证书"></a>验证证书</h6><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## 进入你的CS文件夹，将刚才生成的证书和 C2.profile 复制进去.</span><br><span class="line">## 执行以下命令验证 C2.profile 的正确性.</span><br></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">./c2lint</span> C2.profile  <span class="comment">#出现以下页面基本就成功了</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/pasted-74.png" alt="upload successful"></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 先开启一个名叫CS且不会掉线的终端</span></span><br><span class="line">screen -S CS</span><br><span class="line"></span><br><span class="line"><span class="comment">## 加载C2文件启动CS服务端</span></span><br><span class="line">./teamserver 1.8.8.8 Password ./C2.profile</span><br><span class="line"></span><br><span class="line"><span class="comment">## 然后键盘按住组合键将终端放在后台执行</span></span><br><span class="line">Ctrl+a+d</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改服务端"><a href="#修改服务端" class="headerlink" title="修改服务端"></a>修改服务端</h5><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## 在CS的根目录下直接打开teamserver客户端跳到最后一行修改</span><br><span class="line">vim teamserver</span><br></pre></td></tr></table></figure>
+<p><img src="/images/pasted-76.png" alt="upload successful"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">默认启动的端口和证书以及证书密码等需要修改。</span><br><span class="line">可以在启动时自定义命令，或者我们直接修改teamserver文件也是一样的效果。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	<span id="/post/Cobalt-Strike-%E7%89%B9%E5%BE%81%E7%AF%87/" class="leancloud-visitors view" data-flag-title="Cobalt Strike_特征篇">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/post/KF_iTel/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/post/git-个人博客推送/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2021-07-31 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E7%89%B9%E5%BE%81%E5%8F%91%E7%8E%B0"><span class="toc-article-text">特征发现</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%89%AB%E6%8F%8F%E7%89%B9%E5%BE%81"><span class="toc-article-text">常见的扫描特征</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E8%AF%81%E4%B9%A6%E5%8F%91%E7%8E%B0"><span class="toc-article-text">证书发现</span></a></li></ol></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E7%89%B9%E5%BE%81%E4%BF%AE%E6%94%B9"><span class="toc-article-text">特征修改</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E4%BF%AE%E6%94%B9%E8%AF%81%E4%B9%A6"><span class="toc-article-text">修改证书</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E4%BF%AE%E6%94%B9C2"><span class="toc-article-text">修改C2</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-6"><a class="toc-article-link" href="#%E5%88%9B%E5%BB%BAC2-profile"><span class="toc-article-text">创建C2.profile</span></a></li><li class="toc-article-item toc-article-level-6"><a class="toc-article-link" href="#%E9%AA%8C%E8%AF%81%E8%AF%81%E4%B9%A6"><span class="toc-article-text">验证证书</span></a></li></ol></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E4%BF%AE%E6%94%B9%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-article-text">修改服务端</span></a></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2024 hitman's Blog
+  
+      . wubba <a href="http://hexo.io/" target="_blank">lubba</a> dub <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank"> dub.</a>  
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

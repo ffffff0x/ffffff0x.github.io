@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>git 个人博客推送 | bo0s</title>
+  <meta name="author" content="hitman">
+  
+  <meta name="description" content="My Blog/Website, will Tutorials, and just my general thoughts.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="git 个人博客推送"/>
+  <meta property="og:site_name" content="bo0s"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/12favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">bo0s</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文章">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="标签">
+			  <i class="fa fa-tag"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我是谁.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/wiki/#/" title="WiKi.">
+			  <i class="fa fa-book"></i>WiKi
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tool" title="工具">
+			  <i class="fa fa-space-shuttle"></i>Tool
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/logs" title="日志">
+			  <i class="fa fa-tachometer"></i>Logs
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/code/landing/" title="Discord.JS Bot Code">
+			  <i class="fa fa-code"></i>Tutorials / Code
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> git 个人博客推送</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h6 id="将-docs-文件夹存入暂存区，修改内容提交至本地仓库中"><a href="#将-docs-文件夹存入暂存区，修改内容提交至本地仓库中" class="headerlink" title="将 docs 文件夹存入暂存区，修改内容提交至本地仓库中"></a>将 docs 文件夹存入暂存区，修改内容提交至本地仓库中</h6><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span><span class="bash"> docs/</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="将暂存区的修改提交到当前分支-并添加本次修改的描述-it’s-ok"><a href="#将暂存区的修改提交到当前分支-并添加本次修改的描述-it’s-ok" class="headerlink" title="将暂存区的修改提交到当前分支,并添加本次修改的描述 it’s ok~~"></a>将暂存区的修改提交到当前分支,并添加本次修改的描述 it’s ok~~</h6><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> commit -m <span class="string">&quot;it&#x27;s ok~~&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="将本地的master分支推送到origin主机，同时指定origin为默认主机"><a href="#将本地的master分支推送到origin主机，同时指定origin为默认主机" class="headerlink" title="将本地的master分支推送到origin主机，同时指定origin为默认主机"></a>将本地的master分支推送到origin主机，同时指定origin为默认主机</h6><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">push</span> -u <span class="built_in">origin</span> master</span><br></pre></td></tr></table></figure>
+
+<h6 id="后面就可以不加任何参数使用git-push了"><a href="#后面就可以不加任何参数使用git-push了" class="headerlink" title="后面就可以不加任何参数使用git push了"></a>后面就可以不加任何参数使用git push了</h6><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">push</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="如果提交代码的时候出现两个库版本不同可使用强制参数"><a href="#如果提交代码的时候出现两个库版本不同可使用强制参数" class="headerlink" title="如果提交代码的时候出现两个库版本不同可使用强制参数"></a>如果提交代码的时候出现两个库版本不同可使用强制参数</h6><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin <span class="keyword">master</span> <span class="title">-f</span>    // 慎用，会覆盖远程代码</span><br></pre></td></tr></table></figure>
+
+<h6 id="删除远程仓库的文件"><a href="#删除远程仓库的文件" class="headerlink" title="删除远程仓库的文件"></a>删除远程仓库的文件</h6><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#git rm * -r   //这是删除所有，别复制这个</span></span><br><span class="line"></span><br><span class="line">git rm .DS_Store        <span class="regexp">//</span>删除.DS_Store</span><br><span class="line">git commit -m <span class="string">&quot;rm .DS_Store&quot;</span>         <span class="regexp">//</span>提交到暂存区并填写修改描述</span><br><span class="line">git push        <span class="regexp">//</span>推送到远程仓库</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h6 id="或者我懒点，想一键更新上传代码（push-sh）"><a href="#或者我懒点，想一键更新上传代码（push-sh）" class="headerlink" title="或者我懒点，想一键更新上传代码（push.sh）"></a>或者我懒点，想一键更新上传代码（push.sh）</h6><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">&#x27;--------upload files start--------&#x27;</span></span><br><span class="line"><span class="meta"># 进入生成的构建文件夹</span></span><br><span class="line"><span class="meta"># cd ./</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 如果你是要部署到自定义域名</span></span><br><span class="line"><span class="meta"># echo &#x27;bo0s.com&#x27; &gt; CNAME</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># git init</span></span><br><span class="line">git add docs/</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;推送到新修改到 wiki&#x27;</span></span><br><span class="line">echo <span class="string">&#x27;--------commit successfully--------&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># git push -f origin master</span></span><br><span class="line">git push -u origin master</span><br><span class="line"><span class="meta"># git remote add origin https://github.com/ffffff0x/wiki.git</span></span><br><span class="line"><span class="meta"># git push -u origin master</span></span><br><span class="line">echo <span class="string">&#x27;--------push to GitHub successfully--------&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 如果你还想同步更新到gitee</span></span><br><span class="line"><span class="meta"># git push -f https://gitee.com/ffffff0x/wiki.git master</span></span><br><span class="line">git push -u https:<span class="comment">//github.com/ffffff0x/wiki.git master</span></span><br><span class="line"><span class="meta"># git remote add origin https://gitee.com/ffffff0x/wiki.git</span></span><br><span class="line"><span class="meta"># git push -u origin master</span></span><br><span class="line">echo <span class="string">&#x27;--------push to Gitee successfully--------&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 如果你想要部署到 https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt;</span></span><br><span class="line"><span class="meta"># git push -f git@github.com:&lt;USERNAME&gt;/&lt;REPO&gt;.git master:gh-pages</span></span><br><span class="line">echo 完美</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="未完待续……"><a href="#未完待续……" class="headerlink" title="未完待续……"></a>未完待续……</h2>
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	<span id="/post/git-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/" class="leancloud-visitors view" data-flag-title="git 个人博客推送">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/post/Cobalt-Strike-特征篇/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/post/XXX-泄漏解决方案/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2021-07-07 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2024 hitman's Blog
+  
+      . wubba <a href="http://hexo.io/" target="_blank">lubba</a> dub <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank"> dub.</a>  
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

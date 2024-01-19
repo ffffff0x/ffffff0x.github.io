@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Advanced Bot Setup | bo0s</title>
+  <meta name="author" content="hitman">
+  
+  <meta name="description" content="My Blog/Website, will Tutorials, and just my general thoughts.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Advanced Bot Setup"/>
+  <meta property="og:site_name" content="bo0s"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/12favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">bo0s</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文章">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="标签">
+			  <i class="fa fa-tag"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我是谁.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/wiki/#/" title="WiKi.">
+			  <i class="fa fa-book"></i>WiKi
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tool" title="工具">
+			  <i class="fa fa-space-shuttle"></i>Tool
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/logs" title="日志">
+			  <i class="fa fa-tachometer"></i>Logs
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/code/landing/" title="Discord.JS Bot Code">
+			  <i class="fa fa-code"></i>Tutorials / Code
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+	
+		<div class="page-header">
+			<h1> Advanced Bot Setup</h1>
+		</div>
+	
+
+
+
+<div class="row page">
+	<!-- cols -->
+	
+	<div class="col-md-12"> 
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>So you’ve got a good sense of how NodeJS operates, and how the basics of JS work. <strong>Congrats!</strong> Now if you are here, I assume you are ready for more advanced topics. </p>
+<p>That being said there are some notes I’d like to get out of the way…</p>
+<ul>
+<li>These may not all make sense at first read</li>
+<li><strong>Read</strong> the explainations and code comments</li>
+<li>If you still have questions, feel free to message me over Discord @ <code>TheOnlyKirb#0345</code></li>
+<li>For more community help, I recommend the <code>#development</code> channel in the <a target="_blank" rel="noopener" href="https://discord.gg/k3kr6ED">Watchpost Discord</a></li>
+</ul>
+<p><strong>Furthermore</strong> if you haven’t setup your development environment, or don’t have a bot application on Discord - please refer to the <a href="/code/topics/discordjs/basicbot">Basic Bot Tutorial</a>. As it goes through how to get setup.</p>
+<hr>
+<h2 id="Creating-a-Configuration-File-amp-Basic-File-Tree"><a href="#Creating-a-Configuration-File-amp-Basic-File-Tree" class="headerlink" title="Creating a Configuration File &amp; Basic File Tree"></a>Creating a Configuration File &amp; Basic File Tree</h2><p>One of the first things you should do before setting up a bot, is create a JSON configuration file to include things such as your bots prefix, token, and other important details/credentials.</p>
+<p>For this tutorial we will be using the simple JSON file layout below.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;token&quot;</span>: <span class="string">&quot;Your_BotToken_Here&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;prefix&quot;</span>: <span class="string">&quot;Your_Prefix_Here&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Now</strong> that you have a configuration file, it’s time to make a basic file tree to handle organization as we move forward.</p>
+<p>I recommend a layout like below, and this is the layout I will be using for this tutorial. </p>
+<p><img src="../../../../assets/exampletree.PNG" alt="File Tree"></p>
+<ul>
+<li>You should have at least a main housing holder, that contains a <code>commands</code>, <code>events</code>, and <code>configuration</code> folder. With a launching point file such as <code>index.js</code> in the main housing folder.</li>
+<li>It is also recommended that you leave the folders name lowercase, as it makes sure they are case-insensitive later on.</li>
+</ul>
+<hr>
+<h2 id="Making-the-Client"><a href="#Making-the-Client" class="headerlink" title="Making the Client"></a>Making the Client</h2><p>We first need to create the client before we can do anything! Discord.JS provides a very easy API method to do this.</p>
+<ul>
+<li>We will also be requiring our configuration file made above.</li>
+<li>Go ahead and require <code>fs</code>, it will be used to read directories later on.<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Client = <span class="keyword">new</span> Discord.Client(&#123;</span><br><span class="line">    fetchAllMembers: <span class="literal">false</span>,</span><br><span class="line">    disableEveryone: <span class="literal">true</span>,</span><br><span class="line">    disabledEvents: [],</span><br><span class="line">    http: &#123; <span class="attr">api</span>: <span class="string">&#x27;https://discordapp.com/api&#x27;</span>, <span class="attr">version</span>: <span class="number">7</span> &#125;,</span><br><span class="line">    shardCount: <span class="number">1</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line">Client.config = <span class="built_in">require</span>(<span class="string">&quot;./config/config.json&quot;</span>) <span class="comment">// Import config file and attach it to the Client</span></span><br></pre></td></tr></table></figure>
+I’ll be using <code>Client</code> as the Client variable for this tutorial. We provided a set of settings for the Client, let’s go over what those are and do.</li>
+</ul>
+<p><code>fetchAllMembers</code> - If set to true, it gets all members in every guild the bot is connected to at startup.</p>
+<blockquote>
+<p>It’s not recommended to set this to true, because you will most likely not need every member cached.</p>
+</blockquote>
+<p><code>disableEveryone</code> - Ensures the bot cannot unintentionally ping @everyone<br><code>disabledEvents</code> - Disables events that the Client does not need. A list of events can be found <a target="_blank" rel="noopener" href="https://discord.js.org/#/docs/main/stable/typedef/WSEventType">here</a><br><code>http</code> - Not entirely needed, but it sets the api route and version.<br><code>shardCount</code> - Specifies the # of shards you’d like to launch.</p>
+<blockquote>
+<p>Sharding is important as you prepare to reach 2,500 guilds! A tutorial will be posted later on proper sharding.</p>
+</blockquote>
+<hr>
+<h2 id="Event-Handling"><a href="#Event-Handling" class="headerlink" title="Event Handling"></a>Event Handling</h2><p>So you have a client now, but how do you make it so that commands and events are run in their own files/folders?<br>Let’s find out shall we?</p>
+<p>First we should understand what we have to do. We have to allow Discord.JS to mark the files to run on an event. This means we have to loop through the files and provide the bot with instructions to “handle” them, in other words, we have to tell the bot when to run the files. We will be utilizing node’s built in <a target="_blank" rel="noopener" href="https://nodejs.org/api/fs.html">File System</a> module, which we required earlier on. For info on what each part does, read the code comments!</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fs.readdir(<span class="string">&quot;./events/&quot;</span>, <span class="function">(<span class="params">err, files</span>) =&gt;</span> &#123; <span class="comment">// reads the directory/folder</span></span><br><span class="line">    <span class="keyword">if</span> (err) <span class="keyword">return</span> <span class="built_in">console</span>.error(err) <span class="comment">// optional: log the error</span></span><br><span class="line">    files.forEach(<span class="function"><span class="params">file</span> =&gt;</span> &#123; <span class="comment">// loops through the files in the directory/folder</span></span><br><span class="line">        <span class="keyword">let</span> eventFunction = <span class="built_in">require</span>(<span class="string">`./events/<span class="subst">$&#123;file&#125;</span>`</span>); <span class="comment">// grabs the file</span></span><br><span class="line">        <span class="keyword">let</span> eventName = file.split(<span class="string">&quot;.&quot;</span>)[<span class="number">0</span>]; <span class="comment">// gets the event name from the file name by removing the extention</span></span><br><span class="line">        Client.on(eventName, <span class="function">(<span class="params">...args</span>) =&gt;</span> eventFunction.run(Client, ...args)); <span class="comment">// sets the bot to run the event file on event recieved, and pass in the client</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Once that has been added into <code>index.js</code> you can now create an event file in your events folder. Let’s start by making a simple <code>ready.js</code> file in your events folder! This way when the bot emits a ready event once it has connected to Discord you can run some code!</p>
+<p>For simplicity we will only set the bots status. In ready.js write the following code</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exports</span>.run = <span class="keyword">async</span> (Client) =&gt; &#123; <span class="comment">// on event run, take the client we passed in earlier and use it</span></span><br><span class="line">Client.user.setActivity(<span class="string">&quot;I&#x27;m Alive!&quot;</span>) <span class="comment">// on ready, it will change the bots status to &quot;I&#x27;m Alive!&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This exports the inner code to be run on an event! It’s what is used to run in the event handler above, specifically <code>eventFunction.run()</code><br>With that, you should be set for using different events. It is important to note that certain events have their own information passed in, such as the <code>messageAddReaction</code> event which contains the reaction information. To take this data, simply add it next to the Client variable being used, such as <code>[...] async (Client, reaction) =&gt; [...]</code></p>
+<hr>
+<h2 id="Command-Handling"><a href="#Command-Handling" class="headerlink" title="Command Handling"></a>Command Handling</h2><p>Once you have events setup, you should get ready to add commands, but we need to be able to run commands from different files and directories! And that is where command handling comes in.</p>
+<p>Underneath the configuration variable from earlier, add the following code.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Client.commands = <span class="keyword">new</span> <span class="built_in">Map</span>(); <span class="comment">// creates a map to store commands in</span></span><br><span class="line">Client.commands.categories = [] <span class="comment">// an array of command categories</span></span><br><span class="line">Client.aliases = <span class="keyword">new</span> <span class="built_in">Map</span>(); <span class="comment">// does the same, but for aliases</span></span><br></pre></td></tr></table></figure>
+<p>This adds <code>.commands</code> and <code>.aliases</code> to the client so they can be accessed anywhere the Client is, giving us an easy way to manipulate and run commands. For more information on Maps check out <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">this MDN link</a>. It also adds an array of command categories for the help command and other features within <code>.commands.categories</code></p>
+<p>From here, we need to add the same thing we did with events, but for commands. In this tutorial I will be assuming categories/subfolders will exist in the commands folder for easy organization of commands. For example, <code>./commands/fun</code> or <code>./commands/general</code>.</p>
+<p>Let’s go ahead and go over the command export structure before we set the commands.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exports</span>.run = <span class="keyword">async</span> (Client, message, args) =&gt; &#123; <span class="comment">// since commands will be run from the message event, pass in the Client, Message, and user Arguments</span></span><br><span class="line">   <span class="comment">//... Code Here</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">exports</span>.help = &#123;</span><br><span class="line">    name: <span class="string">&#x27;Command Name&#x27;</span>,</span><br><span class="line">    aliases: [],</span><br><span class="line">    category: <span class="string">&#x27;Category Name&#x27;</span></span><br><span class="line">    description: <span class="string">&#x27;Command Description&#x27;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>exports.run</code> is exporting the actual code that will be run on a command call, while <code>exports.help</code> is exporting the command data for the help command, and command identification.</p>
+<p>Now that we know the command structure, we can set the commands like we did with the events! Do note, normally you wouldn’t want to have this many nested loops, but in this case it is practical.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">fs.readdir(<span class="string">&quot;./commands&quot;</span>, <span class="function">(<span class="params">err, categories</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) <span class="keyword">return</span> <span class="built_in">console</span>.error(err) <span class="comment">// Log error to console</span></span><br><span class="line">    <span class="keyword">if</span> (!categories) <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">&#x27;No categories found!&#x27;</span>)</span><br><span class="line">    categories.forEach(<span class="function"><span class="params">category</span> =&gt;</span> &#123; <span class="comment">// The categories are organized by fs as an array, so loop through them.</span></span><br><span class="line">        fs.readdir(<span class="string">`./commands/<span class="subst">$&#123;category&#125;</span>`</span>, <span class="function">(<span class="params">err2, commands</span>) =&gt;</span> &#123; <span class="comment">// Read the commands in each category</span></span><br><span class="line">            <span class="keyword">if</span> (err2) <span class="keyword">return</span> <span class="built_in">console</span>.error(err2)</span><br><span class="line">            <span class="keyword">let</span> files = commands.filter(<span class="function"><span class="params">f</span> =&gt;</span> f.split(<span class="string">&#x27;.&#x27;</span>).pop() === <span class="string">&#x27;js&#x27;</span>) <span class="comment">// only set javascript files!</span></span><br><span class="line">            <span class="keyword">if</span> (!files) <span class="keyword">return</span> <span class="built_in">console</span>.info(<span class="string">`No commands found in the <span class="subst">$&#123;category&#125;</span> category!`</span>)</span><br><span class="line">            files.forEach(<span class="function"><span class="params">filename</span> =&gt;</span> &#123; <span class="comment">// for each command file do the following</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">let</span> props = <span class="built_in">require</span>(<span class="string">`./commands/<span class="subst">$&#123;category&#125;</span>/<span class="subst">$&#123;filename&#125;</span>`</span>) <span class="comment">// Require the file so we can use it&#x27;s exports</span></span><br><span class="line">                    <span class="keyword">if</span>(!Client.commands.categories.includes(props.help.category)) Client.commands.categories.push(props.help.category) <span class="comment">// set the categories</span></span><br><span class="line">                    Client.commands.set(props.help.name, props) <span class="comment">// Set the command contents in the map we made earlier</span></span><br><span class="line">                    props.help.aliases.forEach(<span class="function"><span class="params">alias</span> =&gt;</span> &#123; <span class="comment">// loop through the alias names and set them in the alias map</span></span><br><span class="line">                        Client.aliases.set(alias, props.help.name) <span class="comment">// set the alias name with the main command name</span></span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125; <span class="keyword">catch</span> (err3) &#123; <span class="built_in">console</span>.error(err3) &#125; <span class="comment">// if there is an error with setting the command, log it here</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>The above code first begins by reading the base command directory, it looks to find any subfolders or “categories” of commands. When finished, there will be an array of folder names, the categories- which are then read for commands. Each category has its inner commands required, and then set to the map we made earlier. If something fails, it is within a try catch statement that will log the error.</p>
+<hr>
+<h2 id="Running-Commands-in-the-Message-Event"><a href="#Running-Commands-in-the-Message-Event" class="headerlink" title="Running Commands in the Message Event"></a>Running Commands in the Message Event</h2><p>To get started, we need to make a <code>message.js</code> event file in our events folder. This is the file the bot will run when the message event is fired off.</p>
+<p>Let’s create it with the following structure</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exports</span>.run = <span class="function">(<span class="params">Client, message</span>) =&gt;</span> &#123; <span class="comment">// pass in the client, and message event details</span></span><br><span class="line"><span class="comment">//... Code Here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This means we can now access the message and the Client from the event file, these are passed into the file via the event handler we made earlier! Nice right?!</p>
+<p>From here, we want to add a few important things.</p>
+<ul>
+<li>Ignore other Bots messages (and itself!)</li>
+<li>Ignore messages in DMs</li>
+<li>Ignore commands if the guild is unavailable, or partically unavailable</li>
+</ul>
+<p>To do those, we need to add the following line into the event file</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!message.guild || message.IsPrivate || message.author.bot) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Now, we only want the bot to respond to prefixed commands, OR commands being used when pinged. So let’s add that. We already have the config setup, so we just need an array to check if the prefix is correct. To do this, add the following.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> prefix = [Client.config.prefix, <span class="string">`&lt;@<span class="subst">$&#123;Client.user.id&#125;</span>&gt;`</span>].find(<span class="function"><span class="params">p</span> =&gt;</span> message.content.toLowerCase().indexOf(p) === <span class="number">0</span>) <span class="comment">// searches for the prefix position in the message content</span></span><br><span class="line"><span class="keyword">if</span>(!prefix) <span class="keyword">return</span>; <span class="comment">// if the prefix wasn&#x27;t matching those in the array, return.</span></span><br></pre></td></tr></table></figure>
+
+<p>Cool! Now the bot will only respond if the prefix is attached behind the command. Like <code>!help</code> for example. But now we need to be able to get the command name or alias name, and check if it exists- and if it does, run it!</p>
+<p>To do this, we need to break the command off of the prefix by spliting the message content into an array. Go ahead and add the following code to do this.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> args = message.content.slice(prefix.length).trim().split(<span class="regexp">/ +/g</span>) <span class="comment">// take off the prefix from the message, and split the user input into an array.</span></span><br><span class="line"><span class="keyword">const</span> command = args.shift().toLowerCase(); <span class="comment">// grab the first bit of user input.</span></span><br><span class="line"><span class="keyword">if</span> (Client.commands.has(command)) command = Client.commands.get(command)</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (Client.aliases.has(command)) command = Client.commands.get(Client.aliases.get(command))</span><br><span class="line"><span class="keyword">if</span> (!command.run) <span class="keyword">return</span>;</span><br><span class="line"><span class="comment">// if the commands map or aliases map has the command, set command = to the command, if not, set it to null.</span></span><br><span class="line"><span class="keyword">if</span>(!command) <span class="keyword">return</span>; <span class="comment">// if the command doesn&#x27;t have an actual function return.</span></span><br><span class="line">command.run(Client, message, args).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123; <span class="comment">// run the command, if error, log it.</span></span><br><span class="line">    <span class="keyword">if</span>(error) <span class="keyword">return</span> <span class="built_in">console</span>.error(error)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>The above code begins by taking the user input and breaking it up, removing the prefix. This then leaves you with mutatable user input which is split into an array of arguments, hence the variables name <code>args</code>. We then ensure the first argument is made into the command, removing it from the array and converting it to lowercase format. From here we are then checking if the commands map we made earlier contains the command, or if there is an alias that matches. If a command is found, it updates the command variable with the command exports/data and runs the command, if there is not a command found, it returns.</p>
+<p>Your final message.js event should look like this!</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exports</span>.run = <span class="function">(<span class="params">Client, message</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!message.guild || message.IsPrivate || message.author.bot) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">const</span> prefix = [Client.config.prefix, <span class="string">`&lt;@<span class="subst">$&#123;Client.user.id&#125;</span>&gt;`</span>].find(<span class="function"><span class="params">p</span> =&gt;</span> message.content.toLowerCase().indexOf(p) === <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">if</span>(!prefix) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">const</span> args = message.content.slice(prefix.length).trim().split(<span class="regexp">/ +/g</span>)</span><br><span class="line">    <span class="keyword">const</span> command = args.shift().toLowerCase();</span><br><span class="line">    <span class="keyword">if</span> (Client.commands.has(command)) command = Client.commands.get(command)</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (Client.aliases.has(command)) command = Client.commands.get(Client.aliases.get(command))</span><br><span class="line">    <span class="keyword">if</span> (!command.run) <span class="keyword">return</span>;</span><br><span class="line">    command.run(bot, message, args).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(error) <span class="keyword">return</span> <span class="built_in">console</span>.error(error)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Creating-a-Ping-Command"><a href="#Creating-a-Ping-Command" class="headerlink" title="Creating a Ping Command"></a>Creating a Ping Command</h2><p>Now that we have the ability to run commands, we need a command to be able to run! Let’s make a simple ping command to make sure everything works. Here is a basic ping command to copy into a <code>ping.js</code> file. If you haven’t yet, make a folder in commands called <code>general</code> and put the <code>ping.js</code> file inside. This way it will be categorized into the general category for organization.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exports</span>.run = <span class="keyword">async</span> (Client, message, args) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> message.channel.send(<span class="string">`:ping_pong: <span class="subst">$&#123;<span class="built_in">Math</span>.floor(Client.ws.ping)&#125;</span>ms`</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">exports</span>.help = &#123;</span><br><span class="line">    name: <span class="string">&#x27;ping&#x27;</span>,</span><br><span class="line">    aliases: [<span class="string">&#x27;pong&#x27;</span>],</span><br><span class="line">    category: <span class="string">&#x27;general&#x27;</span>,</span><br><span class="line">    description: <span class="string">&#x27;Ping pong!&#x27;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>Now that you have one command, go back to your <code>index.js</code> file and let’s set the bot up to log in! This way we can test what we have done so far.</p>
+<p>Under all of the code in <code>index.js</code> lets add the following.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Client.login(Client.config.token)</span><br></pre></td></tr></table></figure>
+
+<p>This will log the bot into Discord! The following should happen if you have followed along so far:</p>
+<ul>
+<li>It will log in without error (I hope)</li>
+<li>A status will appear on the bot</li>
+<li>It will respond to <code>&lt;prefix&gt;ping</code></li>
+</ul>
+<p>Go ahead and try to run the ping command once it is launched. If it worked, <strong>great!</strong> if not, <strong>it’s okay</strong>, try going back over the code posted and make sure it is all correct. If that still doesn’t seem to help, make sure you read the error to see what went wrong. Typos happen, and <strong>will</strong> break your code!</p>
+<hr>
+<h2 id="Creating-a-Help-Command"><a href="#Creating-a-Help-Command" class="headerlink" title="Creating a Help Command"></a>Creating a Help Command</h2><p>Because of the bots structure, it becomes very easy to add an intuitive help command.</p>
+<ul>
+<li>Note: This command is a bit complex, if it seems hard to understand at first, read the comments!</li>
+<li>You must place this <em>inside</em> a command export.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Discord = <span class="built_in">require</span>(<span class="string">&quot;discord.js&quot;</span>)</span><br><span class="line"><span class="keyword">let</span> embed = <span class="keyword">new</span> Discord.MessageEmbed(), commands = <span class="built_in">Array</span>.from(Client.commands) <span class="comment">// create variables, convert map to array</span></span><br><span class="line"><span class="keyword">if</span> (args[<span class="number">0</span>] &amp;&amp; commands.filter(<span class="function"><span class="params">c</span> =&gt;</span> c[<span class="number">1</span>].help.name.toLowerCase() == args[<span class="number">0</span>].toLowerCase()).length &gt; <span class="number">0</span>) &#123; <span class="comment">// if the command being searched matches something run this</span></span><br><span class="line">    <span class="keyword">let</span> commandFound = commands.filter(<span class="function"><span class="params">c</span> =&gt;</span> c[<span class="number">1</span>].help.name == args[<span class="number">0</span>].toLowerCase())[<span class="number">0</span>][<span class="number">1</span>].help <span class="comment">// gets the command help object</span></span><br><span class="line">    embed.addField(<span class="string">`Command Description - <span class="subst">$&#123;commandFound.name.substr(<span class="number">0</span>, <span class="number">1</span>).toUpperCase() + commandFound.name.substr(<span class="number">1</span>)&#125;</span>`</span>, <span class="string">`<span class="subst">$&#123;commandFound.description&#125;</span>\n`</span>) <span class="comment">// embed command description</span></span><br><span class="line"><span class="keyword">if</span> (commandFound.aliases.length &gt; <span class="number">0</span>) embed.addField(<span class="string">`Command Aliases`</span>, <span class="string">`\`<span class="subst">$&#123;commandFound.aliases.join(<span class="string">&quot;\`, \`&quot;</span>)&#125;</span>\``</span>) <span class="comment">// embed aliases</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (args[<span class="number">0</span>]) embed.addField(<span class="string">&quot;Nothing Found&quot;</span>, <span class="string">`Your search parameters returned no results.`</span>) <span class="comment">// if no results say so</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; Client.commands.categories.length; i++) embed.addField(Client.commands.categories[i], <span class="string">`\`<span class="subst">$&#123;commands.filter(c =&gt; c[<span class="number">1</span>].help.category == Client.commands.categories[i]).map(c =&gt; c[<span class="number">1</span>].help.name).join(<span class="string">&quot;\`, \`&quot;</span>)&#125;</span>\``</span>)</span><br><span class="line">    <span class="comment">// otherwise send all commands and categories</span></span><br><span class="line">message.channel.send(embed)</span><br></pre></td></tr></table></figure>
+<p>This command allows a user to query specific commands, and view all commands at one time. Play around with it if it doesn’t make a lot of sense, and <strong>please</strong> read the code comments! They are there to help you.</p>
+<hr>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>With this you should now have a fully functional bot that has command category folders, event and command handling, a ping command, and a help command. Along with this you have the two most basic events, <code>message</code> and <code>ready</code> that you can modify if you’d like.</p>
+<p>As always, if you are here to <strong>just</strong> copy code, you <strong>will not learn</strong>. As some final words on this tutorial, if you do not try and learn from the code posted, you will not get far. Mess around with the code, fiddle, see how to break it, do whatever you need to do to learn - but make sure you are learning, not just pressing <code>CTRL+C</code> and <code>CTRL+V</code>.</p>
+
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	<span id="/code/topics/discordjs/advancedbot/" class="leancloud-visitors view" data-flag-title="Advanced Bot Setup">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2024 hitman's Blog
+  
+      . wubba <a href="http://hexo.io/" target="_blank">lubba</a> dub <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank"> dub.</a>  
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

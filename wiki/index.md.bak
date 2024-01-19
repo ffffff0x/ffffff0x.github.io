@@ -1,0 +1,443 @@
+---
+title: wiki
+date: 2020-12-07 15:17:54
+type: "tool"
+layout: "tool"
+---
+
+
+[这是一篇关于WiKi的介绍Demo。](/wiki/apache)
+<script src="./twikoo.all.min.js"></script>
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<!-- <link rel="stylesheet" href="./twikoo.css"> -->
+
+
+<!-- 
+<script type="text/javascript">
+twikoo.getRecentComments({
+  envId: 'twikoo-0gczbqoxe5362126', // 环境 ID
+  // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+  pageSize: 10, // 获取多少条，默认：10，最大：100
+  includeReply: false // 是否包括最新回复，默认：false
+}).then(function (res) {
+  console.log(res);
+  var res = res;
+  // 返回 Array，包含最新评论的
+  //   * id:           评论 ID
+  //   * url:          评论地址
+  //   * nick:         昵称
+  //   * mailMd5:      邮箱的 MD5 值，可用于展示头像
+  //   * link:         网址
+  //   * comment:      HTML 格式的评论内容
+  //   * commentText:  纯文本格式的评论内容
+  //   * created:      评论时间，格式为毫秒级时间戳
+  //   * avatar:       头像地址（0.2.9 新增）
+  //   * relativeTime: 相对评论时间，如 “1 小时前”（0.2.9 新增）
+  // 返回示例: [ // 从新到旧顺序
+  //   { id: '', url: '', nick: '', mailMd5: '', link: '', comment: '', commentText: '', created: 0 },
+  //   { id: '', url: '', nick: '', mailMd5: '', link: '', comment: '', commentText: '', created: 0 },
+  //   { id: '', url: '', nick: '', mailMd5: '', link: '', comment: '', commentText: '', created: 0 }
+  // ]
+}).catch(function (err) {
+  // 发生错误
+  console.error(err);
+});
+</script> -->
+
+
+  <style>
+    .box{
+      width: 100%;
+      height: 80%;
+      margin:0 auto;
+    }
+    .barrage-container-wrap{
+        width: 100%;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+        /*background: url('./img/bg.jpg') no-repeat;*/
+        background-size: 100% 100%;
+    }
+    .barrage-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+        cursor: default;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .barrage-item{
+        position:absolute;
+        top:0;
+        left: 100%;
+        white-space: nowrap;
+        cursor: pointer;
+        color:#fff;
+    }
+    .barrage-item .barrage-tip{
+        display: none;
+        position: absolute;
+        top:-26px;
+        padding: 7px 15px;
+        line-height: 12px;
+        font-size: 12px;
+        color: #f20606;
+        background-color: #fff;
+        white-space: nowrap;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        -webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.1);
+        box-shadow: 0 0 10px 1px rgba(0,0,0,.1);
+        -webkit-transform-origin: 15px 100%;
+        -ms-transform-origin: 15px 100%;
+        transform-origin: 15px 100%;
+        webkit-animation: tipScale cubic-bezier(.22,.58,.12,.98) .4s;
+        animation: tipScale cubic-bezier(.22,.58,.12,.98) .4s;
+      }
+    .send-wrap{
+      margin-top: 20px;
+    }
+    .input{
+        width: 300px;
+        height: 30px;
+        line-height: 30px;
+        outline: none;
+        -webkit-appearance: none;
+        border-radius: 5px;
+        padding:0;
+        padding-left: 10px;
+    }
+    .send-btn{
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+        background: #93d0ea;
+        text-shadow:1px 1px 1px #333;
+        border-radius: 5px;
+        margin:0 20px 20px 0;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        padding:5px 15px;
+    }
+    @-webkit-keyframes tipScale{
+        0{
+          -webkit-transform: scale(0);
+           transform: scale(0);
+        }
+        50% {
+           -webkit-transform: scale(1.1);
+           transform: scale(1.1);
+        }
+        100% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+    }
+  </style>
+
+<div class="box">
+   <div class="barrage-container-wrap clearfix">
+    <div class="barrage-container">
+    </div> 
+  </div>
+  <div class="send-wrap">
+    <input type="text" class="input" placeholder="弹幕发送">
+    <span class="send-btn">发送</span>
+  </div> 
+</div>
+
+<script>
+//调用twikoo最新评论
+function newcomment() {
+
+	twikoo.getRecentComments({
+		envId: 'twikoo-0gczbqoxe5362126', // 环境 ID
+		pageSize: 7, // 获取多少条，默认：10，最大：100
+		includeReply: false // 是否包括最新回复，默认：false
+	}).then(function (res) {
+		// 查看全部
+		// console.log(res);
+		var hotComments = $("#hot-comments");
+
+		for (var i = 0; i < res.length; i++) {
+			var nick = res[i].nick;
+			var content = res[i].commentText;
+			var newcontent = content.substring(0, 50);
+			var url = res[i].url;
+			var mail = res[i].avatar;
+			var link = res[i].link;
+			var updatedAt = res[i].relativeTime;
+			var commentId = '#' + res[i].id;
+			// console.log(commentId);
+			// hotComments.append('<li class="px1 pb2 flex items-center"><img style="width: 40px;height:40px" class="circle mx1 listavatar" src="' + mail + '"><div class="w100"><div class="flex justify-between"><div class="h6 listauthor overflow-hidden" title="' + nick + '"><a  target="_blank" rel="noopener external nofollow noreferrer" href="' + link + '">' + nick + '</a></div><span class="h6 mr1 listdate wenzi hang1">' + updatedAt + '</span></div> <a href="' + url + commentId + '"><div class="h5 list-comcontent overflow-hidden">' + newcontent + '</div></a></div></li>');
+			console.log(content);
+			;(function(){
+	// console.log(newcomment);
+  var barrageArray = [
+          {
+            url: '用户头像',
+            text: content,
+            level: 10
+          },
+          {
+            url: '用户头像',
+            text: content,
+            level: 10
+          },
+          {
+            url: '用户头像',
+            text: content,
+            level: 10
+          },
+          {
+            url: '',
+            text: 'content',
+            level: 10
+          },
+          {
+            url: '',
+            text: content,
+            level: 10
+          },
+           {
+            url: '',
+            text: content,
+            level: 10
+          },
+          {
+            url: '',
+            text: content,
+            level: 10
+          },
+          {
+            url: '',
+            text: content,
+            level: 10
+          },
+          {
+            url: '',
+            text: content,
+            level: 10
+          },
+          {
+            url: '',
+            text: content,
+            level: 10
+          },
+      ];
+  var barrageColorArray = [
+    '#0099CC','#333333', '#009966','#FFFF66','#9933FF','#FFFF99','#CCCCFF','#CC9933','#FFFF66'
+  ];
+  var barrageTipWidth = 50; //提示语的长度
+ 
+  var barrageBoxWrap = document.querySelector('.barrage-container-wrap');;
+  var barrageBox = document.querySelector('.barrage-container');
+  var inputBox = document.querySelector('.input');
+  var sendBtn = document.querySelector('.send-btn');
+ 
+  //容器的宽高度
+  var barrageWidth = ~~window.getComputedStyle(barrageBoxWrap).width.replace('px','');
+  var barrageHeight = ~~window.getComputedStyle(barrageBoxWrap).height.replace('px','');
+ 
+  //发送
+  function sendMsg(){
+    var inputValue = inputBox.value;
+    inputValue .replace(/\ +/g, "");
+ 
+    if (inputValue.length <= 0) {
+        alert('请输入');
+        return false;
+    }
+ 
+    //生成弹幕
+    createBarrage(inputValue,true);
+    inputBox.value = ''; 
+  }
+   
+ 
+  //创建弹幕
+  function createBarrage(msg, isSendMsg){
+    var divNode = document.createElement('div');
+    var spanNode = document.createElement('span');
+ 
+    divNode.innerHTML = msg;
+    divNode.classList.add('barrage-item');
+    barrageBox.appendChild(divNode);
+ 
+    spanNode.innerHTML = '举报';
+    spanNode.classList.add('barrage-tip');
+    divNode.appendChild(spanNode);
+ 
+    barrageOffsetLeft = getRandom(barrageWidth, barrageWidth*2);
+    barrageOffsetLeft = isSendMsg ? barrageWidth : barrageOffsetLeft
+    barrageOffsetTop = getRandom(10, barrageHeight-10);
+    barrageColor = barrageColorArray[Math.floor(Math.random()*(barrageColorArray.length))];
+ 
+    //执行初始化滚动
+    initBarrage.call(divNode,{
+      left : barrageOffsetLeft,
+      top : barrageOffsetTop,
+      color : barrageColor
+    });
+  }
+ 
+  //初始化弹幕移动(速度，延迟)
+  function initBarrage(obj) {
+    //初始化
+    obj.top = obj.top || 0;
+    obj.class = obj.color || '#fff';
+    this.style.left = obj.left + 'px';
+    this.style.top = obj.top + 'px';
+    this.style.color = obj.color;  
+ 
+    //添加属性
+    this.distance = 0;
+    this.width = ~~window.getComputedStyle(this).width.replace('px','');
+    this.offsetLeft = obj.left;
+    this.timer = null;
+ 
+    //弹幕子节点
+    var barrageChileNode = this.children[0];
+    barrageChileNode.style.left = (this.width-barrageTipWidth)/2 + 'px';
+ 
+    //运动
+    barrageAnimate(this);
+ 
+    //停止
+    this.onmouseenter = function(){
+      barrageChileNode.style.display= 'block';
+      cancelAnimationFrame(this.timer);
+    };
+ 
+    this.onmouseleave = function(){
+      barrageChileNode.style.display = 'none';
+      barrageAnimate(this);
+    };
+ 
+    //举报
+    barrageChileNode.onclick = function(){
+      alert('举报成功');
+    }
+  }
+  
+  //弹幕动画
+  function barrageAnimate(obj){
+    move(obj);
+ 
+    if(Math.abs(obj.distance) < obj.width+obj.offsetLeft){
+      obj.timer = requestAnimationFrame(function(){
+        barrageAnimate(obj);
+      });
+    }else{
+      cancelAnimationFrame(obj.timer);
+      //删除节点
+      obj.parentNode.removeChild(obj);
+    }
+  }
+ 
+  //移动
+  function move(obj){
+    obj.distance--;
+    obj.style.transform = 'translateX('+obj.distance+'px)';
+    obj.style.webkitTransform = 'translateX('+obj.distance+'px)';
+  }
+ 
+  //随机获取高度
+  function getRandom(start, end){
+    return start +(Math.random() * (end - start));
+  }
+ 
+ 
+  /*******初始化事件**********/
+  //系统数据
+  barrageArray.forEach(function(item,index){
+    createBarrage(item.text, false);
+  });
+ 
+  //点击发送
+  sendBtn.onclick = sendMsg;   //点击发送
+ 
+  //回车
+  inputBox.onkeydown = function(e){
+    e = e|| window.event;
+    if(e.keyCode == 13){
+      send();
+    }
+  }
+ 
+})();
+ 
+//兼容写法
+(function() {
+    var lastTime = 0;
+    var vendors = ['webkit', 'moz'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] ||    // Webkit中此取消方法的名字变了
+                                      window[vendors[x] + 'CancelRequestAnimationFrame'];
+    }
+ 
+    if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16.7 - (currTime - lastTime));
+            var id = window.setTimeout(function() {
+                callback(currTime + timeToCall);
+            }, timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+    }
+    if (!window.cancelAnimationFrame) {
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+    }
+}());
+		}
+		// console.log(content);
+
+  // 返回 Array，包含最新评论的
+  //   * id:           评论 ID
+  //   * url:          评论地址
+  //   * nick:         昵称
+  //   * mailMd5:      邮箱的 MD5 值，可用于展示头像
+  //   * link:         网址
+  //   * comment:      HTML 格式的评论内容
+  //   * commentText:  纯文本格式的评论内容
+  //   * created:      评论时间，格式为毫秒级时间戳
+  //   * avatar:       头像地址（0.2.9 新增）
+  //   * relativeTime: 相对评论时间，如 “1 小时前”（0.2.9 新增）
+	}).catch(function (err) {
+		// 发生错误
+		console.error(err);
+	});
+
+}
+newcomment();
+
+// console.log(res);
+
+</script>
+
+
+
+
+
+<div id="tcomment"></div>
+<script>
+twikoo.init({
+  envId: 'twikoo-0gczbqoxe5362126',
+  el: '#tcomment',
+  // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+  // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+})
+</script>

@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>tool | bo0s</title>
+  <meta name="author" content="hitman">
+  
+  <meta name="description" content="My Blog/Website, will Tutorials, and just my general thoughts.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="tool"/>
+  <meta property="og:site_name" content="bo0s"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/12favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">bo0s</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文章">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="标签">
+			  <i class="fa fa-tag"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我是谁.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/wiki/#/" title="WiKi.">
+			  <i class="fa fa-book"></i>WiKi
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tool" title="工具">
+			  <i class="fa fa-space-shuttle"></i>Tool
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/logs" title="日志">
+			  <i class="fa fa-tachometer"></i>Logs
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/code/landing/" title="Discord.JS Bot Code">
+			  <i class="fa fa-code"></i>Tutorials / Code
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <!-- title -->
+<div class="page-header">
+	 <h1><i class="fa fa-space-shuttle"></i> tool</h1>
+
+</div>
+
+  <div class="content" itemprop="articleBody">
+    
+<link type="text/css" href="css/style.css" rel="stylesheet" />
+<script src="./twikoo.all.min.js"></script>
+<div class="tantan">
+	<div class="screen">
+		<div class="landscape"></div>
+		<div class="filter"></div>
+		<canvas id="canvas"></canvas>
+		<div class="send">
+			<div class="input clearfix">
+			<input type="text" class="text">
+			<div class="btn">发送</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			twikoo.getRecentComments({
+			  envId: 'twikoo-0gczbqoxe5362126', // 环境 ID
+			  // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+			  pageSize: 20, // 获取多少条，默认：10，最大：100
+			  includeReply: false // 是否包括最新回复，默认：false
+			}).then(function (res) {
+			  // console.log(res);
+			  console.log(res);	
+  			  // 返回 Array，包含最新评论的
+  			  //   * id:           评论 ID
+  			  //   * url:          评论地址
+  			  //   * nick:         昵称
+  			  //   * mailMd5:      邮箱的 MD5 值，可用于展示头像
+  			  //   * link:         网址
+  			  //   * comment:      HTML 格式的评论内容
+  			  //   * commentText:  纯文本格式的评论内容
+  			  //   * created:      评论时间，格式为毫秒级时间戳
+  			  //   * avatar:       头像地址（0.2.9 新增）
+  			  //   * relativeTime: 相对评论时间，如 “1 小时前”（0.2.9 新增）
+  			  // 返回示例: [ // 从新到旧顺序
+  			  //   { id: '', url: '', nick: '', mailMd5: '', link: '', comment: '', commentText: '', created: 0 },
+  			  //   { id: '', url: '', nick: '', mailMd5: '', link: '', comment: '', commentText: '', created: 0 },
+  			  //   { id: '', url: '', nick: '', mailMd5: '', link: '', comment: '', commentText: '', created: 0 }
+  			  // ]
+
+  			  i = res.length;
+  			  console.log(i);
+  			  console.log(res[0].commentText);
+  			  // commentText0 = res[10].commentText;
+  			  // commentText0 = res[0].commentText;
+  			  // commentText0 = res[0].commentText;
+  			  // commentText0 = res[0].commentText;
+  			  // commentText0 = res[0].commentText;
+  			  // commentText0 = res[0].commentText;
+  			  // commentText0 = res[0].commentText;
+  			  // commentText1 = res[2].commentText;
+  			  // commentText1 = res[2].commentText;
+  			  // commentText1 = res[2].commentText;
+  			  // commentText1 = res[2].commentText;
+  			  // commentText1 = res[2].commentText;
+  			  // commentText1 = res[2].commentText;
+  			  // console.log(commentText1);
+			// document.getElementById("text").innerHTML=content;
+
+			$("#commentText0").html(res[0].commentText);
+			$("#commentText1").html(res[1].commentText); 
+			$("#commentText2").html(res[2].commentText); 
+			$("#commentText3").html(res[3].commentText); 
+			$("#commentText4").html(res[4].commentText); 
+			$("#commentText5").html(res[5].commentText); 
+			$("#commentText6").html(res[6].commentText); 
+			$("#commentText7").html(res[7].commentText); 
+			$("#commentText8").html(res[8].commentText); 
+			$("#commentText9").html(res[9].commentText);
+			$("#commentText10").html(res[10].commentText); 
+			$("#commentText11").html(res[11].commentText); 
+			$("#commentText12").html(res[12].commentText); 
+			$("#commentText13").html(res[13].commentText); 
+			$("#commentText14").html(res[14].commentText); 
+			$("#commentText15").html(res[15].commentText); 
+			$("#commentText16").html(res[16].commentText); 
+			$("#commentText17").html(res[17].commentText); 
+			$("#commentText18").html(res[18].commentText);
+			$("#commentText19").html(res[19].commentText);
+
+
+
+			}).catch(function (err) {
+			  // 发生错误
+			  console.error(err);
+			});
+		</script>
+		<div class="s_show">
+			<!-- <div id="commentText0" class="magictime twisterInUp"></div> -->
+			<div id="commentText1" class="magictime twisterInUp"></div>
+			<div id="commentText2" class="magictime twisterInUp"></div>
+			<div id="commentText3" class="magictime twisterInUp"></div>
+			<div id="commentText4" class="magictime twisterInUp"></div>
+			<div id="commentText5" class="magictime twisterInUp"></div>
+			<div id="commentText6" class="magictime twisterInUp"></div>
+			<div id="commentText7" class="magictime twisterInUp"></div>
+			<div id="commentText8" class="magictime twisterInUp"></div>
+			<div id="commentText9" class="magictime twisterInUp"></div>
+			<div id="commentText10" class="magictime twisterInUp"></div>
+			<div id="commentText11" class="magictime twisterInUp"></div>
+			<div id="commentText12" class="magictime twisterInUp"></div>
+			<div id="commentText13" class="magictime twisterInUp"></div>
+			<div id="commentText14" class="magictime twisterInUp"></div>
+			<div id="commentText15" class="magictime twisterInUp"></div>
+			<div id="commentText16" class="magictime twisterInUp"></div>
+			<div id="commentText17" class="magictime twisterInUp"></div>
+			<div id="commentText18" class="magictime twisterInUp"></div>
+			<div id="commentText19" class="magictime twisterInUp"></div>
+			<div class="magictime twisterInUp">扶我起来，这串代码还没封装</div>
+			<div class="magictime twisterInUp">3点了，总算下班了，呵呵呵````</div>
+			<div class="magictime twisterInUp">我人都傻了，居然这么麻烦！！！</div>
+	<!-- 		<div class="magictime twisterInUp">欢迎使用彩色星空弹幕</div>
+			<div class="magictime twisterInUp">扶我起来，这串代码还没封装</div>
+			<div class="magictime twisterInUp">3点了，总算下班了，呵呵呵````</div>
+			<div class="magictime twisterInUp">欢迎使用彩色星空弹幕</div>
+			<div class="magictime twisterInUp">扶我起来，这串代码还没封装</div>
+			<div class="magictime twisterInUp">3点了，总算下班了，呵呵呵````</div>
+			<div class="magictime twisterInUp">欢迎使用彩色星空弹幕</div>
+			<div class="magictime twisterInUp">扶我起来，这串代码还没封装</div>
+			<div class="magictime twisterInUp">3点了，总算下班了，呵呵呵````</div>
+			<div class="magictime twisterInUp">欢迎使用彩色星空弹幕</div>
+			<div class="magictime twisterInUp">扶我起来，这串代码还没封装</div>
+			<div class="magictime twisterInUp">3点了，总算下班了，呵呵呵````</div>
+			<div class="magictime twisterInUp">欢迎使用彩色星空弹幕</div>
+			<div class="magictime twisterInUp">扶我起来，这串代码还没封装</div>
+			<div class="magictime twisterInUp">3点了，总算下班了，呵呵呵````</div>
+			<div class="magictime twisterInUp">欢迎使用彩色星空弹幕</div>
+			<div class="magictime twisterInUp">扶我起来，这串代码还没封装</div>
+			<div class="magictime twisterInUp">3点了，总算下班了，呵呵呵````</div> -->
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/star.js"></script>
+<script type="text/javascript" src="js/dan.js"></script>
+
+<div id="tcomment"></div>
+<script>
+twikoo.init({
+  envId: 'twikoo-0gczbqoxe5362126',
+  el: '#tcomment',
+  // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+  // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+})
+</script>
+
+
+
+  </div>
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2024 hitman's Blog
+  
+      . wubba <a href="http://hexo.io/" target="_blank">lubba</a> dub <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank"> dub.</a>  
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

@@ -1,0 +1,877 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Page 9 | bo0s</title>
+  <meta name="author" content="hitman">
+  
+  <meta name="description" content="My Blog/Website, will Tutorials, and just my general thoughts.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="bo0s"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/12favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">bo0s</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文章">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="标签">
+			  <i class="fa fa-tag"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我是谁.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/wiki/#/" title="WiKi.">
+			  <i class="fa fa-book"></i>WiKi
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tool" title="工具">
+			  <i class="fa fa-space-shuttle"></i>Tool
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/logs" title="日志">
+			  <i class="fa fa-tachometer"></i>Logs
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/code/landing/" title="Discord.JS Bot Code">
+			  <i class="fa fa-code"></i>Tutorials / Code
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header" style="border-bottom: 1px solid #6fec8e;">
+  <style>
+    @media only screen and (max-width: 600px) {
+      .ghostIcon {
+        width: 100px;
+        height: 100px;
+        float: right !important;
+      }
+    }
+    .ghostIcon {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    float: left;
+    margin-top: -50px;
+    margin-left: -40px;
+    }
+  </style>
+  <img src="../assets/ghost2.gif"
+  class="ghostIcon"><h1>Let&#39;s Go .<span
+      class="blink-fast">|</span></h1>
+</div>
+
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+
+
+		<i class="fa fa-heart blink-slow"></i>
+
+		「 Sometimes ever . || sometimes never . 」
+
+</div>    
+
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/post/新的渗透不测试/" >新的渗透不测试</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-02-01  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>最近招商银行有一个10元风暴的活动，集喵喵，最高可以兑换5000元礼品卡。但是听同事说，这个兑换需要拼手速。作为工程师，能用程序解决的，坚决不用手解决。（其实是想练习一下遗忘已久的逆向技能</p>
+<p>分析思路<br>第一次尝试，先用Charles抓包，但是发现设置代理之后打开银行app直接闪退，果然大银行，对HTTPS证书进行了校验。失败。<br>第二次尝试，用rvictl创建iphone的虚拟网络端口，然后用Wireshark监听所有流量，发现确实走的是HTTPS协议，不是tcp。但是由于内容都是加密的，没什么其他收获。<br>第三次，那就只有祭出必杀器。越狱。</p>
+	
+
+	</div>
+  <a type="button" href="/post/新的渗透不测试/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>最近招商银行有一个10元风暴的活动，集喵喵，最高可以兑换5000元礼品卡。但是听同事说，这个兑换需要拼手速。作为工程师，能用程序解决的，坚决不用手解决。（其实是想练习一下遗忘已久的逆向技能</p>
+<p>分析思路<br>第一次尝试，先用Charles抓包，但是发现设置代理之后打开银行app直接闪退，果然大银行，对HTTPS证书进行了校验。失败。<br>第二次尝试，用rvictl创建iphone的虚拟网络端口，然后用Wireshark监听所有流量，发现确实走的是HTTPS协议，不是tcp。但是由于内容都是加密的，没什么其他收获。<br>第三次，那就只有祭出必杀器。越狱。</p>
+	
+	</div>
+  <a type="button" href="/post/新的渗透不测试/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/post/FTWmrPKc14K0rnag/" >这是可能识别出iphone型号的js</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-01-22  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>改一下可以做成识别Iphone型号的东西</p>
+	
+
+	</div>
+  <a type="button" href="/post/FTWmrPKc14K0rnag/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>改一下可以做成识别Iphone型号的东西</p>
+	
+	</div>
+  <a type="button" href="/post/FTWmrPKc14K0rnag/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/post/4WofsJeOwSLtvZKL/" >这是一个测试</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-01-21  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>这是什么</p>
+<p>这是射门<br>mouse alt.png<br>mouse alt.png<br>$$123123<br>background.jpg<br>/Users/hitman/Downloads/background.jpg</p>
+
+	
+
+	</div>
+  <a type="button" href="/post/4WofsJeOwSLtvZKL/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>这是什么</p>
+<p>这是射门<br>mouse alt.png<br>mouse alt.png<br>$$123123<br>background.jpg<br>/Users/hitman/Downloads/background.jpg</p>
+
+	
+	</div>
+  <a type="button" href="/post/4WofsJeOwSLtvZKL/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/post/fuu/" >这是标题</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-01-17  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>我的天老爷，搞了几天了终于略懂了一丢丢！一开始接触老坂本（5.1）跟着网上教程diy需要自己插入很多文件或者代码，而新版（7.7）基本插件化了，减少了很多目录文件，省去了自己写的同时也懵逼了一些。。毕竟现在教程基本都是老的，不过我没必要研究得太深入毕竟博客以内容质量为主，可以写写博客就ok了吧，反正目前也就只是自己在看而已，还是花点时间做正经事好了。。</p>
+<p>NexT5.1<br>起始日期<br>主题配置文件下搜索since</p>
+	
+
+	</div>
+  <a type="button" href="/post/fuu/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>我的天老爷，搞了几天了终于略懂了一丢丢！一开始接触老坂本（5.1）跟着网上教程diy需要自己插入很多文件或者代码，而新版（7.7）基本插件化了，减少了很多目录文件，省去了自己写的同时也懵逼了一些。。毕竟现在教程基本都是老的，不过我没必要研究得太深入毕竟博客以内容质量为主，可以写写博客就ok了吧，反正目前也就只是自己在看而已，还是花点时间做正经事好了。。</p>
+<p>NexT5.1<br>起始日期<br>主题配置文件下搜索since</p>
+	
+	</div>
+  <a type="button" href="/post/fuu/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/post/新的测试/" >新的测试</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-01-16  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>这是一个新的测试<br>第1<br>第1</p>
+	
+
+	</div>
+  <a type="button" href="/post/新的测试/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>这是一个新的测试<br>第1<br>第1</p>
+	
+	</div>
+  <a type="button" href="/post/新的测试/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/post/Blog的修改/" >Blog的修改</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-01-16  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="这是一个开始"><a href="#这是一个开始" class="headerlink" title="这是一个开始"></a>这是一个开始</h1><h2 id="这是什么"><a href="#这是什么" class="headerlink" title="这是什么"></a>这是什么</h2><h3 id="这个呢"><a href="#这个呢" class="headerlink" title="这个呢"></a>这个呢</h3><h5 id="这个"><a href="#这个" class="headerlink" title="这个"></a>这个</h5><h5 id="md文件的头配置"><a href="#md文件的头配置" class="headerlink" title=".md文件的头配置"></a>.md文件的头配置</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">这是我的标题</span></span><br><span class="line"><span class="attr">tags:</span> [<span class="string">JavaScript</span>,<span class="string">编译器</span>]</span><br><span class="line"><span class="attr">categories:</span> [<span class="string">这是分类</span>,<span class="string">另一个分类</span>]</span><br><span class="line"><span class="attr">date:</span> <span class="number">2021-01-20 13:01:24</span></span><br><span class="line"><span class="attr">shortDesc:</span> <span class="string">这是一段简短的话</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">我是书写者</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">文章内的一段绿色的话</span></span><br><span class="line"><span class="attr">toc:</span> <span class="literal">true</span><span class="string">(开启toc,就是文章内的目录)</span></span><br><span class="line"><span class="attr">feature:</span> <span class="string">images/pasted-10.png(设置文章封面)</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<h5 id="About页面没有图标"><a href="#About页面没有图标" class="headerlink" title="About页面没有图标"></a>About页面没有图标</h5><p>#####</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">##/themes/bithack/layout/about.ejs</span><br><span class="line">&lt;!-- title --&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;page-header&quot;</span>&gt;</span><br><span class="line">     &lt;h1&gt;<span class="xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-user&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span> &lt;%= page.title %&gt;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;content&quot;</span> itemprop=<span class="string">&quot;articleBody&quot;</span>&gt;</span><br><span class="line">    &lt;%- page.content %&gt;</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者这样改</p>
+	
+
+	</div>
+  <a type="button" href="/post/Blog的修改/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="这是一个开始"><a href="#这是一个开始" class="headerlink" title="这是一个开始"></a>这是一个开始</h1><h2 id="这是什么"><a href="#这是什么" class="headerlink" title="这是什么"></a>这是什么</h2><h3 id="这个呢"><a href="#这个呢" class="headerlink" title="这个呢"></a>这个呢</h3><h5 id="这个"><a href="#这个" class="headerlink" title="这个"></a>这个</h5><h5 id="md文件的头配置"><a href="#md文件的头配置" class="headerlink" title=".md文件的头配置"></a>.md文件的头配置</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">这是我的标题</span></span><br><span class="line"><span class="attr">tags:</span> [<span class="string">JavaScript</span>,<span class="string">编译器</span>]</span><br><span class="line"><span class="attr">categories:</span> [<span class="string">这是分类</span>,<span class="string">另一个分类</span>]</span><br><span class="line"><span class="attr">date:</span> <span class="number">2021-01-20 13:01:24</span></span><br><span class="line"><span class="attr">shortDesc:</span> <span class="string">这是一段简短的话</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">我是书写者</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">文章内的一段绿色的话</span></span><br><span class="line"><span class="attr">toc:</span> <span class="literal">true</span><span class="string">(开启toc,就是文章内的目录)</span></span><br><span class="line"><span class="attr">feature:</span> <span class="string">images/pasted-10.png(设置文章封面)</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<h5 id="About页面没有图标"><a href="#About页面没有图标" class="headerlink" title="About页面没有图标"></a>About页面没有图标</h5><p>#####</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">##/themes/bithack/layout/about.ejs</span><br><span class="line">&lt;!-- title --&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;page-header&quot;</span>&gt;</span><br><span class="line">     &lt;h1&gt;<span class="xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-user&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span> &lt;%= page.title %&gt;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;content&quot;</span> itemprop=<span class="string">&quot;articleBody&quot;</span>&gt;</span><br><span class="line">    &lt;%- page.content %&gt;</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者这样改</p>
+	
+	</div>
+  <a type="button" href="/post/Blog的修改/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/post/Untitled/" >hexo以及MarkDown语法的熟悉</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-01-13  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>这是在测试网站的上传图片功能</p>
+<p>#hexo命令及Markdown语法<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/huanhao/p/markdown.html">Hexo语法学习</a><br>20-12-08_11-17.png<br><img src="/images/pasted-0.png" alt="upload successful"><br>这是图片</p>
+<p>插入程序代码的方式有两种：、使用缩进（Tab）。</p>
+<pre><code>$ npm install hexo-generator-search --save</code></pre>
+<p>使用反引号 `（~ 键）<br>    </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line">print(<span class="string">&quot;Hello, World!&quot;</span>);</span><br></pre></td></tr></table></figure><br>这是红色<p></p>
+<p><code>scanf()</code></p>
+<p>20-12-09_11-53.png<br><img src="/images/pasted-1.png" alt="upload successful"></p>
+	
+
+	</div>
+  <a type="button" href="/post/Untitled/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>这是在测试网站的上传图片功能</p>
+<p>#hexo命令及Markdown语法<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/huanhao/p/markdown.html">Hexo语法学习</a><br>20-12-08_11-17.png<br><img src="/images/pasted-0.png" alt="upload successful"><br>这是图片</p>
+<p>插入程序代码的方式有两种：、使用缩进（Tab）。</p>
+<pre><code>$ npm install hexo-generator-search --save</code></pre>
+<p>使用反引号 `（~ 键）<br>    </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line">print(<span class="string">&quot;Hello, World!&quot;</span>);</span><br></pre></td></tr></table></figure><br>这是红色<p></p>
+<p><code>scanf()</code></p>
+<p>20-12-09_11-53.png<br><img src="/images/pasted-1.png" alt="upload successful"></p>
+	
+	</div>
+  <a type="button" href="/post/Untitled/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/post/Blog开始编写/" >Blog Start</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-10-29  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="这是我的Blog"><a href="#这是我的Blog" class="headerlink" title=" 这是我的Blog"></a><center> 这是我的Blog</center></h1><h3 id="这是我的Blog，我将要开始编写"><a href="#这是我的Blog，我将要开始编写" class="headerlink" title="这是我的Blog，我将要开始编写"></a>这是我的Blog，我将要开始编写</h3><hr>
+<h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><ul>
+<li><p>&emsp;&emsp; 最开始想开始写Blog是自己好几年前的想法连，现在才开始写自己的Blog又好几个因素在内。自己写博客希望能写下自己的一些成果，有自己书写笔记心得的地方，一个展示自己的地方，并且和大佬们交换友链还能够蹭蹭流量。</p>
+</li>
+<li><p>&emsp;&emsp; 今年是自己工作的第三个年头了，除了日常<strong>渗透</strong>工作之外，也打算写点东西来记录自己的技术成长，主要在<strong>反信息欺诈</strong>方面。</p>
+</li>
+<li><p>&emsp;&emsp; 拖了那么久一个是自己太懒了，另一个原因是因为自己之前买了一个阿里的域名和服务器想着配置配置上线，结果要备案，要人脸识别要身份证，我偏不！<br>可是就弄个单IP展示Blog看着也太涝了，随即放弃了。。。。。</p>
+</li>
+<li><p>&emsp;&emsp; 之前总感觉这些东西记在自己本地txt文档里，记在印象笔记里就行，没成想，一直顺手的脑抽rm ./* -rf 毁了所有，我记着没有sudo是不会执行的，这下记忆深刻了！</p>
+</li>
+<li><p>&emsp;&emsp; 另一个原因是在看别的大佬的Blog时看到的层级关系，思路方法都很清晰。自己在搞渗透测试的时候总是在一个～/User/里面一阵搜索，很多时候忘了关键词还检索不出来，真是伤透了脑筋。</p>
+</li>
+<li><p>&emsp;&emsp; 有的时候偶尔去浏览一下 大佬们的博客，虽然也看不懂，但是可以明显地感受到“大佬”的努力程度。牛人尚且如此努力，我等凡人有什么理由不努力呢。</p>
+</li>
+<li><p>&emsp;&emsp; 整理Blog一方面是为了自己记录成长，另一方面也是为了自己巩固记忆，写这个Blog也不是想有人能看，主要还是自己做一个备份吧。<br>看别的大佬写的文章技术性又好，思路又广，排版也好看，都不想自己写了。</p>
+</li>
+</ul>
+<h3 id="2021规划"><a href="#2021规划" class="headerlink" title="2021规划"></a>2021规划</h3><p>1.新方向</p>
+<ul>
+<li>PHP审计，简单逆向</li>
+<li>加深域渗透方面的知识</li>
+<li>明确定位多抓商务方面，技术是学不完的</li>
+</ul>
+<p> 2.旧方向</p>
+<ul>
+<li>多了解几个新的诈骗网站和类型</li>
+<li>Python和Golang还是抓起来</li>
+<li>自动化搞起来，累死人了</li>
+<li>涨新，涨不起来不等</li>
+</ul>
+	
+
+	</div>
+  <a type="button" href="/post/Blog开始编写/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="这是我的Blog"><a href="#这是我的Blog" class="headerlink" title=" 这是我的Blog"></a><center> 这是我的Blog</center></h1><h3 id="这是我的Blog，我将要开始编写"><a href="#这是我的Blog，我将要开始编写" class="headerlink" title="这是我的Blog，我将要开始编写"></a>这是我的Blog，我将要开始编写</h3><hr>
+<h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><ul>
+<li><p>&emsp;&emsp; 最开始想开始写Blog是自己好几年前的想法连，现在才开始写自己的Blog又好几个因素在内。自己写博客希望能写下自己的一些成果，有自己书写笔记心得的地方，一个展示自己的地方，并且和大佬们交换友链还能够蹭蹭流量。</p>
+</li>
+<li><p>&emsp;&emsp; 今年是自己工作的第三个年头了，除了日常<strong>渗透</strong>工作之外，也打算写点东西来记录自己的技术成长，主要在<strong>反信息欺诈</strong>方面。</p>
+</li>
+<li><p>&emsp;&emsp; 拖了那么久一个是自己太懒了，另一个原因是因为自己之前买了一个阿里的域名和服务器想着配置配置上线，结果要备案，要人脸识别要身份证，我偏不！<br>可是就弄个单IP展示Blog看着也太涝了，随即放弃了。。。。。</p>
+</li>
+<li><p>&emsp;&emsp; 之前总感觉这些东西记在自己本地txt文档里，记在印象笔记里就行，没成想，一直顺手的脑抽rm ./* -rf 毁了所有，我记着没有sudo是不会执行的，这下记忆深刻了！</p>
+</li>
+<li><p>&emsp;&emsp; 另一个原因是在看别的大佬的Blog时看到的层级关系，思路方法都很清晰。自己在搞渗透测试的时候总是在一个～/User/里面一阵搜索，很多时候忘了关键词还检索不出来，真是伤透了脑筋。</p>
+</li>
+<li><p>&emsp;&emsp; 有的时候偶尔去浏览一下 大佬们的博客，虽然也看不懂，但是可以明显地感受到“大佬”的努力程度。牛人尚且如此努力，我等凡人有什么理由不努力呢。</p>
+</li>
+<li><p>&emsp;&emsp; 整理Blog一方面是为了自己记录成长，另一方面也是为了自己巩固记忆，写这个Blog也不是想有人能看，主要还是自己做一个备份吧。<br>看别的大佬写的文章技术性又好，思路又广，排版也好看，都不想自己写了。</p>
+</li>
+</ul>
+<h3 id="2021规划"><a href="#2021规划" class="headerlink" title="2021规划"></a>2021规划</h3><p>1.新方向</p>
+<ul>
+<li>PHP审计，简单逆向</li>
+<li>加深域渗透方面的知识</li>
+<li>明确定位多抓商务方面，技术是学不完的</li>
+</ul>
+<p> 2.旧方向</p>
+<ul>
+<li>多了解几个新的诈骗网站和类型</li>
+<li>Python和Golang还是抓起来</li>
+<li>自动化搞起来，累死人了</li>
+<li>涨新，涨不起来不等</li>
+</ul>
+	
+	</div>
+  <a type="button" href="/post/Blog开始编写/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/post/untitled-1607326654965/" >tttt</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-10-29  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>学习编译器原理的时候，想到了一个面试题，如何把字符串解析成<code>JSON</code>对象。今天动手实现一遍。</p>
+
+	
+
+	</div>
+  <a type="button" href="/post/untitled-1607326654965/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>学习编译器原理的时候，想到了一个面试题，如何把字符串解析成<code>JSON</code>对象。今天动手实现一遍。</p>
+
+	
+	</div>
+  <a type="button" href="/post/untitled-1607326654965/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/post/用编译器的思路实现一个JSON解析器/" >用编译器的思路实现一个JSON解析器</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-10-29  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>学习编译器原理的时候，想到了一个面试题，如何把字符串解析成<code>JSON</code>对象。今天动手实现一遍。</p>
+<h2 id="JSON的数据类型"><a href="#JSON的数据类型" class="headerlink" title="JSON的数据类型"></a>JSON的数据类型</h2><ul>
+<li>字符串</li>
+<li>数字</li>
+<li>对象</li>
+<li>数组</li>
+<li>布尔</li>
+<li>null</li>
+</ul>
+<p>JSON 中的字符串必须用双引号包围。</p>
+<h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><p>编译器的第一步是词义分析和语义分析，生成AST，我发现AST本身就是结构化的对象，和JavaScript中的JSON类似，所以只需要让生成的AST符合JSON的规范就可以。</p>
+<p>##</p>
+<h2 id="JSON的数据类型-1"><a href="#JSON的数据类型-1" class="headerlink" title="JSON的数据类型"></a>JSON的数据类型</h2><ul>
+<li>字符串</li>
+<li>数字</li>
+<li>对象</li>
+<li>数组</li>
+<li>布尔</li>
+<li>null</li>
+</ul>
+<p>JSON 中的字符串必须用双引号包围。</p>
+	
+
+	</div>
+  <a type="button" href="/post/用编译器的思路实现一个JSON解析器/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p>学习编译器原理的时候，想到了一个面试题，如何把字符串解析成<code>JSON</code>对象。今天动手实现一遍。</p>
+<h2 id="JSON的数据类型"><a href="#JSON的数据类型" class="headerlink" title="JSON的数据类型"></a>JSON的数据类型</h2><ul>
+<li>字符串</li>
+<li>数字</li>
+<li>对象</li>
+<li>数组</li>
+<li>布尔</li>
+<li>null</li>
+</ul>
+<p>JSON 中的字符串必须用双引号包围。</p>
+<h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><p>编译器的第一步是词义分析和语义分析，生成AST，我发现AST本身就是结构化的对象，和JavaScript中的JSON类似，所以只需要让生成的AST符合JSON的规范就可以。</p>
+<p>##</p>
+<h2 id="JSON的数据类型-1"><a href="#JSON的数据类型-1" class="headerlink" title="JSON的数据类型"></a>JSON的数据类型</h2><ul>
+<li>字符串</li>
+<li>数字</li>
+<li>对象</li>
+<li>数组</li>
+<li>布尔</li>
+<li>null</li>
+</ul>
+<p>JSON 中的字符串必须用双引号包围。</p>
+	
+	</div>
+  <a type="button" href="/post/用编译器的思路实现一个JSON解析器/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+
+   
+    
+     <a href="/page/8/" type="button" class="btn btn-default"><i class="fa fa-arrow-circle-o-left"></i> Prev</a>
+      
+
+        <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+ 
+       <a href="/page/10/" type="button" class="btn btn-default ">Next<i class="fa fa-arrow-circle-o-right"></i></a>     
+        
+
+  
+</div>
+
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
+
+
+		
+			<img src="/images/pasted-10.png">
+
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/反诈打击/">反诈打击<span>71</span></a></li>
+		
+		</ul>
+	</div>
+
+<! -- 设置边栏 -->
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/投资类/">投资类<span>1</span></a></li>
+		
+			<li><a href="/tags/理财类/">理财类<span>20</span></a></li>
+		
+			<li><a href="/tags/客服类/">客服类<span>3</span></a></li>
+		
+			<li><a href="/tags/游戏交易类/">游戏交易类<span>1</span></a></li>
+		
+			<li><a href="/tags/果聊类/">果聊类<span>2</span></a></li>
+		
+			<li><a href="/tags/菠菜类/">菠菜类<span>15</span></a></li>
+		
+			<li><a href="/tags/借贷类/">借贷类<span>18</span></a></li>
+		
+			<li><a href="/tags/ETC类/">ETC类<span>1</span></a></li>
+		
+			<li><a href="/tags/杀猪盘/">杀猪盘<span>5</span></a></li>
+		
+			<li><a href="/tags/公检法类/">公检法类<span>2</span></a></li>
+		
+			<li><a href="/tags/刷单类/">刷单类<span>7</span></a></li>
+		
+		 
+		</ul>
+	</div>
+
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/post/内网横向/" ><i class="fa fa-file-o"></i>内网横向</a>
+      </li>
+    
+      <li>
+        <a href="/post/SQLI_Bypass/"  title="这是一个模版文件描述，以后就这么写✍️." ><i class="fa fa-file-o"></i>SQLI_Bypass</a>
+      </li>
+    
+      <li>
+        <a href="/post/XSS_Bypass/"  title="这是一个模版文件描述，以后就这么写✍️." ><i class="fa fa-file-o"></i>XSS_Bypass</a>
+      </li>
+    
+      <li>
+        <a href="/post/Phishing_WebIM/"  title="这是一个模版文件描述，以后就这么写✍️." ><i class="fa fa-file-o"></i>刷单_WebIM</a>
+      </li>
+    
+      <li>
+        <a href="/post/Phishing_Netchat/"  title="这是一个模版文件描述，以后就这么写✍️." ><i class="fa fa-file-o"></i>刷单_Netchat</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/aj-nicoloff-0b1208194" title="" target="_blank"]);">My Linkedin</a></li>
+	
+		<li><i class="fa fa-github-alt"></i><a href="https://www.baidu.com/" title="" target="_blank"]);">BaiDu</a></li>
+	
+		<li><i class="fa fa-slideshare"></i><a href="https://github.com/ffffff0x" title="" target="_blank"]);">Telegram</a></li>
+	
+		<li><i class="fa fa-windows"></i><a href="https://github.com/ffffff0x" title="" target="_blank"]);">Github</a></li>
+	
+		<li><i class="fa fa-linux"></i><a href="https://github.com/ffffff0x" title="" target="_blank"]);">Github</a></li>
+	
+		<li><i class="fa fa-apple"></i><a href="https://github.com/ffffff0x" title="" target="_blank"]);">Github</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+<!-- 这里添加边栏 -->
+
+	
+	
+</div> <!-- row-fluid -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2024 hitman's Blog
+  
+      . wubba <a href="http://hexo.io/" target="_blank">lubba</a> dub <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank"> dub.</a>  
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

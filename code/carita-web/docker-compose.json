@@ -1,0 +1,1 @@
+{"version":"2","services":{"carita-web":{"image":"nginx:alpine","volumes":["./:/usr/share/nginx/html:ro"],"ports":["80:80"]}}}

@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Basic Bot Setup | bo0s</title>
+  <meta name="author" content="hitman">
+  
+  <meta name="description" content="My Blog/Website, will Tutorials, and just my general thoughts.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Basic Bot Setup"/>
+  <meta property="og:site_name" content="bo0s"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/12favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">bo0s</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文章">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="标签">
+			  <i class="fa fa-tag"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我是谁.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/wiki/#/" title="WiKi.">
+			  <i class="fa fa-book"></i>WiKi
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tool" title="工具">
+			  <i class="fa fa-space-shuttle"></i>Tool
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/logs" title="日志">
+			  <i class="fa fa-tachometer"></i>Logs
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/code/landing/" title="Discord.JS Bot Code">
+			  <i class="fa fa-code"></i>Tutorials / Code
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+	
+		<div class="page-header">
+			<h1> Basic Bot Setup</h1>
+		</div>
+	
+
+
+
+<div class="row page">
+	<!-- cols -->
+	
+	<div class="col-md-12"> 
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p><strong>You’ve made it!</strong> You’ve joined Discord and now you want to spice things up a bit and create a Discord Bot, perhaps this is even your first time working with NodeJS, or even <em>your first time writing code at all.</em></p>
+<p><strong>Before</strong> we get started, I’d like to mention that before you create a public application, or even a private one - you should have at <em>the very least</em> a basic understanding of how the language you are using works. You can’t write code without knowing the basics.</p>
+<p>If you are wanting to hop right into making a bot, I <strong>strongly advise</strong> that you visit the following websites to learn some of the basics first:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.w3schools.com/nodejs/default.asp">w3schools</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.codecademy.com/learn/learn-node-js">codecademy</a></li>
+<li><a target="_blank" rel="noopener" href="https://javascript.info/">javascript.info</a></li>
+</ul>
+<p>I’m going to hope you listened, and at least <em>skimmed</em> the basics on the sites above. </p>
+<hr>
+<h2 id="Setting-up-the-Environment"><a href="#Setting-up-the-Environment" class="headerlink" title="Setting up the Environment"></a>Setting up the Environment</h2><p><strong>Before</strong> you can get started with anything, you need to make sure your environment is setup correctly. By this, I mean you need to make sure that your desktop, or laptop - has the programs required to code, and run code with NodeJS.</p>
+<p>If you haven’t already, install the following:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">NodeJS 12+</a><br><em><strong>Note:</strong></em> <em>We will be using Visual Studio Code for this tutorial, but feel free to use any code editor you like.</em></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/download">Visual Studio Code</a></li>
+</ul>
+<p>Once you have those installed, continue on by creating a new folder.</p>
+<p>I’ll be naming my folder <code>DiscordBot</code> - Go ahead and open that folder in Visual Studio Code. To begin creating a project with NodeJS we will be using the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Package_manager"><em>Package Manager</em></a> NPM. </p>
+<p>We now need a Terminal to use. Type <strong>Ctrl+`</strong> to open a new one in Visual Studio Code.</p>
+<p>To get started with a new application, we want to <em>initalize</em> it! This helps us keep track of packages and dependencies, along with some other tid-bits we will use later on. Go ahead and run </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+<p>And you are all set. Now we need to install Discord.JS</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install discord.js --save</span><br></pre></td></tr></table></figure>
+<p>This will install Discord.JS and all of it’s dependencies.</p>
+<h2 id="Creating-a-Discord-Application-Discord-Bot-User"><a href="#Creating-a-Discord-Application-Discord-Bot-User" class="headerlink" title="Creating a Discord Application (Discord Bot User)"></a>Creating a Discord Application (Discord Bot User)</h2><p>Before you can work on the code for the bot, you have to get a bot user from Discord first.</p>
+<p>Go to <a target="_blank" rel="noopener" href="https://discord.com/developers/applications">discord.com/developers/applications</a> and create a new application.</p>
+<p>It <em>should</em> look like this, <strong>if</strong> it doesn’t - you may have a popup blocker removing the popup. Toggle it off and try again.<br><img src="../../../../assets/createanappdiscord.PNG" alt="Bot Creation Popup"><br><strong>After</strong> clicking “create” you will see a sidebar that has a “Bot” tab, click that, and click the “Add Bot” button.</p>
+<p>Now, you need to invite your bot to a server! Add it to a server by generating an invite link <a target="_blank" rel="noopener" href="https://discordapi.com/permissions.html#8">here</a></p>
+<hr>
+<h2 id="Ready-Set-Code"><a href="#Ready-Set-Code" class="headerlink" title="Ready, Set, Code!"></a>Ready, Set, Code!</h2><p><strong>Now</strong> we get to begin coding the basic bot! </p>
+<p>Let’s create a new file called <code>index.js</code> and start by writing the following code.<br>I’ve added comments to the code to explain each part.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Discord = <span class="built_in">require</span>(<span class="string">&quot;discord.js&quot;</span>)</span><br><span class="line"><span class="keyword">const</span> Client = <span class="keyword">new</span> Discord.Client(&#123;</span><br><span class="line">    fetchAllMembers: <span class="literal">false</span>, <span class="comment">// Don&#x27;t ask Discord for all discord users your bot is in at one time.</span></span><br><span class="line">    disableEveryone: <span class="literal">true</span>, <span class="comment">// Don&#x27;t allow the bot to ping @everyone.</span></span><br><span class="line">    disabledEvents: [], <span class="comment">// This is important, but for now, we can safely ignore it.</span></span><br><span class="line">    http: &#123; <span class="attr">api</span>: <span class="string">&#x27;https://discordapp.com/api&#x27;</span>, <span class="attr">version</span>: <span class="number">7</span> &#125;, <span class="comment">// Sets the API version.</span></span><br><span class="line">    shardCount: <span class="number">1</span> <span class="comment">// Don&#x27;t worry about this, it basically says you only want **one** copy of your bot!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>So you’ve created a bot now! Congrats! Only issue is… right now it doesn’t log in. Let’s fix that!</p>
+<ul>
+<li>First, you will need to go back to your bots application page. Remember how it said “Token” on the page? </li>
+<li>Copy that token and paste it where I have <code>TOKEN_HERE</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Client.login(<span class="string">&quot;TOKEN_HERE&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>Now your bot can login. Normally, you would keep your token stored in a Configuration file, but this is fine for now.<br>To connect your bot to Discord, in the terminal use the following command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node index.js</span><br></pre></td></tr></table></figure>
+<p>You should now see your Bot come online in your server!</p>
+<hr>
+<h2 id="Making-the-Bot-Functional"><a href="#Making-the-Bot-Functional" class="headerlink" title="Making the Bot Functional"></a>Making the Bot Functional</h2><p>So you have a bot, but it doesn’t do anything yet! Once again, let’s change that!</p>
+<p>Discord sends <code>events</code> to your bot that let it know when something happens, or when someone does something. We will be using the <a target="_blank" rel="noopener" href="https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-message">message</a> event to get and read user messages.<br>Taking the code from before, add the following lines to it. I’ve explained what the code does in the comments.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Client.on(<span class="string">&quot;message&quot;</span>, <span class="function"><span class="params">msg</span> =&gt;</span> &#123; <span class="comment">// when the Discord sends the bot a message, run this code</span></span><br><span class="line">    <span class="keyword">if</span>(msg.content === <span class="string">&quot;hey!&quot;</span>) &#123; <span class="comment">// checks if the message content equals &quot;hey!&quot;</span></span><br><span class="line">        msg.channel.send(<span class="string">&quot;hey cool person!&quot;</span>) <span class="comment">// sends a message in the current channel</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>Go ahead and relaunch your bot if you haven’t already. Go ahead and send “hey!” in a channel!<br>Your bot should have responded with “hey cool person!” if all went well.</p>
+<hr>
+<h2 id="Congrats"><a href="#Congrats" class="headerlink" title="Congrats!"></a>Congrats!</h2><p>You now have a functioning Discord Bot that responds to a word. Try messing around with the small amount of code you have and see if you can make it do more!</p>
+<p>For more functions of discord.js, check the <a target="_blank" rel="noopener" href="https://discord.js.org/">documentation here</a>. If you feel confident enough, try adding some other events, or using different functions of Discord.JS. Below should be your final code from the tutorial, if anything went wrong, try examining it to see what you did differently!</p>
+<p>Once you get the hang of things, you can try and work with the more advanced example on the site. I will warn you, if this was difficult, it will be <strong>much</strong> harder to understand the advanced example, but it may help to view the code and see syntax, and other functions of Discord.JS, and NodeJS itself. Once again, if this was difficult, go through the resources listed at the top of the tutorial and come back when you are finished. It will take time, but it will be worth it, and save you time in the long run.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Discord = <span class="built_in">require</span>(<span class="string">&quot;discord.js&quot;</span>)</span><br><span class="line"><span class="keyword">const</span> Client = <span class="keyword">new</span> Discord.Client(&#123;</span><br><span class="line">    fetchAllMembers: <span class="literal">false</span>,</span><br><span class="line">    disableEveryone: <span class="literal">true</span>, </span><br><span class="line">    disabledEvents: [],</span><br><span class="line">    http: &#123; <span class="attr">api</span>: <span class="string">&#x27;https://discordapp.com/api&#x27;</span>, <span class="attr">version</span>: <span class="number">7</span> &#125;, </span><br><span class="line">    shardCount: <span class="number">1</span> </span><br><span class="line">&#125;);</span><br><span class="line">Client.on(<span class="string">&quot;message&quot;</span>, <span class="function"><span class="params">msg</span> =&gt;</span> &#123; </span><br><span class="line">    <span class="keyword">if</span>(msg.content === <span class="string">&quot;hey!&quot;</span>) &#123; </span><br><span class="line">        msg.channel.send(<span class="string">&quot;hey cool person!&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">Client.login(<span class="string">&quot;TOKEN_HERE&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	<span id="/code/topics/discordjs/basicbot/" class="leancloud-visitors view" data-flag-title="Basic Bot Setup">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2024 hitman's Blog
+  
+      . wubba <a href="http://hexo.io/" target="_blank">lubba</a> dub <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank"> dub.</a>  
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

